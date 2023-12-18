@@ -1,12 +1,15 @@
 import React from "react";
+import Header from "../Header/Header";
+// import Dropdown from "../Dropdown/Dropdown";
+// import SearchBar from "../SearchBar/SearchBar";
 import "./App.css";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <h1 className="text-3xl font-bold underline text-red-600">
-      Simple React TS tailwind sample
-    </h1>
+    <div>
+      <Header />
+    </div>
   );
-}
+};
 
 export default App;
