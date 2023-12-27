@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Route } from "react-router-dom";
 import Header from "../Header/Header";
+import HolisticProductList from "../HolisticProductList/HolisticProducList";
 import { getHolisticProducts } from "../../apiCalls";
+
 import "./App.css";
 
 interface HolisticProduct {
@@ -36,15 +39,14 @@ const App: React.FC = () => {
   return (
     <div>
       <Header />
-      <div>
-        {holisticProducts.map((product) => (
-          <div key={product.id}>
-            <h1>{product.product_title}</h1>
-            <img src={product.img} alt={product.product_title} />
-            <p>{product.product_type}</p>
-          </div>
-        ))}
-      </div>
+      <main className="App">
+        <Route
+          path="/"
+          render={() => (
+            <HolisticProductList holisticProducts={holisticProducts} />
+          )}
+        />
+      </main>
     </div>
   );
 };

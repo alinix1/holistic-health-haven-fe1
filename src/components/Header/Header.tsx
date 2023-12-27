@@ -10,10 +10,10 @@ const Header: React.FC = () => {
     <div className="bg-F2E8DF p-8 flex items-center justify-between">
       <nav className="nav-bar flex items-center mb-60">
         <CartIcon className="mr-4" />
-        <Link to="/" className="mr-4 text-[#736555] font-extrabold">
+        <Link to="/testimonials" className="mr-4 text-[#736555] font-extrabold">
           <p className="nav-btn">Testimonials</p>
         </Link>
-        <Link to="/" className="text-[#736555] font-extrabold">
+        <Link to="/holistic-products" className="text-[#736555] font-extrabold">
           <p className="nav-btn">Holistic Products</p>
         </Link>
       </nav>
