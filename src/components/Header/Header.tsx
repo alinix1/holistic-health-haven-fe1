@@ -13,7 +13,7 @@ const Header: React.FC = () => {
         <Link to="/testimonials" className="mr-4 text-[#736555] font-extrabold">
           <p className="nav-btn">Testimonials</p>
         </Link>
-        <Link to="/holistic-products" className="text-[#736555] font-extrabold">
+        <Link to="/" className="text-[#736555] font-extrabold">
           <p className="nav-btn">Holistic Products</p>
         </Link>
       </nav>

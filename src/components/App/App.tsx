@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Header from "../Header/Header";
 import HolisticProductList from "../HolisticProductList/HolisticProducList";
+import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
+import TestimonialsPage from "../TestimonialsPage/TestimonialsPage";
+import BadURL from "../BadURL/BadURL";
 import { getHolisticProducts } from "../../apiCalls";
 
 import "./App.css";
@@ -40,12 +43,31 @@ const App: React.FC = () => {
     <div>
       <Header />
       <main className="App">
-        <Route
-          path="/"
-          render={() => (
-            <HolisticProductList holisticProducts={holisticProducts} />
-          )}
-        />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <HolisticProductList holisticProducts={holisticProducts} />
+            )}
+          />
+          <Route
+            exact
+            path="/testimonials"
+            render={() => <TestimonialsPage />}
+          />
+          <Route
+            exact
+            path="/:id"
+            render={({ match }) => (
+              <HolisticProductPage
+                holisticProducts={holisticProducts}
+                id={parseInt(match.params.id)}
+              />
+            )}
+          />
+          <Route path="*" component={BadURL} />
+        </Switch>
       </main>
     </div>
   );
