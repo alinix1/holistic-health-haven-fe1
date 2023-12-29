@@ -5,7 +5,7 @@ import HolisticProductList from "../HolisticProductList/HolisticProducList";
 import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
 import TestimonialsPage from "../TestimonialsPage/TestimonialsPage";
 import BadURL from "../BadURL/BadURL";
-import { getHolisticProducts } from "../../apiCalls";
+import { getHolisticProducts, getReviews } from "../../apiCalls";
 
 import "./App.css";
 
