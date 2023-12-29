@@ -1,4 +1,4 @@
-import holisticProductData from "./mockData";
+import { holisticProductData, reviewsData } from "./mockData";
 
 const getHolisticProducts = () => {
   return Promise.resolve({
@@ -7,4 +7,11 @@ const getHolisticProducts = () => {
   });
 };
 
-export { getHolisticProducts };
+const getReviews = () => {
+  return Promise.resolve({
+    json: () => Promise.resolve(reviewsData),
+    ok: true,
+  });
+};
+
+export { getHolisticProducts, getReviews };
