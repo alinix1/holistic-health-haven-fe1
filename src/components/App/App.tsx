@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Header from "../Header/Header";
 import HolisticProductList from "../HolisticProductList/HolisticProducList";
 import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
 import TestimonialsPage from "../TestimonialsPage/TestimonialsPage";
 import BadURL from "../BadURL/BadURL";
-import { getHolisticProducts, getReviews } from "../../apiCalls";
+import { getHolisticProducts } from "../../apiCalls";
 
 import "./App.css";
 
@@ -66,7 +66,8 @@ const App: React.FC = () => {
               />
             )}
           />
-          <Route path="*" component={BadURL} />
+          <Route path="/badURL" component={BadURL} />
+          <Redirect from="*" to="/badURL" />
         </Switch>
       </main>
     </div>

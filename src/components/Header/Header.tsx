@@ -7,7 +7,7 @@ import CartIcon from "../CartIcon/CartIcon";
 
 const Header: React.FC = () => {
   return (
-    <div className="bg-F2E8DF p-8 flex items-center justify-between">
+    <div className="bg-F2E8DF p-2 flex items-center justify-between">
       <nav className="nav-bar flex items-center mb-60">
         <CartIcon className="mr-4" />
         <Link to="/testimonials" className="mr-4 text-[#736555] font-extrabold">
@@ -21,10 +21,10 @@ const Header: React.FC = () => {
         <h1 className="text-black font-regular text-4xl mb-4">
           Holistic Health Haven
         </h1>
-        <div className="mt-2">
-          <Dropdown />
-        </div>
-        <div className="mt-2">
+        <div className="mt-12 flex">
+          <div className="mr-5">
+            <Dropdown />
+          </div>
           <SearchBar />
         </div>
       </div>
