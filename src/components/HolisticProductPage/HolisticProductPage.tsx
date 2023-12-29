@@ -21,7 +21,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
   const selectedProduct = holisticProducts.find((product) => product.id === id);
 
   if (!selectedProduct) {
-    return <div>Product not found</div>;
+    return <div>Bad URL</div>;
   }
 
   return (
