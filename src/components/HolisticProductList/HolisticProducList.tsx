@@ -30,13 +30,12 @@ const HolisticProductCards: React.FC<HolisticProductListProps> = ({
     />
   ));
   return (
-    <div className="background-container bg-white">
+    <div className="background-container justify-center">
       <div
-        className="holistic-products-list p-4 grid grid-cols-2 gap-5"
+        className="holistic-products-list p-4 grid grid-cols-3 gap-4"
         style={{
-          backgroundImage: `url(${holisticHerbalImage})`,
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url(${holisticHerbalImage})`,
           backgroundSize: "cover",
-          opacity: 1.2,
         }}
       >
         {holisticCards}

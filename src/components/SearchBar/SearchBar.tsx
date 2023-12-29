@@ -4,7 +4,7 @@ const SearchBar: React.FC = () => {
   return (
     <section>
       <input
-        className="search font-inherit text-inherit bg-white-300 border-none px-7 w-90 transition-all focus:outline-none focus:w-full focus:bg-grey-400"
+        className="search font-inherit text-inherit bg-white-300 border border-gray-300 px-7 w-90"
         type="text"
         name="search"
         value=""

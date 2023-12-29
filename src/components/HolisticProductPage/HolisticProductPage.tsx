@@ -27,9 +27,9 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
   return (
     <div>
       <h2>{selectedProduct.product_title}</h2>
-      <p>{selectedProduct.product_type}</p>
+      <p>{selectedProduct.product_type.join(", ")}</p>
       <p>{selectedProduct.product_description}</p>
-      <p>{selectedProduct.price}</p>
+      <p>${selectedProduct.price.toFixed(2)}</p>
       <img src={selectedProduct.img} alt={selectedProduct.product_title} />
     </div>
   );
