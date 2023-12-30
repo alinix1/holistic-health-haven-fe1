@@ -1,5 +1,6 @@
 import React from "react";
 import anime from "animejs";
+import { Link } from "react-router-dom";
 
 const GRID_WIDTH = 20;
 const GRID_HEIGHT = 25;
@@ -70,6 +71,11 @@ const ErrorMessage = () => {
       <h2 className="text-white text-3xl font-bold text-center mb-8">
         Sorry, this URL does not exist.
       </h2>
+      <Link to="/" className="bottom-0 left-0">
+        <button className="home-btn bg-[#5A7340] border border-black text-white px-4 py-2 rounded mb-7 w-[15vw]">
+          home
+        </button>
+      </Link>
       <p className="text-white text-md font-normal mb-5">
         In the meantime, click on the animation below.
       </p>
