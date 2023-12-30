@@ -5,6 +5,7 @@ import HolisticProductList from "../HolisticProductList/HolisticProducList";
 import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
 import TestimonialsPage from "../TestimonialsPage/TestimonialsPage";
 import BadURL from "../BadURL/BadURL";
+import spinner from "../../assets/Yin_and_Yang.gif";
 import { getHolisticProducts } from "../../apiCalls";
 
 import "./App.css";
@@ -23,6 +24,8 @@ const App: React.FC = () => {
     []
   );
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     getHolisticProducts()
       .then((response) => {
@@ -33,11 +36,28 @@ const App: React.FC = () => {
       })
       .then((data) => {
         setHolisticProducts(data as HolisticProduct[]);
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
+        setLoading(false);
       });
   }, []);
+
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center h-full mt-20">
+        <img
+          src={spinner}
+          alt="loading spinner Yin & Yang"
+          className="loading-image w-20 h-20"
+        />
+        <h4 className="mt-4">
+          ...Please wait for the page to load fully. Namaste.
+        </h4>
+      </div>
+    );
+  }
 
   return (
     <div>
