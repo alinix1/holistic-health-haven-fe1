@@ -1,4 +1,5 @@
 import React from "react";
+import WaterDropGrid from "../WaterDropGrid/WaterDropGrid";
 
 interface HolisticProduct {
   id: number;
@@ -21,7 +22,11 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
   const selectedProduct = holisticProducts.find((product) => product.id === id);
 
   if (!selectedProduct) {
-    return <div>Bad URL</div>;
+    return (
+      <div>
+        <WaterDropGrid />
+      </div>
+    );
   }
 
   return (
