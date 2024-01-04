@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import HolisticProductList from "../HolisticProductList/HolisticProducList";
 import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
 import TestimonialsPage from "../TestimonialsPage/TestimonialsPage";
+import Footer from "../Footer/Footer";
 import BadURL from "../BadURL/BadURL";
 import spinner from "../../assets/Yin_and_Yang.gif";
 import { getHolisticProducts } from "../../apiCalls";
@@ -90,6 +91,7 @@ const App: React.FC = () => {
           <Redirect from="*" to="/badURL" />
         </Switch>
       </main>
+      <Footer />
     </div>
   );
 };
