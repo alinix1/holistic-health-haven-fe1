@@ -61,9 +61,9 @@ const App: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="App">
+      <main className="App flex-grow">
         <Switch>
           <Route
             exact
