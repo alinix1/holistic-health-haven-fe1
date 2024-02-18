@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
+import Dropdown from "../Dropdown/Dropdown";
+import SearchBar from "../SearchBar/SearchBar";
 import Header from "../Header/Header";
 import HolisticProductList from "../HolisticProductList/HolisticProducList";
 import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
@@ -26,6 +28,10 @@ const App: React.FC = () => {
   );
 
   const [loading, setLoading] = useState(true);
+  const [searchValue, setSearchValue] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState<HolisticProduct[]>(
+    []
+  );
 
   useEffect(() => {
     getHolisticProducts()
@@ -45,6 +51,23 @@ const App: React.FC = () => {
       });
   }, []);
 
+  const handleSearchInput = (value: string) => {
+    const formattedValue = value.toLowerCase();
+    setSearchValue(formattedValue);
+
+    if (formattedValue) {
+      const allHolisticProductsInput = holisticProducts.filter(
+        (holisticProduct) =>
+          holisticProduct.product_title.toLowerCase().includes(formattedValue)
+      );
+      setFilteredProducts(allHolisticProductsInput);
+    } else {
+      setFilteredProducts([]);
+    }
+  };
+
+  const productList = searchValue ? filteredProducts : holisticProducts;
+
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center h-full mt-20">
@@ -62,14 +85,25 @@ const App: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
+      <Header>
+        <Dropdown />
+        <SearchBar
+          handleSearchInput={handleSearchInput}
+          searchValue={searchValue}
+        />
+        {searchValue && !productList.length && (
+          <p className="text-red-500 font-bold text-center mt-4">
+            No products match your search! Try searching by a different name.
+          </p>
+        )}
+      </Header>
       <main className="App flex-grow">
         <Switch>
           <Route
             exact
             path="/"
             render={() => (
-              <HolisticProductList holisticProducts={holisticProducts} />
+              <HolisticProductList holisticProducts={productList} />
             )}
           />
           <Route
