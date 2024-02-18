@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import WaterDropGrid from "../WaterDropGrid/WaterDropGrid";
 import holisticMushroom from "../../assets/holistic_mushrooms.jpg";
 import holisticTree from "../../assets/holistic_tree.jpg";
@@ -38,20 +39,28 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
 
   return (
     <div className="flex items-center justify-start">
-      <div className="flex flex-col items-center">
+      <section className="product-section flex flex-col items-center">
         <img
           className="product-img w-72 h-72 object-cover mr-6 ml-10 mt-10 rounded"
           src={selectedProduct.img}
           alt={selectedProduct.product_title}
         />
-        <button
-          className="add-cart-btn mt-4 ml-10 text-[#fff] bg-[#5A7340] px-8 py-2 rounded"
-          style={{ width: "fit-content" }}
-        >
-          Add to Cart
-        </button>
-      </div>
-      <div className="flex flex-col ml-4">
+        <article className="button-container">
+          <button
+            className="add-cart-btn mt-4 ml-10 text-[#fff] bg-[#5A7340] px-8 py-2 rounded"
+            style={{ width: "fit-content" }}
+          >
+            Add to Cart
+          </button>
+
+          <Link to="/" className="link">
+            <button className=" mt-4 ml-10 text-[#fff] bg-[#5A7340] px-8 py-2 rounded">
+              Back
+            </button>
+          </Link>
+        </article>
+      </section>
+      <article className="flex flex-col ml-4">
         <h2 className="product-title text-lg font-bold mb-2">
           {selectedProduct.product_title}
         </h2>
@@ -62,8 +71,8 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
           {selectedProduct.product_description}
         </p>
         <p className="product-price">${selectedProduct.price.toFixed(2)}</p>
-      </div>
-      <div className="flex flex-col items-end ml-">
+      </article>
+      <article className="flex flex-col items-end ml-">
         <img
           className="w-72 h-72 object-cover mt-10 rounded border-4 border-[#402B18]"
           src={holisticMushroom}
@@ -74,7 +83,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
           src={holisticTree}
           alt="Holistic Tree"
         />
-      </div>
+      </article>
       {/* <ReviewForm onSubmit={handleReviewSubmit} /> */}
     </div>
   );
