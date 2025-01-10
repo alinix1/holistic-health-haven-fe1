@@ -65,7 +65,7 @@ const App: React.FC = () => {
 
       setFilteredProducts(filtered);
     } else {
-      // If no ailment is selected, show all products
+      // If no ailment is selected, show all products list
       setFilteredProducts([]);
     }
 
@@ -76,17 +76,22 @@ const App: React.FC = () => {
     const formattedValue = value.toLowerCase();
     setSearchValue(formattedValue);
 
-    if (formattedValue) {
-      const allHolisticProductsInput = holisticProducts.filter(
-        (holisticProduct) =>
-          holisticProduct.product_title.toLowerCase().includes(formattedValue)
-      );
-      setFilteredProducts(allHolisticProductsInput);
-    } else {
-      setFilteredProducts([]);
-    }
+    // Determine which list to filter: full product list or selected ailment subgroup
+    const mainProductList = ailment
+      ? holisticProducts.filter((holisticProduct) =>
+          holisticProduct.product_type.some(
+            (type) => type.toLowerCase().trim() === ailment.toLowerCase().trim()
+          )
+        )
+      : holisticProducts;
+
+    const filteredProducts = mainProductList.filter((product) =>
+      product.product_title.toLowerCase().includes(formattedValue)
+    );
+    setFilteredProducts(filteredProducts);
   };
-  // Determine the product list to display
+
+  // Determine the products to display
   const productList =
     searchValue || ailment ? filteredProducts : holisticProducts;
 
@@ -139,7 +144,7 @@ const App: React.FC = () => {
             render={({ match }) => (
               <HolisticProductPage
                 holisticProducts={holisticProducts}
-                id={parseInt(match.params.id)}
+                id={Number.parseInt(match.params.id)}
               />
             )}
           />
