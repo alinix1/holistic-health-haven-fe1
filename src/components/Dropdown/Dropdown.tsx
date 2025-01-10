@@ -1,24 +1,38 @@
 import React from "react";
 
-const Dropdown: React.FC = () => {
+interface DropdownProps {
+  handleAilmentSelect: (selectedAilment: string) => void;
+}
+
+const Dropdown: React.FC<DropdownProps> = ({ handleAilmentSelect }) => {
+  const ailments = [
+    "Fibromyalgia",
+    "Stress & Anxiety",
+    "Insomnia",
+    "Cold & Flu",
+    "Inflammation & Joint pain",
+    "Heart Problems",
+    "Hormonal Imbalances",
+    "Low Energy",
+    "Liver Problems",
+    "Gut Problems",
+  ];
+
   return (
-    <section className="ailments-search h-10">
-      <select name="ailments ml-2 h-20vh w-30vw">
+    <form className="dropdown-form">
+      <select
+        name="ailments ml-2 h-20vh w-30vw"
+        onChange={(event) => handleAilmentSelect(event.target.value)}
+      >
         <option value="">Select Ailment</option>
-        <option value="Fibromyalgia">Fibromyalgia</option>
-        <option value="Stress & Anxiety">Stress & Anxiety</option>
-        <option value="Insomnia">Insomnia</option>
-        <option value="Cold & Flu">Cold & Flu</option>
-        <option value="Inflammation & Joint pain">
-          Inflammation & Joint pain
-        </option>
-        <option value="Heart Problems">Heart Problems</option>
-        <option value="Hormonal Imbalances">Hormonal Imbalances</option>
-        <option value="Low Energy">Low Energy</option>
-        <option value="Liver Problems">Liver Problems</option>
-        <option value="Gut Problems">Gut Problems</option>
+        {ailments.map((ailment) => (
+          <option key={ailment} value={ailment}>
+            {ailment}
+          </option>
+        ))}
       </select>
-    </section>
+    </form>
   );
 };
+
 export default Dropdown;
