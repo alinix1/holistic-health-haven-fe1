@@ -26,6 +26,7 @@ const App: React.FC = () => {
   const [holisticProducts, setHolisticProducts] = useState<HolisticProduct[]>(
     []
   );
+  const [ailment, setAilment] = useState("");
 
   const [loading, setLoading] = useState(true);
   const [searchValue, setSearchValue] = useState("");
@@ -51,6 +52,26 @@ const App: React.FC = () => {
       });
   }, []);
 
+  const handleAilmentSelect = (selectedAilment: string) => {
+    setAilment(selectedAilment);
+
+    if (selectedAilment) {
+      const formattedAilment = selectedAilment.toLowerCase().trim();
+      const filtered = holisticProducts.filter((holisticProduct) =>
+        holisticProduct.product_type.some(
+          (type) => type.toLowerCase().trim() === formattedAilment
+        )
+      );
+
+      setFilteredProducts(filtered);
+    } else {
+      // If no ailment is selected, show all products
+      setFilteredProducts([]);
+    }
+
+    setSearchValue("");
+  };
+
   const handleSearchInput = (value: string) => {
     const formattedValue = value.toLowerCase();
     setSearchValue(formattedValue);
@@ -65,8 +86,9 @@ const App: React.FC = () => {
       setFilteredProducts([]);
     }
   };
-
-  const productList = searchValue ? filteredProducts : holisticProducts;
+  // Determine the product list to display
+  const productList =
+    searchValue || ailment ? filteredProducts : holisticProducts;
 
   if (loading) {
     return (
@@ -86,7 +108,7 @@ const App: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header>
-        <Dropdown />
+        <Dropdown handleAilmentSelect={handleAilmentSelect} />
         <SearchBar
           handleSearchInput={handleSearchInput}
           searchValue={searchValue}
