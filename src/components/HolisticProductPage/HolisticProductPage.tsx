@@ -67,7 +67,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
         <p className="product-type mb-2">
           {selectedProduct.product_type.join(", ")}
         </p>
-        <p className="product-description mb-2">
+        <p className="product-description mb-4 px-4 max-w-md leading-relaxed text-center">
           {selectedProduct.product_description}
         </p>
         <p className="product-price">${selectedProduct.price.toFixed(2)}</p>
