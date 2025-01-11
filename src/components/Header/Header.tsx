@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/holistic_logo.png";
 import CartIcon from "../CartIcon/CartIcon";
+import CartDropdown from "../CartDropdown/CartDropdown";
 
 interface HeaderProps {
   children?: React.ReactNode;
@@ -10,17 +11,27 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  const toggleIsCartOpen = () => {
-    setIsCartOpen(!isCartOpen);
+  const openCart = () => {
+    if (!isCartOpen) {
+      setIsCartOpen(true);
+    }
   };
+
+  const closeCart = () => {
+    setIsCartOpen(false);
+  };
+
   return (
     <div className="bg-F2E8DF p-2 flex items-center justify-between">
-      <nav className="nav-bar flex items-center mb-60">
+      <nav className="nav-bar flex items-center mb-60 relative">
         <CartIcon
           className="mr-4"
           isCartOpen={isCartOpen}
-          toggleIsCartOpen={toggleIsCartOpen}
+          toggleIsCartOpen={openCart}
         />
+        {/* Cart Dropdown */}
+        {isCartOpen && <CartDropdown toggleIsCartOpen={closeCart} />}
+
         <Link to="/testimonials" className="mr-4 text-[#736555] font-extrabold">
           <p className="nav-btn">Testimonials</p>
         </Link>
