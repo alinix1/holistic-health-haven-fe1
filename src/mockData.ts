@@ -5,7 +5,7 @@ let holisticProductData = [
     product_title: "Vitamin C",
     img: "https://www.verywellhealth.com/thmb/gCoBqPnmydeTKB9XC6le1JmNAlQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/the-benefits-of-vitamin-c-supplements-89083-primary-recirc-ec07af56471e41caa683c0d7ed67c6b2.jpg",
     product_description:
-      "immune system support, anti-inflammatory - describe overall product, quantity, recommended dose per serving, potential side effects",
+      "immune system support, anti-inflammatory - Supports immune system health and reduces inflammation. Each bottle contains 60 gummies of Vitamin C. Recommended dosage: 2 capsules daily with water. Potential side effects may include mild digestive discomfort; consult your healthcare provider before use.",
     price: 24.99,
   },
   {
@@ -18,7 +18,7 @@ let holisticProductData = [
     product_title: "CBD salve",
     img: "https://www.shutterstock.com/image-photo/hemp-salve-joints-muscles-relaxing-600nw-1793404621.jpg",
     product_description:
-      "anti-inflammatory, de-stress, muscle relaxation - describe overall product, quantity, recommended dose per serving, potential side effects",
+      "anti-inflammatory, de-stress, muscle relaxation - Experience soothing relief with this anti-inflammatory CBD salve, designed to help de-stress and promote muscle relaxation. Comes in a convenient 2 oz jar, perfect for targeted application. Apply a small amount to the affected area as needed. Potential side effects may include mild skin irritation; discontinue use if irritation occurs.",
     price: 30.0,
   },
   {
@@ -27,7 +27,7 @@ let holisticProductData = [
     product_title: "Epsom salts",
     img: "https://hips.hearstapps.com/hmg-prod/images/handmade-lavender-soap-and-salt-royalty-free-image-1625928611.jpg?crop=0.736xw:1.00xh;0.0609xw,0&resize=640:*",
     product_description:
-      "de-stress, muscle relaxation - describe overall product, quantity, recommended dose per serving, potential side effects",
+      "de-stress, muscle relaxation - Unwind and relax with these premium Epsom salts, enriched with the calming properties of lavender and rose petals. Perfect for de-stressing and soothing tired muscles, this 16 oz package creates a luxurious bath experience. Add 1-2 cups to a warm bath and soak for 20 minutes to maximize benefits. Potential side effects may include mild skin irritation; discontinue use if irritation occurs.",
     price: 15.99,
   },
   {
@@ -36,7 +36,7 @@ let holisticProductData = [
     product_title: "Potassium",
     img: "https://ucmscdn.healthgrades.com/33/d3/b6b115594a9d892a7a0b212384bf/gettyimages-185061828.jpg",
     product_description:
-      "heart health, muscle relaxation - describe overall product, quantity, recommended dose per serving, potential side effects",
+      "heart health, muscle relaxation - Support heart health and promote muscle relaxation with this high-quality potassium supplement. Each bottle contains 100 tablets. Recommended dosage: 1 tablet daily with food, or as directed by a healthcare provider. Potential side effects may include mild digestive upset or muscle weakness if taken in excess. Consult your healthcare provider before use.",
     price: 10.5,
   },
 ];
