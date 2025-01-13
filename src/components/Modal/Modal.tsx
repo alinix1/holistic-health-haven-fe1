@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import sale from "../../assets/sale.jpg";
 import xIcon from "../../assets/x-mark.png";
 
 interface ModalProps {
@@ -20,7 +21,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
       {/* Modal Container */}
       <div
         onClick={(event) => event.stopPropagation()}
-        className="bg-white rounded-lg shadow-xl p-6 w-full max-w-md relative"
+        className="rounded-lg shadow-xl p-6 w-[90%] max-w-lg h-[70%] relative"
+        style={{
+          backgroundImage: `url(${sale})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         {/* Close Button */}
         <button
