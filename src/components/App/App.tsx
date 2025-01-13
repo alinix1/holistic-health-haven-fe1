@@ -6,6 +6,7 @@ import Header from "../Header/Header";
 import HolisticProductList from "../HolisticProductList/HolisticProducList";
 import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
 import TestimonialsPage from "../TestimonialsPage/TestimonialsPage";
+import Modal from "../Modal/Modal";
 import Footer from "../Footer/Footer";
 import BadURL from "../BadURL/BadURL";
 import spinner from "../../assets/Yin_and_Yang.gif";
@@ -34,7 +35,14 @@ const App: React.FC = () => {
     []
   );
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   useEffect(() => {
+    setIsModalOpen(true);
     getHolisticProducts()
       .then((response) => {
         if (!response.ok) {
@@ -112,6 +120,10 @@ const App: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Modal */}
+      <Modal isOpen={isModalOpen} onClose={closeModal} title="This is a Modal">
+        <p>Welcome to the modal content.</p>
+      </Modal>
       <Header>
         <Dropdown handleAilmentSelect={handleAilmentSelect} />
         <SearchBar
