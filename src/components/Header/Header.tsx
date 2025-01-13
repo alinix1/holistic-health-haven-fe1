@@ -38,6 +38,9 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
         <Link to="/" className="text-[#736555] font-extrabold">
           <p className="nav-btn">Holistic Products</p>
         </Link>
+        <Link to="/payment" className="ml-4 text-[#736555] font-extrabold">
+          <p className="nav-btn">Payment</p>
+        </Link>
       </nav>
       <section>
         <h1 className="text-black font-regular text-4xl mb-4">

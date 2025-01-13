@@ -6,6 +6,7 @@ import Header from "../Header/Header";
 import HolisticProductList from "../HolisticProductList/HolisticProducList";
 import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
 import TestimonialsPage from "../TestimonialsPage/TestimonialsPage";
+import PaymentPage from "../PaymentPage/PaymentPage";
 import Footer from "../Footer/Footer";
 import BadURL from "../BadURL/BadURL";
 import spinner from "../../assets/Yin_and_Yang.gif";
@@ -138,6 +139,7 @@ const App: React.FC = () => {
             path="/testimonials"
             render={() => <TestimonialsPage />}
           />
+          <Route exact path="/payment" render={() => <PaymentPage />} />
           <Route
             exact
             path="/:id"
