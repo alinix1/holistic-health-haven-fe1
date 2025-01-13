@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import xIcon from "../../assets/x-mark.png";
 
 interface CartDropdownProps {
@@ -24,12 +25,14 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ toggleIsCartOpen }) => {
           />
         </div>
         <p>Your cart is empty</p>
-        <button
-          type="button"
-          className="mt-4 w-full bg-[#5A7340] text-[#Ffffff] py-2 rounded hover:bg-[#F2DCB3] hover:text-[#000]"
-        >
-          GO TO CHECKOUT
-        </button>
+        <Link to="payment">
+          <button
+            type="button"
+            className="mt-4 w-full bg-[#5A7340] text-[#Ffffff] py-2 rounded-[0.3125rem] hover:bg-[#F2DCB3] hover:text-[#000]"
+          >
+            GO TO CHECKOUT
+          </button>
+        </Link>
       </div>
     </div>
   );

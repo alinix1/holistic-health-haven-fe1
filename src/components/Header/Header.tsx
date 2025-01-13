@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/holistic_logo.png";
 import CartIcon from "../CartIcon/CartIcon";
