@@ -1,9 +1,15 @@
 import React from "react";
-import { CheckCircleIcon } from "@heroicons/react/outline";
+import { CheckCircleIcon } from "@heroicons/react/24/outline";
+import flowerFieldImage from "../../assets/flower_field.png";
 
 const PrivacyPolicy: React.FC = () => {
   return (
-    <div className="p-6">
+    <div
+      className="p-6 bg-cover bg-center bg-fixed h-screen flex flex-col items-center justify-center text-black"
+      style={{
+        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url(${flowerFieldImage})`,
+      }}
+    >
       <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
       <p className="mb-4">Effective Date: 1/1/2025</p>
       <p className="mb-4 text-left">
