@@ -15,10 +15,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
     return null;
   }
   return (
-    <div
-      onClick={onClose}
-      className="fixed inset-0 flex items-center justify-center z-40"
-    >
+    <div className="fixed inset-0 flex items-center justify-center z-40">
       {/* Modal Container */}
       <div
         onClick={(event) => event.stopPropagation()}
