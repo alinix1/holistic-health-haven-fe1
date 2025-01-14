@@ -1,23 +1,24 @@
-import React from "react";
+import type React from "react";
+import type { HolisticProductPageProps } from "../../model";
 import { Link } from "react-router-dom";
 import WaterDropGrid from "../WaterDropGrid/WaterDropGrid";
 import holisticMushroom from "../../assets/holistic_mushrooms.jpg";
 import holisticTree from "../../assets/holistic_tree.jpg";
 // import ReviewForm from "../ReviewForm/ReviewForm";
 
-interface HolisticProduct {
-  id: number;
-  product_type: string[];
-  product_title: string;
-  img: string;
-  product_description: string;
-  price: number;
-}
+// interface HolisticProduct {
+//   id: number;
+//   product_type: string[];
+//   product_title: string;
+//   img: string;
+//   product_description: string;
+//   price: number;
+// }
 
-interface HolisticProductPageProps {
-  holisticProducts: HolisticProduct[];
-  id: number;
-}
+// interface HolisticProductPageProps {
+//   holisticProducts: HolisticProduct[];
+//   id: number;
+// }
 
 const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
   holisticProducts,
@@ -47,6 +48,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
         />
         <article className="button-container">
           <button
+            type="button"
             className="add-cart-btn mt-4 ml-10 text-[#fff] bg-[#5A7340] px-8 py-2 rounded"
             style={{ width: "fit-content" }}
           >

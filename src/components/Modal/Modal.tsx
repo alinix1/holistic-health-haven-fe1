@@ -1,13 +1,14 @@
 import React, { ReactNode } from "react";
+import type { ModalProps } from "../../model";
 import discount from "../../assets/discount.jpg";
 import xIcon from "../../assets/x-mark.png";
 
-interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  title?: string;
-  children: React.ReactNode;
-}
+// interface ModalProps {
+//   isOpen: boolean;
+//   onClose: () => void;
+//   title?: string;
+//   children: React.ReactNode;
+// }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
   if (!isOpen) {

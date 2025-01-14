@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useState, useEffect } from "react";
 import { Route, Switch, Redirect, Link } from "react-router-dom";
+import type { HolisticProduct } from "../../model";
 import Dropdown from "../Dropdown/Dropdown";
 import SearchBar from "../SearchBar/SearchBar";
 import Header from "../Header/Header";
@@ -17,14 +19,14 @@ import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
 
 import "./App.css";
 
-interface HolisticProduct {
-  id: number;
-  product_type: string[];
-  product_title: string;
-  img: string;
-  product_description: string;
-  price: number;
-}
+// interface HolisticProduct {
+//   id: number;
+//   product_type: string[];
+//   product_title: string;
+//   img: string;
+//   product_description: string;
+//   price: number;
+// }
 
 const App: React.FC = () => {
   const [holisticProducts, setHolisticProducts] = useState<HolisticProduct[]>(
