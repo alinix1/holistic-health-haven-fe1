@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import sale from "../../assets/sale.jpg";
+import discount from "../../assets/discount.jpg";
 import xIcon from "../../assets/x-mark.png";
 
 interface ModalProps {
@@ -16,24 +16,23 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+      className="fixed inset-0 flex items-center justify-center z-40"
     >
       {/* Modal Container */}
       <div
         onClick={(event) => event.stopPropagation()}
-        className="rounded-lg shadow-xl p-6 w-[90%] max-w-lg h-[70%] relative"
-        style={{
-          backgroundImage: `url(${sale})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        className="bg-white rounded-lg shadow-xl p-6 w-[90%] max-w-lg h-[70%] relative z-50"
       >
+        <img
+          src={discount}
+          alt="Discount price"
+          className="absolute top-2 right-2 w-[10rem] h-[10rem] z-60"
+        />
         {/* Close Button */}
         <button
           onClick={onClose}
           type="button"
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-70"
           aria-label="Close"
         >
           <img src={xIcon} alt="close icon" className="w-4 h-4" />
