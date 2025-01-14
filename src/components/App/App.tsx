@@ -10,8 +10,6 @@ import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
 import TestimonialsPage from "../TestimonialsPage/TestimonialsPage";
 import Modal from "../Modal/Modal";
 import submitButton from "../../assets/submit_email.svg";
-// import CartIcon from "../CartIcon/CartIcon";
-// import CartDropdown from "../CartDropdown/CartDropdown";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import Footer from "../Footer/Footer";
 import BadURL from "../BadURL/BadURL";

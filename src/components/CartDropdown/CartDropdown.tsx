@@ -1,4 +1,5 @@
 import type React from "react";
+import { useHistory } from "react-router-dom";
 import type { CartDropdownProps } from "../../model";
 import xIcon from "../../assets/x-mark.png";
 
@@ -10,10 +11,17 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
   toggleIsCartOpen,
   cartItems,
 }) => {
+  const history = useHistory();
+
   const total = cartItems.reduce(
     (acc, item) => acc + item.price * (item.quantity || 1),
     0
   );
+
+  const handleCheckout = () => {
+    history.push("/payment");
+  };
+
   return (
     <div>
       <div
@@ -48,13 +56,23 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
             <p className="font-bold">Total: ${total.toFixed(2)}</p>
             <button
               type="button"
+              onClick={handleCheckout}
               className="mt-4 w-full bg-[#5A7340] text-[#Ffffff] py-2 rounded hover:bg-[#F2DCB3] hover:text-[#000]"
             >
               GO TO CHECKOUT
             </button>
           </>
         ) : (
-          <p>Your cart is empty</p>
+          <>
+            <p>Your cart is empty</p>
+            <button
+              type="button"
+              onClick={handleCheckout}
+              className="mt-4 w-full bg-[#5A7340] text-[#Ffffff] py-2 rounded hover:bg-[#F2DCB3] hover:text-[#000]"
+            >
+              GO TO CHECKOUT
+            </button>
+          </>
         )}
       </div>
     </div>
