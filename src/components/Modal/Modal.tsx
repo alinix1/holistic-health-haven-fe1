@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import type React from "react";
 import type { ModalProps } from "../../model";
 import discount from "../../assets/discount.jpg";
 import xIcon from "../../assets/x-mark.png";
