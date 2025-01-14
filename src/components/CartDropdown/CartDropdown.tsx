@@ -35,20 +35,22 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
           <img
             src={xIcon}
             alt="close icon"
-            className="absolute top-2 right-2 w-4 h-4 cursor-pointer"
+            className="absolute top-1 right-1 w-4 h-4 cursor-pointer"
             onClick={toggleIsCartOpen}
           />
         </div>
         {/* Conditional Rendering of Cart Items */}
         {cartItems.length > 0 ? (
           <>
-            <ul className="mb-4">
+            <ul className="mb-4 mt-6">
               {cartItems.map((item) => (
                 <li
                   key={item.id}
                   className="flex justify-between items-center mb-2"
                 >
-                  <span>{item.product_title}</span>
+                  <span>
+                    {item.product_title} {item.quantity}
+                  </span>
                   <span>${item.price.toFixed(2)}</span>
                 </li>
               ))}

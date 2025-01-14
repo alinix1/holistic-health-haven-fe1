@@ -50,27 +50,21 @@ const App: React.FC = () => {
   };
 
   const addToCart = (item: HolisticProduct) => {
-    console.log("Adding items to cart:", item);
     setCartItems((prevItems) => {
       const existingItem = prevItems.find(
         (cartItem) => cartItem.id === item.id
       );
 
       if (existingItem) {
-        console.log("Item already exists in cart");
         return prevItems.map((cartItem) =>
           cartItem.id === item.id
             ? { ...cartItem, quantity: (cartItem.quantity ?? 0) + 1 }
             : cartItem
         );
       }
-      console.log("Item not in cart. Adding new item");
+
       return [...prevItems, { ...item, quantity: 1 }];
     });
-
-    setTimeout(() => {
-      console.log("Updated cart items:", cartItems);
-    }, 0);
   };
   useEffect(() => {
     setIsModalOpen(true);
