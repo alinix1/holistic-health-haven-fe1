@@ -1,9 +1,10 @@
-import React from "react";
+import type React from "react";
+import type { CartDropdownProps } from "../../model";
 import xIcon from "../../assets/x-mark.png";
 
-interface CartDropdownProps {
-  toggleIsCartOpen: () => void;
-}
+// interface CartDropdownProps {
+//   toggleIsCartOpen: () => void;
+// }
 
 const CartDropdown: React.FC<CartDropdownProps> = ({ toggleIsCartOpen }) => {
   return (

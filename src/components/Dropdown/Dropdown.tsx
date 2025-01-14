@@ -1,8 +1,9 @@
-import React from "react";
+import type React from "react";
+import type { DropdownProps } from "../../model";
 
-interface DropdownProps {
-  handleAilmentSelect: (selectedAilment: string) => void;
-}
+// interface DropdownProps {
+//   handleAilmentSelect: (selectedAilment: string) => void;
+// }
 
 const Dropdown: React.FC<DropdownProps> = ({ handleAilmentSelect }) => {
   const ailments = [

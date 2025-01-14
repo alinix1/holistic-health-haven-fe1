@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/holistic_logo.png";
 import CartIcon from "../CartIcon/CartIcon";
 import CartDropdown from "../CartDropdown/CartDropdown";
+import type { HeaderProps } from "../../model";
 
-interface HeaderProps {
-  children?: React.ReactNode;
-}
+// interface HeaderProps {
+//   children?: React.ReactNode;
+// }
 
 const Header: React.FC<HeaderProps> = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);

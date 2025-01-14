@@ -1,19 +1,20 @@
-import React from "react";
+import type React from "react";
 import HolisticProductCard from "../HolisticProductCard/HolisticProductCard";
 import holisticHerbalImage from "../../assets/holistic_herbal.jpg";
+import type { HolisticProductListProps } from "../../model";
 
-interface HolisticProduct {
-  id: number;
-  product_type: string[];
-  product_title: string;
-  img: string;
-  product_description: string;
-  price: number;
-}
+// interface HolisticProduct {
+//   id: number;
+//   product_type: string[];
+//   product_title: string;
+//   img: string;
+//   product_description: string;
+//   price: number;
+// }
 
-interface HolisticProductListProps {
-  holisticProducts: HolisticProduct[];
-}
+// interface HolisticProductListProps {
+//   holisticProducts: HolisticProduct[];
+// }
 
 const HolisticProductCards: React.FC<HolisticProductListProps> = ({
   holisticProducts,
