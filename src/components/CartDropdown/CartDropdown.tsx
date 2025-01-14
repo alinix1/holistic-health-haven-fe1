@@ -49,7 +49,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
                   className="flex justify-between items-center mb-2"
                 >
                   <span>
-                    {item.product_title} {item.quantity}
+                    {item.quantity} x {item.product_title}
                   </span>
                   <span>${item.price.toFixed(2)}</span>
                 </li>
