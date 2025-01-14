@@ -1,9 +1,11 @@
+import type React from "react";
+import type { SearchBarProps } from "../../model";
 import searchIcon from "../../assets/magnifying-glass.svg";
 
-interface SearchBarProps {
-  handleSearchInput: (value: string) => void;
-  searchValue: string;
-}
+// interface SearchBarProps {
+//   handleSearchInput: (value: string) => void;
+//   searchValue: string;
+// }
 
 const SearchBar: React.FC<SearchBarProps> = ({
   handleSearchInput,

@@ -1,27 +1,33 @@
-import React, { useState, useEffect } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import type React from "react";
+import { useState, useEffect } from "react";
+import { Route, Switch, Redirect, Link } from "react-router-dom";
+import type { HolisticProduct } from "../../model";
 import Dropdown from "../Dropdown/Dropdown";
 import SearchBar from "../SearchBar/SearchBar";
 import Header from "../Header/Header";
 import HolisticProductList from "../HolisticProductList/HolisticProducList";
 import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
 import TestimonialsPage from "../TestimonialsPage/TestimonialsPage";
+import Modal from "../Modal/Modal";
+import submitButton from "../../assets/submit_email.svg";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import Footer from "../Footer/Footer";
 import BadURL from "../BadURL/BadURL";
 import spinner from "../../assets/Yin_and_Yang.gif";
 import { getHolisticProducts } from "../../apiCalls";
+import TermsAndConditions from "../TermsAndConditions/TermsAndConditions";
+import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
 
 import "./App.css";
 
-interface HolisticProduct {
-  id: number;
-  product_type: string[];
-  product_title: string;
-  img: string;
-  product_description: string;
-  price: number;
-}
+// interface HolisticProduct {
+//   id: number;
+//   product_type: string[];
+//   product_title: string;
+//   img: string;
+//   product_description: string;
+//   price: number;
+// }
 
 const App: React.FC = () => {
   const [holisticProducts, setHolisticProducts] = useState<HolisticProduct[]>(
@@ -35,7 +41,14 @@ const App: React.FC = () => {
     []
   );
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   useEffect(() => {
+    setIsModalOpen(true);
     getHolisticProducts()
       .then((response) => {
         if (!response.ok) {
@@ -113,6 +126,69 @@ const App: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Modal */}
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <div className="flex flex-col h-full px-4 py-6">
+          {/* Title Section */}
+          <div className="text-left">
+            <h2 className="text-2xl font-bold mb-8">
+              15% off your first order
+            </h2>
+          </div>
+
+          {/* Form Container */}
+          <div className="flex-grow flex items-center justify-center mt-20">
+            <div className="w-full max-w-md p-4 border border-gray-200 rounded-lg bg-white shadow">
+              <form
+                onSubmit={(event) => {
+                  event.preventDefault();
+                  console.log("Email submitted");
+                }}
+                className="flex flex-col items-center space-y-4"
+              >
+                <div className="flex items-center justify-between w-full">
+                  <label htmlFor="email" className="text-sm font-medium">
+                    Enter your email to subscribe:
+                  </label>
+                  <button type="submit" className="ml-4">
+                    <img
+                      src={submitButton}
+                      alt="submit button"
+                      className="w-7 h-7"
+                    />
+                  </button>
+                </div>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="Your email address"
+                  className="w-full max-w-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus-ring-blue-500"
+                  required
+                />
+              </form>
+            </div>
+
+            {/* Terms & Conditions */}
+          </div>
+          <p className="absolute bottom-2 left-0 right-0 text-center text-sm font-bold">
+            By subscribing you agree with our{" "}
+            <Link
+              to="/terms-and-conditions"
+              className="text-blue-500 underline hover:text-blue-700"
+            >
+              terms & conditions
+            </Link>{" "}
+            and{" "}
+            <Link
+              to="/privacy-policy"
+              className="text-blue-500 underline hover:text-blue-700"
+            >
+              privacy policy
+            </Link>
+            .
+          </p>
+        </div>
+      </Modal>
       <Header>
         <Dropdown handleAilmentSelect={handleAilmentSelect} />
         <SearchBar
@@ -139,6 +215,12 @@ const App: React.FC = () => {
             path="/testimonials"
             render={() => <TestimonialsPage />}
           />
+          <Route
+            exact
+            path="/terms-and-conditions"
+            component={TermsAndConditions}
+          />
+          <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route exact path="/payment" render={() => <PaymentPage />} />
           <Route
             exact

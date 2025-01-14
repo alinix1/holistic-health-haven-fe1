@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import type React from "react";
+import type { CartDropdownProps } from "../../model";
 import xIcon from "../../assets/x-mark.png";
 
-interface CartDropdownProps {
-  toggleIsCartOpen: () => void;
-}
+// interface CartDropdownProps {
+//   toggleIsCartOpen: () => void;
+// }
 
 const CartDropdown: React.FC<CartDropdownProps> = ({ toggleIsCartOpen }) => {
   return (
@@ -25,14 +25,12 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ toggleIsCartOpen }) => {
           />
         </div>
         <p>Your cart is empty</p>
-        <Link to="payment">
-          <button
-            type="button"
-            className="mt-4 w-full bg-[#5A7340] text-[#Ffffff] py-2 rounded-[0.3125rem] hover:bg-[#F2DCB3] hover:text-[#000]"
-          >
-            GO TO CHECKOUT
-          </button>
-        </Link>
+        <button
+          type="button"
+          className="mt-4 w-full bg-[#5A7340] text-[#Ffffff] py-2 rounded hover:bg-[#F2DCB3] hover:text-[#000]"
+        >
+          GO TO CHECKOUT
+        </button>
       </div>
     </div>
   );
