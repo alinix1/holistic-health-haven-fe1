@@ -11,6 +11,7 @@ import cartIcon from "../../assets/shopping-cart.svg";
 const CartIcon: React.FC<CartIconProps> = ({
   isCartOpen,
   toggleIsCartOpen,
+  cartCount,
   className,
 }) => {
   const handleClick = () => {
@@ -22,7 +23,7 @@ const CartIcon: React.FC<CartIconProps> = ({
       className={`relative flex cursor-pointer items-center justify-center ${className}`}
     >
       <img className="w-10 h-10" src={cartIcon} alt="Cart Icon" />
-      <span className="absolute bottom-3">0</span>
+      {cartCount > 0 && <span className="absolute bottom-3">{cartCount}</span>}
     </div>
   );
 };

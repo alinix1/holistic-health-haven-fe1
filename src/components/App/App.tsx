@@ -10,6 +10,8 @@ import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
 import TestimonialsPage from "../TestimonialsPage/TestimonialsPage";
 import Modal from "../Modal/Modal";
 import submitButton from "../../assets/submit_email.svg";
+// import CartIcon from "../CartIcon/CartIcon";
+// import CartDropdown from "../CartDropdown/CartDropdown";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import Footer from "../Footer/Footer";
 import BadURL from "../BadURL/BadURL";
@@ -43,10 +45,35 @@ const App: React.FC = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const [cartItems, setCartItems] = useState<HolisticProduct[]>([]);
+
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
+  const addToCart = (item: HolisticProduct) => {
+    console.log("Adding items to cart:", item);
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find(
+        (cartItem) => cartItem.id === item.id
+      );
+
+      if (existingItem) {
+        console.log("Item already exists in cart");
+        return prevItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: (cartItem.quantity ?? 0) + 1 }
+            : cartItem
+        );
+      }
+      console.log("Item not in cart. Adding new item");
+      return [...prevItems, { ...item, quantity: 1 }];
+    });
+
+    setTimeout(() => {
+      console.log("Updated cart items:", cartItems);
+    }, 0);
+  };
   useEffect(() => {
     setIsModalOpen(true);
     getHolisticProducts()
@@ -189,7 +216,7 @@ const App: React.FC = () => {
           </p>
         </div>
       </Modal>
-      <Header>
+      <Header cartItems={cartItems}>
         <Dropdown handleAilmentSelect={handleAilmentSelect} />
         <SearchBar
           handleSearchInput={handleSearchInput}
@@ -229,6 +256,7 @@ const App: React.FC = () => {
               <HolisticProductPage
                 holisticProducts={holisticProducts}
                 id={Number.parseInt(match.params.id)}
+                addToCart={addToCart}
               />
             )}
           />

@@ -1,11 +1,13 @@
 export interface CartDropdownProps {
   toggleIsCartOpen: () => void;
+  cartItems: HolisticProduct[];
 }
 
 export interface CartIconProps {
   className?: string;
   isCartOpen: boolean;
   toggleIsCartOpen: () => void;
+  cartCount: number;
 }
 
 export interface DropdownProps {
@@ -14,6 +16,7 @@ export interface DropdownProps {
 
 export interface HeaderProps {
   children?: React.ReactNode;
+  cartItems: HolisticProduct[];
 }
 
 export interface ModalProps {
@@ -39,6 +42,7 @@ export interface HolisticProduct {
   img: string;
   product_description: string;
   price: number;
+  quantity?: number;
 }
 
 export interface HolisticProductListProps {
@@ -48,6 +52,7 @@ export interface HolisticProductListProps {
 export interface HolisticProductPageProps {
   holisticProducts: HolisticProduct[];
   id: number;
+  addToCart: (product: HolisticProduct) => void;
 }
 
 export interface SearchBarProps {

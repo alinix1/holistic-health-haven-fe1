@@ -6,7 +6,14 @@ import xIcon from "../../assets/x-mark.png";
 //   toggleIsCartOpen: () => void;
 // }
 
-const CartDropdown: React.FC<CartDropdownProps> = ({ toggleIsCartOpen }) => {
+const CartDropdown: React.FC<CartDropdownProps> = ({
+  toggleIsCartOpen,
+  cartItems,
+}) => {
+  const total = cartItems.reduce(
+    (acc, item) => acc + item.price * (item.quantity || 1),
+    0
+  );
   return (
     <div>
       <div
@@ -24,13 +31,31 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ toggleIsCartOpen }) => {
             onClick={toggleIsCartOpen}
           />
         </div>
-        <p>Your cart is empty</p>
-        <button
-          type="button"
-          className="mt-4 w-full bg-[#5A7340] text-[#Ffffff] py-2 rounded hover:bg-[#F2DCB3] hover:text-[#000]"
-        >
-          GO TO CHECKOUT
-        </button>
+        {/* Conditional Rendering of Cart Items */}
+        {cartItems.length > 0 ? (
+          <>
+            <ul className="mb-4">
+              {cartItems.map((item) => (
+                <li
+                  key={item.id}
+                  className="flex justify-between items-center mb-2"
+                >
+                  <span>{item.product_title}</span>
+                  <span>${item.price.toFixed(2)}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="font-bold">Total: ${total.toFixed(2)}</p>
+            <button
+              type="button"
+              className="mt-4 w-full bg-[#5A7340] text-[#Ffffff] py-2 rounded hover:bg-[#F2DCB3] hover:text-[#000]"
+            >
+              GO TO CHECKOUT
+            </button>
+          </>
+        ) : (
+          <p>Your cart is empty</p>
+        )}
       </div>
     </div>
   );

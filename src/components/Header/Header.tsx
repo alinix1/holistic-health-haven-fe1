@@ -10,7 +10,7 @@ import type { HeaderProps } from "../../model";
 //   children?: React.ReactNode;
 // }
 
-const Header: React.FC<HeaderProps> = ({ children }) => {
+const Header: React.FC<HeaderProps> = ({ children, cartItems }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   const openCart = () => {
@@ -23,6 +23,12 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
     setIsCartOpen(false);
   };
 
+  // Calculate the total cart count
+  const cartCount = cartItems.reduce(
+    (count, item) => count + (item.quantity || 1),
+    0
+  );
+
   return (
     <div className="bg-F2E8DF p-2 flex items-center justify-between">
       <nav className="nav-bar flex items-center mb-60 relative">
@@ -30,9 +36,12 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
           className="mr-4"
           isCartOpen={isCartOpen}
           toggleIsCartOpen={openCart}
+          cartCount={cartCount}
         />
         {/* Cart Dropdown */}
-        {isCartOpen && <CartDropdown toggleIsCartOpen={closeCart} />}
+        {isCartOpen && (
+          <CartDropdown toggleIsCartOpen={closeCart} cartItems={cartItems} />
+        )}
 
         <Link to="/testimonials" className="mr-4 text-[#736555] font-extrabold">
           <p className="nav-btn">Testimonials</p>
