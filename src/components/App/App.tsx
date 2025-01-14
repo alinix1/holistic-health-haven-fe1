@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect, Link } from "react-router-dom";
 import Dropdown from "../Dropdown/Dropdown";
 import SearchBar from "../SearchBar/SearchBar";
 import Header from "../Header/Header";
@@ -12,6 +12,8 @@ import Footer from "../Footer/Footer";
 import BadURL from "../BadURL/BadURL";
 import spinner from "../../assets/Yin_and_Yang.gif";
 import { getHolisticProducts } from "../../apiCalls";
+import TermsAndConditions from "../TermsAndConditions/TermsAndConditions";
+import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
 
 import "./App.css";
 
@@ -166,8 +168,21 @@ const App: React.FC = () => {
             {/* Terms & Conditions */}
           </div>
           <p className="absolute bottom-2 left-0 right-0 text-center text-sm font-bold">
-            By subscribing you agree with our Terms & Conditions and Privacy
-            Policy.
+            By subscribing you agree with our{" "}
+            <Link
+              to="/terms-and-conditions"
+              className="text-blue-500 underline hover:text-blue-700"
+            >
+              terms & conditions
+            </Link>{" "}
+            and{" "}
+            <Link
+              to="/privacy-policy"
+              className="text-blue-500 underline hover:text-blue-700"
+            >
+              privacy policy
+            </Link>
+            .
           </p>
         </div>
       </Modal>
@@ -197,6 +212,12 @@ const App: React.FC = () => {
             path="/testimonials"
             render={() => <TestimonialsPage />}
           />
+          <Route
+            exact
+            path="/terms-and-conditions"
+            component={TermsAndConditions}
+          />
+          <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route
             exact
             path="/:id"
