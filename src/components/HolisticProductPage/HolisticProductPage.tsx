@@ -53,7 +53,6 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
             className="add-cart-btn mt-4 ml-10 text-[#fff] bg-[#5A7340] px-8 py-2 rounded"
             style={{ width: "fit-content" }}
             onClick={() => {
-              console.log("Add to Cart Clicked:", selectedProduct);
               addToCart(selectedProduct);
             }}
           >
