@@ -23,6 +23,7 @@ import holisticTree from "../../assets/holistic_tree.jpg";
 const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
   holisticProducts,
   id,
+  addToCart,
 }) => {
   const selectedProduct = holisticProducts.find((product) => product.id === id);
 
@@ -51,12 +52,18 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
             type="button"
             className="add-cart-btn mt-4 ml-10 text-[#fff] bg-[#5A7340] px-8 py-2 rounded"
             style={{ width: "fit-content" }}
+            onClick={() => {
+              addToCart(selectedProduct);
+            }}
           >
             Add to Cart
           </button>
 
           <Link to="/" className="link">
-            <button className=" mt-4 ml-10 text-[#fff] bg-[#5A7340] px-8 py-2 rounded">
+            <button
+              type="button"
+              className=" mt-4 ml-10 text-[#fff] bg-[#5A7340] px-8 py-2 rounded"
+            >
               Back
             </button>
           </Link>

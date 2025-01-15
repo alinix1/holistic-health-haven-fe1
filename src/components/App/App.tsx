@@ -10,6 +10,7 @@ import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
 import TestimonialsPage from "../TestimonialsPage/TestimonialsPage";
 import Modal from "../Modal/Modal";
 import submitButton from "../../assets/submit_email.svg";
+import PaymentPage from "../PaymentPage/PaymentPage";
 import Footer from "../Footer/Footer";
 import BadURL from "../BadURL/BadURL";
 import spinner from "../../assets/Yin_and_Yang.gif";
@@ -42,10 +43,29 @@ const App: React.FC = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const [cartItems, setCartItems] = useState<HolisticProduct[]>([]);
+
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
+  const addToCart = (item: HolisticProduct) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find(
+        (cartItem) => cartItem.id === item.id
+      );
+
+      if (existingItem) {
+        return prevItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: (cartItem.quantity ?? 0) + 1 }
+            : cartItem
+        );
+      }
+
+      return [...prevItems, { ...item, quantity: 1 }];
+    });
+  };
   useEffect(() => {
     setIsModalOpen(true);
     getHolisticProducts()
@@ -188,7 +208,7 @@ const App: React.FC = () => {
           </p>
         </div>
       </Modal>
-      <Header>
+      <Header cartItems={cartItems}>
         <Dropdown handleAilmentSelect={handleAilmentSelect} />
         <SearchBar
           handleSearchInput={handleSearchInput}
@@ -220,6 +240,7 @@ const App: React.FC = () => {
             component={TermsAndConditions}
           />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+          <Route exact path="/payment" render={() => <PaymentPage />} />
           <Route
             exact
             path="/:id"
@@ -227,6 +248,7 @@ const App: React.FC = () => {
               <HolisticProductPage
                 holisticProducts={holisticProducts}
                 id={Number.parseInt(match.params.id)}
+                addToCart={addToCart}
               />
             )}
           />
