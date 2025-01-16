@@ -66,6 +66,7 @@ const App: React.FC = () => {
       return [...prevItems, { ...item, quantity: 1 }];
     });
   };
+
   useEffect(() => {
     setIsModalOpen(true);
     getHolisticProducts()

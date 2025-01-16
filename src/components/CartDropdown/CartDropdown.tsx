@@ -59,7 +59,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
             <button
               type="button"
               onClick={handleCheckout}
-              className="mt-4 w-full bg-[#5A7340] text-[#Ffffff] py-2 rounded hover:bg-[#F2DCB3] hover:text-[#000]"
+              className="inline-block rounded bg-[#5A7340] text-[#fff] shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-[#4C6334] hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-[#3E522C] focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-[#4A5C30] active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
             >
               GO TO CHECKOUT
             </button>
@@ -70,7 +70,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
             <button
               type="button"
               onClick={handleCheckout}
-              className="mt-4 w-full bg-[#5A7340] text-[#Ffffff] py-2 rounded hover:bg-[#F2DCB3] hover:text-[#000]"
+              className="inline-block rounded bg-[#5A7340] text-[#fff] shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-[#4C6334] hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-[#3E522C] focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-[#4A5C30] active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
             >
               GO TO CHECKOUT
             </button>
