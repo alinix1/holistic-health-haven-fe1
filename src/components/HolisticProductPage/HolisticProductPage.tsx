@@ -1,4 +1,5 @@
 import type React from "react";
+// import { useEffect } from "react";
 import type { HolisticProductPageProps } from "../../model";
 import { Link } from "react-router-dom";
 import WaterDropGrid from "../WaterDropGrid/WaterDropGrid";
@@ -50,7 +51,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
         <article className="button-container">
           <button
             type="button"
-            className="add-cart-btn mt-4 ml-10 text-[#fff] bg-[#5A7340] px-8 py-2 rounded"
+            className="inline-block rounded bg-[#5A7340] text-[#fff] px-5 py-2 text-sm font-medium leading-normal shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-[#8C6645] hover:px-7 hover:py-3 hover:text-[#ffffff] hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-[#402B18] focus:text-[#ffffff] focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-[#67733D] active:text-[#BFB2A3] active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] transition-all duration-200 ease-in-out focus:outline-none focus:ring-0"
             style={{ width: "fit-content" }}
             onClick={() => {
               addToCart(selectedProduct);
@@ -81,7 +82,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
         </p>
         <p className="product-price">${selectedProduct.price.toFixed(2)}</p>
       </article>
-      <article className="flex flex-col items-end ml-">
+      <article className="flex flex-col items-end ml-10 animate-[fade-in-right_1s_ease-in-out]">
         <img
           className="w-72 h-72 object-cover mt-10 rounded border-4 border-[#402B18]"
           src={holisticMushroom}

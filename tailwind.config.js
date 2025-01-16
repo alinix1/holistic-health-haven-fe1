@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/tw-elements/dist/js/**/*.js",
+  ],
   theme: {
     extend: {
       backgroundColor: {
@@ -12,5 +15,9 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  safelist: [
+    "animate-[fade-in_1s_ease-in-out]",
+    "animate-[fade-in-right_1s_ease-in-out]",
+  ],
+  plugins: [require("tw-elements/plugin.cjs")],
 };
