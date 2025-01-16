@@ -1,47 +1,106 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
 
-## Available Scripts
+  <!-- HEADER -->
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project / App</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#usage">Installation</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#notes">Notes</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#roadmap">Acknowledgments</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+</div>
 
-### `npm start`
+<!-- ABOUT THE PROJECT -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## About The Project / App
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Built With
 
-### `npm test`
+- ![Figma][Figma-shield]
+- ![Miro][Miro-shield]
+- ![TypeScript][TypeScript-shield]
+- ![React][React-shield]
+- ![React Router][React-Router-shield]
+- ![Axios][Axios-shield]
+- ![Tailwind CSS][Tailwind-CSS-shield]
+- ![Formik][Formik-shield]
+- ![Stripe][Stripe-shield]
+- ![Testing Library][Testing-Library-shield]
+- ![Playwright][Playwright-shield]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### `npm run build`
+<!-- SETUP -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- INSTALLATION -->
 
-### `npm run eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<!-- USAGE -->
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<!-- NOTES -->
 
-## Learn More
+## Notes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Feature Overview
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# holistic-health-haven-fe1
+## Wins:
+
+## Challenges:
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+<!-- ACKNOWLEDGMENTS -->
+
+## Acknowledgments
+
+Used the following resources during the project:
+
+<!-- CONTACT -->
+
+## Contact
+
+Ali Nix | [![LinkedIn][linkedin-shield]][linkedin-url1]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[Figma-shield]: https://img.shields.io/badge/Figma-F24E1E.svg?style=for-the-badge&logo=Figma&logoColor=white
+[Miro-shield]: https://img.shields.io/badge/Miro-050038.svg?style=for-the-badge&logo=Miro&logoColor=white
+[TypeScript-shield]: https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white
+[React-shield]: https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black
+[React-Router-shield]: https://img.shields.io/badge/React%20Router-CA4245.svg?style=for-the-badge&logo=React-Router&logoColor=white
+[Axios-shield]: https://img.shields.io/badge/Axios-5A29E4.svg?style=for-the-badge&logo=Axios&logoColor=white
+[Tailwind-CSS-shield]: https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white
+[Formik-shield]: https://img.shields.io/badge/Formik-2563EB.svg?style=for-the-badge&logo=Formik&logoColor=white
+[Stripe-shield]: https://img.shields.io/badge/Stripe-635BFF.svg?style=for-the-badge&logo=Stripe&logoColor=white
+[Testing-Library-shield]: https://img.shields.io/badge/Testing%20Library-E33332.svg?style=for-the-badge&logo=Testing-Library&logoColor=white
+[Playwright-shield]: https://img.shields.io/badge/Playwright-45ba4b?style=for-the-badge&logo=Playwright&logoColor=white
