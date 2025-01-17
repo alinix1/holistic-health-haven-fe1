@@ -20,12 +20,12 @@ const HolisticProductCard: React.FC<HolisticProductProps> = ({
   return (
     <Link to={`/${id}`}>
       <div
-        className="product-card box-border flex flex-col items-center gap-7 m-4 p-4 px-8 w-3/4 h-auto auto rounded-sm shadow-xl bg-white"
+        className="product-card box-border flex flex-col items-center gap-7 m-4 p-4 px-8 w-3/4 h-auto rounded-lg shadow-xl bg-white overflow-hidden"
         key={id}
       >
         <h1 className="product-title mt-3 font-bold">{product_title}</h1>
         <img
-          className="product-img w-80 h-48 object-cover rounded-t-sm hover:shadow-lg hover:scale-105 transition-transform duration-500"
+          className="product-img w-80 h-48 object-cover rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-4-strong"
           src={img}
           alt={product_title}
         />

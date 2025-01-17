@@ -12,6 +12,7 @@ export interface CartIconProps {
 
 export interface DropdownProps {
   handleAilmentSelect: (selectedAilment: string) => void;
+  ailment: string;
 }
 
 export interface HeaderProps {
@@ -58,6 +59,7 @@ export interface HolisticProductPageProps {
 export interface SearchBarProps {
   handleSearchInput: (value: string) => void;
   searchValue: string;
+  handleSearch: () => void;
 }
 
 export interface Review {
