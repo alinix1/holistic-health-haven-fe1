@@ -88,6 +88,7 @@ const App: React.FC = () => {
 
   const handleAilmentSelect = (selectedAilment: string) => {
     setAilment(selectedAilment);
+    setSearchValue("");
 
     if (selectedAilment) {
       const formattedAilment = selectedAilment.toLowerCase().trim();
@@ -107,10 +108,10 @@ const App: React.FC = () => {
   };
 
   const handleSearchInput = (value: string) => {
-    const formattedValue = value.toLowerCase();
-    setSearchValue(formattedValue);
-
-    // Determine which list to filter: full product list or selected ailment subgroup
+    setSearchValue(value);
+  };
+  // Determine which list to filter: full product list or selected ailment subgroup
+  const handleSearch = () => {
     const mainProductList = ailment
       ? holisticProducts.filter((holisticProduct) =>
           holisticProduct.product_type.some(
@@ -120,7 +121,7 @@ const App: React.FC = () => {
       : holisticProducts;
 
     const filteredProducts = mainProductList.filter((product) =>
-      product.product_title.toLowerCase().includes(formattedValue)
+      product.product_title.toLowerCase().includes(searchValue.toLowerCase())
     );
     setFilteredProducts(filteredProducts);
   };
@@ -214,6 +215,7 @@ const App: React.FC = () => {
         <SearchBar
           handleSearchInput={handleSearchInput}
           searchValue={searchValue}
+          handleSearch={handleSearch}
         />
         {searchValue && !productList.length && (
           <p className="text-red-500 font-bold text-center mt-4">

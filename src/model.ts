@@ -58,6 +58,7 @@ export interface HolisticProductPageProps {
 export interface SearchBarProps {
   handleSearchInput: (value: string) => void;
   searchValue: string;
+  handleSearch: () => void;
 }
 
 export interface Review {
