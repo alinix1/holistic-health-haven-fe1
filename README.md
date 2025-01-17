@@ -37,6 +37,7 @@
 - ![React][React-shield]
 - ![React Router][React-Router-shield]
 - ![Axios][Axios-shield]
+- ![Context API][Context-API-shield]
 - ![Tailwind CSS][Tailwind-CSS-shield]
 - ![Formik][Formik-shield]
 - ![Stripe][Stripe-shield]
@@ -99,8 +100,11 @@ Ali Nix | [![LinkedIn][linkedin-shield]][linkedin-url1]
 [React-shield]: https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black
 [React-Router-shield]: https://img.shields.io/badge/React%20Router-CA4245.svg?style=for-the-badge&logo=React-Router&logoColor=white
 [Axios-shield]: https://img.shields.io/badge/Axios-5A29E4.svg?style=for-the-badge&logo=Axios&logoColor=white
+[Context-API-shield]: https://img.shields.io/badge/Context--Api-000000?style=for-the-badge&logo=react
 [Tailwind-CSS-shield]: https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white
 [Formik-shield]: https://img.shields.io/badge/Formik-2563EB.svg?style=for-the-badge&logo=Formik&logoColor=white
 [Stripe-shield]: https://img.shields.io/badge/Stripe-635BFF.svg?style=for-the-badge&logo=Stripe&logoColor=white
 [Testing-Library-shield]: https://img.shields.io/badge/Testing%20Library-E33332.svg?style=for-the-badge&logo=Testing-Library&logoColor=white
 [Playwright-shield]: https://img.shields.io/badge/Playwright-45ba4b?style=for-the-badge&logo=Playwright&logoColor=white
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url1]: https://www.linkedin.com/in/ali-nix-38b9b9126/

@@ -23,12 +23,12 @@ const SearchBar: React.FC<SearchBarProps> = ({
         name="searchValue"
         value={searchValue}
         onChange={handleInputChange}
-        placeholder="Search holistic products"
+        placeholder="Search holistic products..."
         style={{
           backgroundImage: `url(${searchIcon})`,
-          backgroundSize: "20px",
-          backgroundRepeat: "no-repeat",
+          backgroundSize: "16px",
           backgroundPosition: "10px center",
+          backgroundRepeat: "no-repeat",
         }}
       />
     </section>
