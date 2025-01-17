@@ -87,24 +87,21 @@ const App: React.FC = () => {
   }, []);
 
   const handleAilmentSelect = (selectedAilment: string) => {
-    setAilment(selectedAilment);
-    setSearchValue("");
-
-    if (selectedAilment) {
-      const formattedAilment = selectedAilment.toLowerCase().trim();
-      const filtered = holisticProducts.filter((holisticProduct) =>
-        holisticProduct.product_type.some(
-          (type) => type.toLowerCase().trim() === formattedAilment
-        )
-      );
-
-      setFilteredProducts(filtered);
-    } else {
-      // If no ailment is selected, show all products list
+    if (!selectedAilment) {
+      setAilment("");
       setFilteredProducts([]);
+      return;
     }
+    setAilment(selectedAilment);
 
-    setSearchValue("");
+    const formattedAilment = selectedAilment.toLowerCase().trim();
+    const filtered = holisticProducts.filter((holisticProduct) =>
+      holisticProduct.product_type.some(
+        (type) => type.toLowerCase().trim() === formattedAilment
+      )
+    );
+
+    setFilteredProducts(filtered);
   };
 
   const handleSearchInput = (value: string) => {
@@ -211,7 +208,7 @@ const App: React.FC = () => {
         </div>
       </Modal>
       <Header cartItems={cartItems}>
-        <Dropdown handleAilmentSelect={handleAilmentSelect} />
+        <Dropdown handleAilmentSelect={handleAilmentSelect} ailment={ailment} />
         <SearchBar
           handleSearchInput={handleSearchInput}
           searchValue={searchValue}
