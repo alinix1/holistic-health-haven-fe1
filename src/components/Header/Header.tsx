@@ -30,45 +30,53 @@ const Header: React.FC<HeaderProps> = ({ children, cartItems }) => {
   );
 
   return (
-    <div className="bg-F2E8DF p-2 flex items-center justify-between">
-      <nav className="nav-bar flex items-center mb-60 relative">
-        <CartIcon
-          className="mr-4"
-          isCartOpen={isCartOpen}
-          toggleIsCartOpen={openCart}
-          cartCount={cartCount}
-        />
-        {/* Cart Dropdown */}
-        {isCartOpen && (
-          <CartDropdown toggleIsCartOpen={closeCart} cartItems={cartItems} />
-        )}
+    <header className="bg-F2E8DF">
+      <div className="p-2 flex items-center justify-between">
+        <nav className="nav-bar flex items-center">
+          <CartIcon
+            className="mr-4"
+            isCartOpen={isCartOpen}
+            toggleIsCartOpen={openCart}
+            cartCount={cartCount}
+          />
+          {isCartOpen && (
+            <CartDropdown toggleIsCartOpen={closeCart} cartItems={cartItems} />
+          )}
+          <Link
+            to="/testimonials"
+            className="mr-4 text-[#736555] font-extrabold"
+          >
+            Testimonials
+          </Link>
+          <Link to="/" className="text-[#736555] font-extrabold">
+            Holistic Products
+          </Link>
+          <Link to="/payment" className="ml-4 text-[#736555] font-extrabold">
+            Payment
+          </Link>
+        </nav>
 
-        <Link to="/testimonials" className="mr-4 text-[#736555] font-extrabold">
-          <p className="nav-btn">Testimonials</p>
+        <section>
+          <h1 className="text-black font-regular text-4xl">
+            Holistic Health Haven
+          </h1>
+          <div className="mt-4">{children}</div>
+        </section>
+
+        <Link to="/">
+          <img
+            style={{ width: "12rem", height: "12rem" }}
+            src={logo}
+            alt="tree logo"
+          />
         </Link>
-        <Link to="/" className="text-[#736555] font-extrabold">
-          <p className="nav-btn">Holistic Products</p>
-        </Link>
-        <Link to="/payment" className="ml-4 text-[#736555] font-extrabold">
-          <p className="nav-btn">Payment</p>
-        </Link>
-      </nav>
-      <section>
-        <h1 className="text-black font-regular text-4xl mb-4">
-          Holistic Health Haven
-        </h1>
-        <article className="mt-12 flex">
-          <div className="mr-5">{children}</div>
-        </article>
-      </section>
-      <Link to="/">
-        <img
-          style={{ width: "12rem", height: "12rem" }}
-          src={logo}
-          alt="tree logo"
-        />
-      </Link>
-    </div>
+      </div>
+
+      {/* Divider */}
+      <div className="mt-2">
+        <hr className="h-0.5 border-t-0 bg-gray-600 dark:grey/10 w-full" />
+      </div>
+    </header>
   );
 };
 
