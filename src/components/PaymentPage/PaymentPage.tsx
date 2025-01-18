@@ -5,7 +5,7 @@ import { stateData } from "../../mockData";
 
 const PaymentPage = () => {
   const initialValues = {
-    fullnName: "",
+    fullName: "",
     email: "",
     address: "",
     city: "",
@@ -31,8 +31,8 @@ const PaymentPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-F2E8DF flex flex-col items-center py-10 px-4">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">
+    <div className="min-h-screen flex flex-col items-center py-10 px-4 bg-[#8BA663]">
+      <h1 className="text-3xl font-bold text-black mb-6">
         Complete Your Payment
       </h1>
       <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-8">

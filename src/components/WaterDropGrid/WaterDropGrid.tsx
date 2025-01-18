@@ -72,7 +72,10 @@ const ErrorMessage = () => {
         Sorry, this URL does not exist.
       </h2>
       <Link to="/" className="bottom-0 left-0">
-        <button className="home-btn bg-[#5A7340] border border-black text-white px-4 py-2 rounded mb-7 w-[15vw]">
+        <button
+          type="button"
+          className="mt-4 mb-4 ml-10 text-[#fff] bg-[#5A7340] px-8 py-2 rounded"
+        >
           home
         </button>
       </Link>
