@@ -10,7 +10,9 @@ import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
 import TestimonialsPage from "../TestimonialsPage/TestimonialsPage";
 import Modal from "../Modal/Modal";
 import submitButton from "../../assets/submit_email.svg";
+import CheckoutItem from "../CheckoutItem/CheckoutItem";
 import PaymentPage from "../PaymentPage/PaymentPage";
+import AboutPage from "../AboutPage/AboutPage";
 import Footer from "../Footer/Footer";
 import BadURL from "../BadURL/BadURL";
 import spinner from "../../assets/Yin_and_Yang.gif";
@@ -240,7 +242,9 @@ const App: React.FC = () => {
             component={TermsAndConditions}
           />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+          <Route exact path="/checkout" render={() => <CheckoutItem />} />
           <Route exact path="/payment" render={() => <PaymentPage />} />
+          <Route exact path="/about" render={() => <AboutPage />} />
           <Route
             exact
             path="/:id"
