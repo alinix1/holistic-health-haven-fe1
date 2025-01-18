@@ -19,7 +19,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
   );
 
   const handleCheckout = () => {
-    history.push("/payment");
+    history.push("/checkout");
   };
 
   return (

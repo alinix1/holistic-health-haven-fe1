@@ -63,7 +63,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
           <Link to="/" className="link">
             <button
               type="button"
-              className=" mt-4 ml-10 text-[#fff] bg-[#5A7340] px-8 py-2 rounded"
+              className="mt-4 ml-10 text-[#fff] bg-[#5A7340] px-8 py-2 rounded"
             >
               Back
             </button>
