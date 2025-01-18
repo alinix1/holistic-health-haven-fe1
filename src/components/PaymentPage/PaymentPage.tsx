@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { stateData } from "../../mockData";
 
 const PaymentPage = () => {
   const initialValues = {
@@ -100,19 +101,19 @@ const PaymentPage = () => {
                       className="text-red-500 text-sm mt-1"
                     />
                   </div>
-                  <div>
-                    <Field
-                      name="state"
-                      type="text"
-                      placeholder="State/Province"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <ErrorMessage
-                      name="state"
-                      component="div"
-                      className="text-red-500 text-sm mt-1"
-                    />
-                  </div>
+                  <Field
+                    as="select"
+                    name="state"
+                    id="state"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  >
+                    <option value="" label="Select your state" />
+                    {stateData.map((state) => (
+                      <option key={state.id} value={state.name}>
+                        {state.name}
+                      </option>
+                    ))}
+                  </Field>
                   <div>
                     <Field
                       name="postalCode"
