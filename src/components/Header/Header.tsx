@@ -43,14 +43,29 @@ const Header: React.FC<HeaderProps> = ({ children, cartItems }) => {
           <CartDropdown toggleIsCartOpen={closeCart} cartItems={cartItems} />
         )}
 
-        <Link to="/testimonials" className="mr-4 text-[#736555] font-extrabold">
-          <p className="nav-btn">Testimonials</p>
+        <Link to="/testimonials" className="mr-4 font-extrabold">
+          <button
+            type="button"
+            className=" nav-button rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
+          >
+            Testimonials
+          </button>
         </Link>
-        <Link to="/" className="text-[#736555] font-extrabold">
-          <p className="nav-btn">Holistic Products</p>
+        <Link to="/" className="mr-4 font-extrabold">
+          <button
+            type="button"
+            className=" nav-button rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
+          >
+            Holistic Products
+          </button>
         </Link>
-        <Link to="/payment" className="ml-4 text-[#736555] font-extrabold">
-          <p className="nav-btn">Payment</p>
+        <Link to="/payment" className="ml-4 font-extrabold">
+          <button
+            type="button"
+            className=" nav-button rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
+          >
+            Payment
+          </button>
         </Link>
       </nav>
       <section>
