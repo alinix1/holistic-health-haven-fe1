@@ -42,14 +42,15 @@ const TestimonialsPage: React.FC = () => {
           <li key={review.id} className="mb-4 text-left">
             <p className="font-bold text-lg">
               <span
-                className="text-gray-200 font-sans"
+                className="text-gray-400 font-serif text-4xl mr-2"
+                aria-hidden="true"
                 style={{ fontSize: "5em" }}
               >
                 &#8220;
               </span>
               {review.user_name}
             </p>
-            <p className="text-xl">
+            <p className="text-xl font-semibold text-gray-700">
               {review.user_review.split(". ").map((sentence, index) => (
                 <React.Fragment key={index}>
                   {index > 0 && <br />}
