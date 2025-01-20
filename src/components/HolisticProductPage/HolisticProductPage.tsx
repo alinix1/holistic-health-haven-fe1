@@ -44,7 +44,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
     <div className="flex items-center justify-start">
       <section className="product-section flex flex-col items-center">
         <img
-          className="product-img w-72 h-72 object-cover mr-6 ml-10 mt-10 rounded shadow-none transition-shadow duration-300 ease-in-out hover:shadow-4-strong"
+          className="product-img w-72 h-72 object-cover mr-6 ml-10 mt-10 rounded shadow-none transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
           src={selectedProduct.img}
           alt={selectedProduct.product_title}
         />

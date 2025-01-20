@@ -25,7 +25,7 @@ const HolisticProductCard: React.FC<HolisticProductProps> = ({
       >
         <h1 className="product-title mt-3 font-bold">{product_title}</h1>
         <img
-          className="product-img w-80 h-48 object-cover rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-4-strong"
+          className="product-img w-80 h-48 object-cover rounded-lg shadow-none transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
           src={img}
           alt={product_title}
         />
