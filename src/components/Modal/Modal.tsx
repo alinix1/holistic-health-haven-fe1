@@ -1,7 +1,7 @@
 import type React from "react";
 import type { ModalProps } from "../../model";
 import discount from "../../assets/discount.jpg";
-import xIcon from "../../assets/x-mark.png";
+// import xIcon from "../../assets/x-mark.png";
 
 // interface ModalProps {
 //   isOpen: boolean;
@@ -33,7 +33,21 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
           className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-70"
           aria-label="Close"
         >
-          <img src={xIcon} alt="close icon" className="w-4 h-4" />
+          <span className="[&>svg]:h-6 [&>svg]:w-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </span>
         </button>
         {/* Modal Title */}
         {title && <h2 className="text-xl font-bold mb-4">{title}</h2>}
