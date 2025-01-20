@@ -6,7 +6,7 @@ const TermsAndConditions: React.FC = () => {
     <div
       className="p-6 bg-cover bg-center bg-fixed h-screen flex flex-col items-center justify-center text-black"
       style={{
-        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url(${flowerFieldImage})`,
+        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(${flowerFieldImage})`,
       }}
     >
       <div className="p-6 max-w-4xl mx-auto text-black">
