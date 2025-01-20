@@ -59,9 +59,9 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
             <button
               type="button"
               onClick={handleCheckout}
-              className="inline-block rounded bg-[#5A7340] text-[#fff] shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-[#4C6334] hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-[#3E522C] focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-[#4A5C30] active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+              className="ms-1 inline-block rounded bg-[#5A7340] px-8 py-2 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-[#8BA663]-accent-300 hover:shadow-primary-2 focus:bg-[#8BA663]-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-[#8BA663]-600 active:shadow-[#8BA663]-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
             >
-              GO TO CHECKOUT
+              Go to checkout
             </button>
           </>
         ) : (
