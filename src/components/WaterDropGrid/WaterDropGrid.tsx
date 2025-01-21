@@ -67,19 +67,19 @@ const DotGrid = () => {
 
 const ErrorMessage = () => {
   return (
-    <div>
-      <h2 className="text-white text-3xl font-bold text-center mb-8">
+    <div className="flex flex-col items-center text-center space-y-8">
+      <h2 className="text-white text-3xl font-bold">
         Sorry, this URL does not exist.
       </h2>
       <Link to="/" className="bottom-0 left-0">
         <button
           type="button"
-          className="mt-4 mb-4 ml-10 text-[#fff] bg-[#5A7340] px-8 py-2 rounded"
+          className="inline-block rounded bg-[#5A7340] px-8 py-2 text-md font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-[#8BA663]-accent-300 hover:shadow-primary-2 focus:bg-[#8BA663]-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-[#8BA663]-600 active:shadow-[#8BA663]-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
         >
           home
         </button>
       </Link>
-      <p className="text-white text-md font-normal mb-5">
+      <p className="text-white text-md font-normal">
         In the meantime, click on the animation below.
       </p>
     </div>
