@@ -74,13 +74,15 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
         <h2 className="product-title text-lg font-bold mb-2">
           {selectedProduct.product_title}
         </h2>
-        <p className="product-type mb-2">
+        <p className="product-type mb-2 italic semi-bold">
           {selectedProduct.product_type.join(", ")}
         </p>
-        <p className="product-description mb-4 px-4 max-w-md leading-relaxed text-center">
+        <p className="product-description mb-4 px-4 max-w-md leading-relaxed text-center inline-block text-justify">
           {selectedProduct.product_description}
         </p>
-        <p className="product-price">${selectedProduct.price.toFixed(2)}</p>
+        <p className="product-price font-bold">
+          ${selectedProduct.price.toFixed(2)}
+        </p>
       </article>
       <article className="flex flex-col items-end ml-10 mt-10 mb-10 gap-10 animate-[fade-in-right_1s_ease-in-out]">
         <img

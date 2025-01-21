@@ -1,16 +1,16 @@
-import React from "react";
+import type React from "react";
 import flowerFieldImage from "../../assets/flower_field.png";
 
 const TermsAndConditions: React.FC = () => {
   return (
     <div
-      className="p-6 bg-cover bg-center bg-fixed h-screen flex flex-col items-center justify-center text-black"
+      className="p-6 bg-cover bg-center bg-fixed min-h-screen flex flex-col items-center justify-center text-black"
       style={{
         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(${flowerFieldImage})`,
       }}
     >
       <div className="p-6 max-w-4xl mx-auto text-black">
-        <h1 className="text-3xl font-bold mb-6 text-center">
+        <h1 className="text-3xl font-bold mb-4 text-center">
           Terms & Conditions
         </h1>
         <p className="mb-4">

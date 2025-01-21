@@ -11,20 +11,25 @@ const AboutPage: React.FC = () => {
   return (
     <div className="py-10 px-6 min-h-screen">
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
-        About Holistic Health Haven
+        <span className="italic"> About </span> Holistic Health Haven
       </h1>
-      <p>
-        Doggo ipsum big ol yapper woofer, much ruin diet. Length boy smol blop
-        fat boi bork, shibe floofs sub woofer floofs doing me a frighten, heckin
-        angery woofer porgo pupper. Yapper vvv clouds very good spot, I am bekom
-        fat porgo. he made many woofs heck. Doggorino what a nice floof doge
-        aqua doggo puggorino most angery pupper I have ever seen, yapper very
-        good spot blop. Borkdrive h*ck noodle horse heckin good boys and girls
-        aqua doggo I am bekom fat corgo, dat tungg tho pats super chub doge what
-        a nice floof. Boofers porgo borking doggo adorable doggo h*ck, porgo
-        woofer. Long woofer h*ck waggy wags lotsa pats, super chub shoob.
-        Fluffer vvv boof many pats, pupperino. Many pats adorable doggo stop it
-        fren much ruin diet long bois, shoob heckin.
+      <p className="leading-relaxed">
+        At Holistic Health Haven, we believe in empowering individuals to take
+        charge of their well-being through natural and sustainable practices.
+        Our mission is to create a sanctuary where holistic health meets modern
+        living, offering a carefully curated selection of products designed to
+        nourish the mind, body, and spirit. From organic remedies and herbal
+        supplements to mindfulness tools and eco-friendly essentials, every item
+        in our collection is thoughtfully sourced to support your journey toward
+        balance and vitality.
+      </p>
+      <p className="mt-4 leading-relaxed">
+        We are committed to fostering a community that values self-care,
+        sustainability, and conscious living. Whether you’re exploring holistic
+        health for the first time or deepening your existing practices, Holistic
+        Health Haven is here to inspire, guide, and support you every step of
+        the way. Together, let’s cultivate a lifestyle that embraces wellness in
+        harmony with the world around us.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto items-start">
@@ -67,21 +72,29 @@ const AboutPage: React.FC = () => {
               aria-labelledby="headingOne"
               data-twe-parent="#accordionExample"
             >
-              <div className="px-5 py-4">
+              <div className="px-5 py-4 text-justify">
                 <p>
-                  Most angery pupper I have ever seen super chub waggy wags much
-                  ruin diet, very jealous pupper very taste wow. Floofs noodle
-                  horse borkdrive heck pupperino, shibe you are doing me the
-                  shock vvv. Lotsa pats borkdrive borkf heckin super chub, shoob
-                  wow very biscit the neighborhood pupper. Floofs ruff smol bork
-                  dat tungg tho, super chub puggo. Woofer wrinkler smol borking
-                  doggo with a long snoot for pats ur givin me a spook, stop it
-                  fren. Much ruin diet h*ck pupperino you are doing me a
-                  frighten clouds snoot, I am bekom fat woofer doge extremely
-                  cuuuuuute wrinkler, the neighborhood pupper stop it fren borkf
-                  many pats. Dat tungg tho doggorino puggorino you are doin me a
-                  concern shoob long woofer, smol heckin good boys stop it fren
-                  bork.
+                  Holistic Health Haven was founded in 2018 in Denver, CO, born
+                  from a passion for natural healing and a desire to create a
+                  sanctuary for holistic wellness. Our founders, inspired by
+                  their personal experiences with sustainable living and
+                  mindfulness, envisioned a space where individuals could
+                  reconnect with nature and prioritize their well-being.
+                </p>
+                <p className="mt-4">
+                  What started as a small local initiative in the heart of
+                  Denver quickly grew into a trusted destination for natural
+                  remedies, eco-friendly products, and resources for self-care.
+                  With a deep commitment to empowering individuals to nurture
+                  their mind, body, and spirit, Holistic Health Haven became a
+                  community-driven platform celebrating balance, mindfulness,
+                  and conscious living.
+                </p>
+                <p className="mt-4">
+                  Since 2018, we have been proud to serve as a resource and
+                  gathering place for those seeking to live in harmony with
+                  themselves and the environment. Our journey is your journey,
+                  and we are honored to be part of your path to holistic health.
                 </p>
               </div>
             </div>
@@ -123,18 +136,33 @@ const AboutPage: React.FC = () => {
               aria-labelledby="headingTwo"
               data-twe-parent="#accordionExample"
             >
-              <div className="px-5 py-4">
+              <div className="px-5 py-4 text-justify">
                 <p>
-                  Blop noodle horse fluffer the neighborhood pupper, big ol
-                  pupper maximum borkdrive. Doggorino sub woofer ur givin me a
-                  spook heckin angery woofer shoober, I am bekom fat ur givin me
-                  a spook. Boofers smol sub woofer maximum borkdrive h*ck, borkf
-                  smol borking doggo with a long snoot for pats h*ck. Waggy wags
-                  he made many woofs wrinkler super chub, wow very biscit ruff.
-                  Aqua doggo noodle horse long woofer shoob maximum borkdrive
-                  puggo pats, heck snoot doing me a frighten borkf waggy wags,
-                  long woofer clouds lotsa pats yapper borkdrive. Blep long
-                  doggo super chub snoot, heckin boofers.
+                  Holistic Health Haven's products are carefully curated to
+                  promote overall well-being while staying true to nature. We
+                  believe that what you put into your body and use in your daily
+                  life should align with your health goals and values. Our
+                  products are crafted with high-quality, sustainably sourced
+                  ingredients, ensuring they are safe, effective, and
+                  eco-friendly.
+                </p>
+                <p className="mt-4">
+                  When you choose Holistic Health Haven, you’re not just
+                  purchasing a product—you’re investing in a healthier
+                  lifestyle. Whether it’s our organic remedies, mindfulness
+                  tools, or eco-conscious essentials, every item is designed to
+                  nurture your mind, body, and spirit. We prioritize
+                  transparency and sustainability, so you can feel confident
+                  that you’re making choices that benefit not only yourself but
+                  also the planet.
+                </p>
+                <p className="mt-4">
+                  Join the thousands who trust Holistic Health Haven for their
+                  wellness journey. From natural skincare to herbal supplements,
+                  our products empower you to take charge of your health and
+                  embrace a more balanced, harmonious way of living. Together,
+                  let’s create a world where well-being and sustainability go
+                  hand in hand.
                 </p>
               </div>
             </div>
@@ -176,21 +204,25 @@ const AboutPage: React.FC = () => {
               aria-labelledby="headingThree"
               data-twe-parent="#accordionExample"
             >
-              <div className="px-5 py-4">
+              <div className="px-5 py-4 text-justify">
                 <p>
-                  Doggo ipsum big ol yapper woofer, much ruin diet. Length boy
-                  smol blop fat boi bork, shibe floofs sub woofer floofs doing
-                  me a frighten, heckin angery woofer porgo pupper. Yapper vvv
-                  clouds very good spot, I am bekom fat porgo. he made many
-                  woofs heck. Doggorino what a nice floof doge aqua doggo
-                  puggorino most angery pupper I have ever seen, yapper very
-                  good spot blop. Borkdrive h*ck noodle horse heckin good boys
-                  and girls aqua doggo I am bekom fat corgo, dat tungg tho pats
-                  super chub doge what a nice floof. Boofers porgo borking doggo
-                  adorable doggo h*ck, porgo woofer. Long woofer h*ck waggy wags
-                  lotsa pats, super chub shoob. Fluffer vvv boof many pats,
-                  pupperino. Many pats adorable doggo stop it fren much ruin
-                  diet long bois, shoob heckin.
+                  At Holistic Health Haven, our mission is to inspire and
+                  empower individuals to live healthier, more balanced lives
+                  through holistic wellness. We are committed to providing
+                  high-quality, natural, and sustainable products that nurture
+                  the mind, body, and spirit. By fostering a community rooted in
+                  mindfulness, sustainability, and self-care, we aim to create a
+                  sanctuary where people can reconnect with nature and
+                  prioritize their well-being.
+                </p>
+                <p className="mt-4">
+                  We believe that true wellness comes from living in harmony
+                  with ourselves and the world around us. Through our carefully
+                  curated offerings, we strive to make holistic living
+                  accessible and meaningful for everyone, guiding you on your
+                  journey to greater health, vitality, and balance. Together,
+                  let’s cultivate a future where wellness and sustainability go
+                  hand in hand.
                 </p>
               </div>
             </div>
