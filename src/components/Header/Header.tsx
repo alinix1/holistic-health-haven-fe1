@@ -72,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({ children, cartItems }) => {
             type="button"
             className="nav-button rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
           >
-            About
+            About Us
           </button>
         </Link>
       </nav>
