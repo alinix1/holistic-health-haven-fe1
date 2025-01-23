@@ -8,3 +8,10 @@ export const mapHolisticProductToCartItem = (
   price: product.price,
   quantity: product.quantity || 1,
 });
+
+export const removeItemFromCart = (
+  cartItems: CartItem[],
+  itemId: number
+): CartItem[] => {
+  return cartItems.filter((item) => item.id !== itemId);
+};
