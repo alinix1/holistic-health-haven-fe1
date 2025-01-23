@@ -1,11 +1,8 @@
 import type React from "react";
 import { useHistory } from "react-router-dom";
+import { mapHolisticProductToCartItem } from "../../utils/cartUtils";
 import type { CartDropdownProps } from "../../model";
 import xIcon from "../../assets/x-mark.png";
-
-// interface CartDropdownProps {
-//   toggleIsCartOpen: () => void;
-// }
 
 const CartDropdown: React.FC<CartDropdownProps> = ({
   toggleIsCartOpen,
@@ -19,7 +16,8 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
   );
 
   const handleCheckout = () => {
-    history.push("/checkout");
+    const cartItemsForCheckout = cartItems.map(mapHolisticProductToCartItem); // Map HolisticProduct to CartItem
+    history.push("/checkout", { cartItems: cartItemsForCheckout });
   };
 
   return (
