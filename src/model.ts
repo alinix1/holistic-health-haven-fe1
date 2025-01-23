@@ -32,7 +32,7 @@ export interface HolisticProductProps {
   product_type: string[];
   product_title: string;
   img: string;
-  product_description: string;
+  product_description?: string;
   price: number;
 }
 
@@ -41,9 +41,9 @@ export interface HolisticProduct {
   product_type: string[];
   product_title: string;
   img: string;
-  product_description: string;
+  product_description?: string;
   price: number;
-  quantity?: number;
+  quantity: number;
 }
 
 export interface HolisticProductListProps {
@@ -67,4 +67,19 @@ export interface Review {
   holistic_product_id: number;
   user_name: string;
   user_review: string;
+}
+
+export interface CartItem {
+  id: number;
+  product_title: string;
+  price: number;
+  quantity?: number;
+}
+
+export interface CheckoutItemProps {
+  cartItems: CartItem[];
+  onProceedToPayment: (values: {
+    items: CartItem[];
+    shippingAddress: string;
+  }) => void;
 }
