@@ -7,20 +7,6 @@ import holisticMushroom from "../../assets/holistic_mushrooms.jpg";
 import holisticTree from "../../assets/holistic_tree.jpg";
 // import ReviewForm from "../ReviewForm/ReviewForm";
 
-// interface HolisticProduct {
-//   id: number;
-//   product_type: string[];
-//   product_title: string;
-//   img: string;
-//   product_description: string;
-//   price: number;
-// }
-
-// interface HolisticProductPageProps {
-//   holisticProducts: HolisticProduct[];
-//   id: number;
-// }
-
 const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
   holisticProducts,
   id,

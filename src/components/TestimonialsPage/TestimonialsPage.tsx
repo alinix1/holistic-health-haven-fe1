@@ -3,13 +3,6 @@ import { getReviews } from "../../apiCalls";
 import type { Review } from "../../model";
 import holisticHerbalImage from "../../assets/holistic_herbal.jpg";
 
-// interface Review {
-//   id: number;
-//   holistic_product_id: number;
-//   user_name: string;
-//   user_review: string;
-// }
-
 const TestimonialsPage: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>([]);
 

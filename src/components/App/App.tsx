@@ -21,15 +21,6 @@ import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
 
 import "./App.css";
 
-// interface HolisticProduct {
-//   id: number;
-//   product_type: string[];
-//   product_title: string;
-//   img: string;
-//   product_description: string;
-//   price: number;
-// }
-
 const App: React.FC = () => {
   const [holisticProducts, setHolisticProducts] = useState<HolisticProduct[]>(
     []
