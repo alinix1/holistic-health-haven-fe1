@@ -13,12 +13,16 @@ const Dropdown: React.FC<DropdownProps> = ({
     "Stress & Anxiety",
     "Insomnia",
     "Cold & Flu",
+    "Overall Immunity",
     "Inflammation & Joint pain",
     "Heart Problems",
     "Hormonal Imbalances",
     "Low Energy",
     "Liver Problems",
     "Gut Problems",
+    "Low Libido",
+    "Muscle Recovery",
+    "Bacterial & Fungal Infections",
   ];
 
   return (
