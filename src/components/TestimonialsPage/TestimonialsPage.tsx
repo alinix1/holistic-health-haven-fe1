@@ -7,19 +7,16 @@ const TestimonialsPage: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>([]);
 
   useEffect(() => {
-    getReviews()
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch reviews data");
-        }
-        return response.json();
-      })
-      .then((data) => {
+    const fetchReviews = async () => {
+      try {
+        const data = await getReviews();
         setReviews(data as Review[]);
-      })
-      .catch((error) => {
-        console.error("Error fetching reviews data:", error);
-      });
+      } catch (error) {
+        console.error("Error fetching reviews:", error);
+      }
+    };
+
+    fetchReviews();
   }, []);
 
   return (
