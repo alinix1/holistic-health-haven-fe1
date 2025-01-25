@@ -60,22 +60,20 @@ const App: React.FC = () => {
   };
 
   useEffect(() => {
-    setIsModalOpen(true);
-    getHolisticProducts()
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        return response.json();
-      })
-      .then((data) => {
+    const fetchProducts = async () => {
+      setIsModalOpen(true);
+      try {
+        const data = await getHolisticProducts();
         setHolisticProducts(data as HolisticProduct[]);
+        // setFilteredProducts(data as HolisticProduct[]);
         setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
+      } catch (error) {
+        console.error("Error fetching holistic products:", error);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+    fetchProducts();
   }, []);
 
   const handleAilmentSelect = (selectedAilment: string) => {
