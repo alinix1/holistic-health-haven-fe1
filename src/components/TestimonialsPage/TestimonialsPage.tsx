@@ -38,10 +38,10 @@ const TestimonialsPage: React.FC = () => {
               {review.user_name}
             </p>
             <p className="text-xl font-semibold text-gray-700">
-              {review.user_review.split(". ").map((sentence, index) => (
-                <React.Fragment key={index}>
-                  {index > 0 && <br />}
-                  {index === 0 ? `${sentence}.` : sentence}
+              {review.user_review.split(". ").map((sentence) => (
+                <React.Fragment key={sentence}>
+                  <br />
+                  {sentence}
                 </React.Fragment>
               ))}
             </p>

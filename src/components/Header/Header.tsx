@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ children, cartItems }) => {
   // Calculate the total cart count
   const cartCount = cartItems.reduce(
     (count, item) => count + (item.quantity || 1),
-    0
+    0,
   );
 
   return (

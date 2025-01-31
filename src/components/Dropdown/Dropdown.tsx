@@ -42,7 +42,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 type="button"
                 onClick={() =>
                   handleAilmentSelect(
-                    ailmentOption === "Select Ailment" ? "" : ailmentOption
+                    ailmentOption === "Select Ailment" ? "" : ailmentOption,
                   )
                 }
                 className={`${

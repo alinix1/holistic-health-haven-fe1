@@ -8,7 +8,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   handleSearch,
 }) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
+    const { value } = event.target;
     handleSearchInput(value);
   };
   return (

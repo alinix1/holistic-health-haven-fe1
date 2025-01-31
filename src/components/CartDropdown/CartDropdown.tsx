@@ -25,9 +25,17 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
       <div className="relative">
         <img
           src={xIcon}
-          alt="close icon"
+          alt="Close cart"
           className="absolute top-2 right-2 w-4 h-4 cursor-pointer"
+          role="button"
+          tabIndex={0}
+          aria-label="Close cart"
           onClick={toggleIsCartOpen}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              toggleIsCartOpen();
+            }
+          }}
         />
       </div>
       <div className="mt-8">
