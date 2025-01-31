@@ -1,11 +1,8 @@
 import type React from "react";
 import { useHistory } from "react-router-dom";
 import type { CartDropdownProps } from "../../model";
+import Button from "../Button/Button";
 import xIcon from "../../assets/x-mark.png";
-
-// interface CartDropdownProps {
-//   toggleIsCartOpen: () => void;
-// }
 
 const CartDropdown: React.FC<CartDropdownProps> = ({
   toggleIsCartOpen,
@@ -53,13 +50,9 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
             </ul>
             <p className="font-bold mb-4">Total: ${total.toFixed(2)}</p>
             <div className="flex flex-col justify-center items-center">
-              <button
-                type="button"
-                onClick={handleCheckout}
-                className="rounded bg-[#5A7340] px-4 py-2 text-md font-medium leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-[#8BA663]-accent-300 hover:shadow-primary-2 focus:bg-[#8BA663]-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-[#8BA663]-600 active:shadow-[#8BA663]-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
-              >
+              <Button className="mt-4 md:mt-0" onClick={handleCheckout}>
                 Go to Checkout
-              </button>
+              </Button>
             </div>
           </>
         ) : (
