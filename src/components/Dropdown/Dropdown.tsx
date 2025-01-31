@@ -3,10 +3,6 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import type { DropdownProps } from "../../model";
 
-// interface DropdownProps {
-//   handleAilmentSelect: (selectedAilment: string) => void;
-// }
-
 const Dropdown: React.FC<DropdownProps> = ({
   handleAilmentSelect,
   ailment,
