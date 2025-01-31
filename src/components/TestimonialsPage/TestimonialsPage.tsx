@@ -3,29 +3,16 @@ import { getReviews } from "../../apiCalls";
 import type { Review } from "../../model";
 import holisticHerbalImage from "../../assets/holistic_herbal.jpg";
 
-// interface Review {
-//   id: number;
-//   holistic_product_id: number;
-//   user_name: string;
-//   user_review: string;
-// }
-
 const TestimonialsPage: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>([]);
 
   useEffect(() => {
     getReviews()
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch reviews data");
-        }
-        return response.json();
-      })
       .then((data) => {
-        setReviews(data as Review[]);
+        setReviews(data);
       })
       .catch((error) => {
-        console.error("Error fetching reviews data:", error);
+        console.error("Error fetching data:", error);
       });
   }, []);
 
