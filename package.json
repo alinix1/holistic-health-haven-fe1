@@ -30,10 +30,14 @@
     "yup": "^1.6.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
+    "start": "npm run build && node build/index.js",
     "build:css": "tailwindcss build -o output.css",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watch",
+    "test:ci": "react-scripts test --coverage",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
