@@ -3,10 +3,6 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import type { DropdownProps } from "../../model";
 
-// interface DropdownProps {
-//   handleAilmentSelect: (selectedAilment: string) => void;
-// }
-
 const Dropdown: React.FC<DropdownProps> = ({
   handleAilmentSelect,
   ailment,
@@ -17,12 +13,16 @@ const Dropdown: React.FC<DropdownProps> = ({
     "Stress & Anxiety",
     "Insomnia",
     "Cold & Flu",
+    "Bacterial & Fungal Infections",
     "Inflammation & Joint pain",
     "Heart Problems",
     "Hormonal Imbalances",
     "Low Energy",
     "Liver Problems",
     "Gut Problems",
+    "Muscle Recovery",
+    "Overall Immunity",
+    "Low Libido",
   ];
 
   return (
@@ -34,7 +34,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         <ChevronDownIcon aria-hidden="true" className="w-5 h-5 text-gray-500" />
       </MenuButton>
       {/* Dropdown Items */}
-      <MenuItems className="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
+      <MenuItems className="absolute max-h-80 left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none overflow-y-auto">
         {ailments.map((ailmentOption) => (
           <MenuItem key={ailmentOption}>
             {({ active }) => (

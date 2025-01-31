@@ -2,6 +2,7 @@ import type React from "react";
 import { useEffect } from "react";
 import { Collapse, initTWE } from "tw-elements";
 import holisticProductsImg from "../../assets/holistic_products.jpg";
+import productsBackgroundImg from "../../assets/products_background.jpg";
 
 const AboutPage: React.FC = () => {
   useEffect(() => {
@@ -10,6 +11,7 @@ const AboutPage: React.FC = () => {
 
   return (
     <div className="py-10 px-6 min-h-screen">
+      {/* About Info */}
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
         <span className="italic"> About </span> Holistic Health Haven
       </h1>
@@ -31,33 +33,30 @@ const AboutPage: React.FC = () => {
         the way. Together, let’s cultivate a lifestyle that embraces wellness in
         harmony with the world around us.
       </p>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto items-start">
-        {/* Accordion Section */}
-        <div id="accordionExample" className="py-10 px-6 min-h-screen">
-          <div className="rounded-t-lg border text-white border-neutral-200 bg-[#736555]">
+      <div className="flex flex-wrap gap-8 mt-10 justify-between">
+        {/* Accordion */}
+        <div id="accordionExample" className="w-full">
+          <div className="rounded-t-lg border-2 text-white border-slate-700 bg-[#736555]">
             <h2 className="mb-0" id="headingOne">
               <button
-                className="group relative flex w-full items-center rounded-t-lg border-0 bg-white px-5 py-4 text-left text-base text-white transition hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white"
+                className="group relative flex w-full items-center rounded-t-lg border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
                 type="button"
                 data-twe-collapse-init
                 data-twe-target="#collapseOne"
-                aria-expanded="true"
                 aria-controls="collapseOne"
               >
                 How Holistic Health Haven Got Started
-                <span className="ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:rotate-0">
+                <span className="ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:me-0 group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth="1.5"
+                    stroke-width="1.5"
                     stroke="currentColor"
-                    className="h-5 w-5"
                   >
                     <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                       d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                     />
                   </svg>
@@ -100,29 +99,29 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="rounded-t-lg border text-white border-neutral-200 bg-[#736555]">
+          <div className="border-2 border-t-0 border-slate-700 text-white dark:border-neutral-600 bg-[#736555]">
             <h2 className="mb-0" id="headingTwo">
               <button
-                className="group relative flex w-full items-center border-0 bg-white px-5 py-4 text-left text-white transition hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark"
+                className="group relative flex w-full items-center border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
                 type="button"
                 data-twe-collapse-init
+                data-twe-collapse-collapsed
                 data-twe-target="#collapseTwo"
                 aria-expanded="false"
                 aria-controls="collapseTwo"
               >
                 Why should I use Holistic Health Haven's products?
-                <span className="ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:rotate-0">
+                <span className="-me-1 ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:me-0 group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6 ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth="1.5"
+                    stroke-width="1.5"
                     stroke="currentColor"
-                    className="h-5 w-5"
                   >
                     <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                       d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                     />
                   </svg>
@@ -167,30 +166,29 @@ const AboutPage: React.FC = () => {
               </div>
             </div>
           </div>
-
-          <div className="rounded-t-lg border text-white border-neutral-200 dark:border-neutral-600 bg-[#736555]">
-            <h2 className="mb-0" id="headingThree">
+          <div className="rounded-b-lg border-2 border-t-0 text-white border-slate-700 bg-[#736555] dark:border-neutral-600">
+            <h2 className="accordion-header mb-0" id="headingThree">
               <button
-                className="group relative flex w-full items-center border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white"
+                className="data-[twe-collapse-collapsed] group relative flex w-full items-center border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none data-[twe-collapse-collapsed]:rounded-b-lg dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black  dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10"
                 type="button"
                 data-twe-collapse-init
+                data-twe-collapse-collapsed
                 data-twe-target="#collapseThree"
                 aria-expanded="false"
                 aria-controls="collapseThree"
               >
                 Our Mission
-                <span className="ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:rotate-0">
+                <span className="-me-1 ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:me-0 group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth="1.5"
+                    stroke-width="1.5"
                     stroke="currentColor"
-                    className="h-5 w-5"
                   >
                     <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                       d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                     />
                   </svg>
@@ -227,14 +225,19 @@ const AboutPage: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
-        {/* Image */}
-        <div className="flex justify-center">
-          <img
-            src={holisticProductsImg}
-            alt="Holistic products"
-            className="w-full max-w-sm rounded-lg shadow-none mt-12 object-cover transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
-          />
+          {/* Images */}
+          <div className="w-full flex flex-col md:flex-row justify-evenly overflow-x-hidden">
+            <img
+              src={holisticProductsImg}
+              alt="Holistic products"
+              className="w-full max-w-sm rounded-lg shadow-none mt-12 object-cover transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
+            />
+            <img
+              src={productsBackgroundImg}
+              alt="Products background"
+              className="w-full max-w-sm rounded-lg shadow-none mt-12 gap:3 object-cover transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
+            />
+          </div>
         </div>
       </div>
     </div>

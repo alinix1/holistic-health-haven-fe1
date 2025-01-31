@@ -2,12 +2,6 @@ import type React from "react";
 import type { CartIconProps } from "../../model";
 import cartIcon from "../../assets/shopping-cart.svg";
 
-// interface CartIconProps {
-//   className?: string;
-//   isCartOpen: boolean;
-//   toggleIsCartOpen: () => void;
-// }
-
 const CartIcon: React.FC<CartIconProps> = ({
   isCartOpen,
   toggleIsCartOpen,
