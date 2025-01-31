@@ -1,34 +1,50 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { stateData } from "../../mockData";
+import { PaymentFormValues } from "../../model";
 
 const PaymentPage = () => {
-  const initialValues = {
+  const initialValues: PaymentFormValues = {
     fullName: "",
     email: "",
     address: "",
     city: "",
     state: "",
     postalCode: "",
-    cardDetails: "", // Eventually replaced with Stripe CardElement
+    cardNumber: "",
+    expireDate: "",
+    cvv: "",
+    cardholderName: "",
   };
 
   const validationSchema = Yup.object({
-    fullnName: Yup.string().required("Full Name is required"),
+    fullName: Yup.string().required("Full Name is required"),
     email: Yup.string()
       .email("Invalid email address")
       .required("Email is required"),
     address: Yup.string().required("Address is required"),
     city: Yup.string().required("City is required"),
     state: Yup.string().required("State is required"),
-    postalCode: Yup.string().required("Postal Code is required"),
+    postalCode: Yup.string()
+      .matches(/^\d{5}$/, "Invalid postal code")
+      .required("Postal Code is required"),
+    cardNumber: Yup.string()
+      .matches(/^\d{16}$/, "Card number must be 16 digits")
+      .required("Card number is required"),
+    expiryDate: Yup.string()
+      .matches(/^(0[1-9]|1[0-2])\/?([0-9]{2})$/, "MM/YY format required")
+      .required("Expiry date is required"),
+    cvv: Yup.string()
+      .matches(/^\d{3,4}$/, "Invalid CVV")
+      .required("CVV is required"),
+    cardholderName: Yup.string().required("Cardholder name is required"),
   });
 
-  const handleSubmit = (values: typeof initialValues) => {
-    // Handle form submission
-    console.log("Form submitted with values:", values);
-  };
+  const handleSubmit = useCallback((values: PaymentFormValues) => {
+    // eslint-disable-next-line no-console
+    console.log("Payment details:", values);
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col items-center py-10 px-4 bg-[#8BA663]">

@@ -23,14 +23,14 @@ import "./App.css";
 
 const App: React.FC = () => {
   const [holisticProducts, setHolisticProducts] = useState<HolisticProduct[]>(
-    []
+    [],
   );
   const [ailment, setAilment] = useState("");
 
   const [loading, setLoading] = useState(true);
   const [searchValue, setSearchValue] = useState("");
   const [filteredProducts, setFilteredProducts] = useState<HolisticProduct[]>(
-    []
+    [],
   );
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,14 +44,14 @@ const App: React.FC = () => {
   const addToCart = (item: HolisticProduct) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find(
-        (cartItem) => cartItem.id === item.id
+        (cartItem) => cartItem.id === item.id,
       );
 
       if (existingItem) {
         return prevItems.map((cartItem) =>
           cartItem.id === item.id
             ? { ...cartItem, quantity: (cartItem.quantity ?? 0) + 1 }
-            : cartItem
+            : cartItem,
         );
       }
 
@@ -83,8 +83,8 @@ const App: React.FC = () => {
     const formattedAilment = selectedAilment.toLowerCase().trim();
     const filtered = holisticProducts.filter((holisticProduct) =>
       holisticProduct.product_type.some(
-        (type) => type.toLowerCase().trim() === formattedAilment
-      )
+        (type) => type.toLowerCase().trim() === formattedAilment,
+      ),
     );
 
     setFilteredProducts(filtered);
@@ -98,15 +98,16 @@ const App: React.FC = () => {
     const mainProductList = ailment
       ? holisticProducts.filter((holisticProduct) =>
           holisticProduct.product_type.some(
-            (type) => type.toLowerCase().trim() === ailment.toLowerCase().trim()
-          )
+            (type) =>
+              type.toLowerCase().trim() === ailment.toLowerCase().trim(),
+          ),
         )
       : holisticProducts;
 
-    const filteredProducts = mainProductList.filter((product) =>
-      product.product_title.toLowerCase().includes(searchValue.toLowerCase())
+    const searchResults = mainProductList.filter((product) =>
+      product.product_title.toLowerCase().includes(searchValue.toLowerCase()),
     );
-    setFilteredProducts(filteredProducts);
+    setFilteredProducts(searchResults);
   };
 
   // Determine the products to display
@@ -143,17 +144,18 @@ const App: React.FC = () => {
           {/* Form Container */}
           <div className="flex-grow flex items-center justify-center mt-20">
             <div className="w-full max-w-md p-4 border border-gray-200 rounded-lg bg-white shadow">
-              <form
-                onSubmit={(event) => {
-                  event.preventDefault();
-                  console.log("Email submitted");
-                }}
-                className="flex flex-col items-center space-y-4"
-              >
+              <form>
                 <div className="flex items-center justify-between w-full">
                   <label htmlFor="email" className="text-sm font-medium">
                     Enter your email to subscribe:
                   </label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="Your email address"
+                    className="w-full max-w-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus-ring-blue-500"
+                    required
+                  />
                   <button
                     type="button"
                     className="ms-1 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
@@ -161,13 +163,6 @@ const App: React.FC = () => {
                     Subscribe
                   </button>
                 </div>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="Your email address"
-                  className="w-full max-w-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus-ring-blue-500"
-                  required
-                />
               </form>
             </div>
 
@@ -234,7 +229,7 @@ const App: React.FC = () => {
             render={({ match }) => (
               <HolisticProductPage
                 holisticProducts={holisticProducts}
-                id={Number.parseInt(match.params.id)}
+                id={Number.parseInt(match.params.id, 10)}
                 addToCart={addToCart}
               />
             )}

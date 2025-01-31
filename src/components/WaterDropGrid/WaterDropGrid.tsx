@@ -6,17 +6,12 @@ import Button from "../Button/Button";
 const GRID_WIDTH = 20;
 const GRID_HEIGHT = 25;
 
-const WaterDropGrid = () => {
-  return (
-    <div className="relative grid place-content-center bg-[#402B18] px-8 py-12">
-      <ErrorMessage />
-      <DotGrid />
-    </div>
-  );
-};
-
 const DotGrid = () => {
-  const handleDotClick = (event: any) => {
+  const handleDotClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    const target = event.currentTarget as HTMLDivElement;
+    const { index } = target.dataset;
+
+    if (!index) return;
     anime({
       targets: ".dot-point",
       scale: [
@@ -33,7 +28,7 @@ const DotGrid = () => {
       ],
       delay: anime.stagger(100, {
         grid: [GRID_WIDTH, GRID_HEIGHT],
-        from: event.target.dataset.index,
+        from: parseInt(index, 10),
       }),
     });
   };
@@ -50,7 +45,7 @@ const DotGrid = () => {
           key={`${i}-${j}`}
         >
           <div className="dot-point h-2 w-2 rounded-full bg-gradient-to-b from-custom-light to-custom-dark opacity-50 group-hover:from-indigo-600 group-hover:to-white" />
-        </div>
+        </div>,
       );
       index++;
     }
@@ -78,6 +73,15 @@ const ErrorMessage = () => {
       <p className="text-white text-md font-normal">
         In the meantime, click on the animation below.
       </p>
+    </div>
+  );
+};
+
+const WaterDropGrid = () => {
+  return (
+    <div className="relative grid place-content-center bg-[#402B18] px-8 py-12">
+      <ErrorMessage />
+      <DotGrid />
     </div>
   );
 };

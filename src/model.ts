@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
@@ -65,6 +67,19 @@ export interface SearchBarProps {
   handleSearchInput: (value: string) => void;
   searchValue: string;
   handleSearch: () => void;
+}
+
+export interface PaymentFormValues {
+  fullName: string;
+  email: string;
+  address: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  cardNumber: string;
+  expireDate: string;
+  cvv: string;
+  cardholderName: string;
 }
 
 export interface Review {
