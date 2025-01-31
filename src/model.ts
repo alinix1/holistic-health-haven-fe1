@@ -1,3 +1,8 @@
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+}
+
 export interface CartDropdownProps {
   toggleIsCartOpen: () => void;
   cartItems: HolisticProduct[];
