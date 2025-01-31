@@ -12,7 +12,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
 
   const total = cartItems.reduce(
     (acc, item) => acc + item.price * (item.quantity || 1),
-    0
+    0,
   );
 
   const handleCheckout = () => {
@@ -25,9 +25,17 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
       <div className="relative">
         <img
           src={xIcon}
-          alt="close icon"
+          alt="Close cart"
           className="absolute top-2 right-2 w-4 h-4 cursor-pointer"
+          role="button"
+          tabIndex={0}
+          aria-label="Close cart"
           onClick={toggleIsCartOpen}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              toggleIsCartOpen();
+            }
+          }}
         />
       </div>
       <div className="mt-8">
@@ -58,13 +66,9 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
         ) : (
           <div className="flex flex-col justify-center items-center">
             <p className="mb-4 text-center text-gray-700">Your cart is empty</p>
-            <button
-              type="button"
-              onClick={handleCheckout}
-              className="rounded bg-[#5A7340] px-4 py-2 text-md font-medium leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-[#8BA663]-accent-300 hover:shadow-primary-2 focus:bg-[#8BA663]-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-[#8BA663]-600 active:shadow-[#8BA663]-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
-            >
+            <Button className="mt-4 md:mt-0" onClick={handleCheckout}>
               Go to Checkout
-            </button>
+            </Button>
           </div>
         )}
       </div>

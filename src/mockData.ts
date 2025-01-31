@@ -1,4 +1,4 @@
-let holisticProductData = [
+const holisticProductData = [
   {
     id: 1,
     product_type: ["Cold & Flu", "Inflammation & Joint pain"],
@@ -41,7 +41,7 @@ let holisticProductData = [
   },
 ];
 
-let reviewsData = [
+const reviewsData = [
   {
     id: 1,
     holistic_product_id: 1,
@@ -72,7 +72,7 @@ let reviewsData = [
   },
 ];
 
-let stateData = [
+const stateData = [
   { name: "Alabama", abbreviation: "AL", id: 1 },
   { name: "Alaska", abbreviation: "AK", id: 2 },
   { name: "Arizona", abbreviation: "AZ", id: 3 },
