@@ -6,10 +6,6 @@ import CartIcon from "../CartIcon/CartIcon";
 import CartDropdown from "../CartDropdown/CartDropdown";
 import type { HeaderProps } from "../../model";
 
-// interface HeaderProps {
-//   children?: React.ReactNode;
-// }
-
 const Header: React.FC<HeaderProps> = ({ children, cartItems }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
 

@@ -2,13 +2,6 @@ import type React from "react";
 import type { ModalProps } from "../../model";
 import discount from "../../assets/discount.jpg";
 
-// interface ModalProps {
-//   isOpen: boolean;
-//   onClose: () => void;
-//   title?: string;
-//   children: React.ReactNode;
-// }
-
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
   if (!isOpen) {
     return null;
