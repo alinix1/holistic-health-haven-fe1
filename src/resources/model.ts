@@ -67,6 +67,8 @@ export interface SearchBarProps {
   handleSearchInput: (value: string) => void;
   searchValue: string;
   handleSearch: () => void;
+  filteredProducts: HolisticProduct[];
+  hasSearched: boolean;
 }
 
 export interface PaymentFormValues {

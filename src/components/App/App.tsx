@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState, useEffect } from "react";
 import { Route, Switch, Redirect, Link } from "react-router-dom";
-import type { HolisticProduct } from "../../model";
+import type { HolisticProduct } from "../../resources/model";
 import Dropdown from "../Dropdown/Dropdown";
 import SearchBar from "../SearchBar/SearchBar";
 import Header from "../Header/Header";
@@ -29,6 +29,7 @@ const App: React.FC = () => {
 
   const [loading, setLoading] = useState(true);
   const [searchValue, setSearchValue] = useState("");
+  const [hasSearched, setHasSearched] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState<HolisticProduct[]>(
     [],
   );
@@ -92,8 +93,12 @@ const App: React.FC = () => {
 
   const handleSearchInput = (value: string) => {
     setSearchValue(value);
+
+    if (value === "") {
+      setHasSearched(false);
+    }
   };
-  // Determine which list to filter: full product list or selected ailment subgroup
+
   const handleSearch = () => {
     const mainProductList = ailment
       ? holisticProducts.filter((holisticProduct) =>
@@ -108,6 +113,7 @@ const App: React.FC = () => {
       product.product_title.toLowerCase().includes(searchValue.toLowerCase()),
     );
     setFilteredProducts(searchResults);
+    setHasSearched(true);
   };
 
   // Determine the products to display
@@ -193,12 +199,9 @@ const App: React.FC = () => {
           handleSearchInput={handleSearchInput}
           searchValue={searchValue}
           handleSearch={handleSearch}
+          filteredProducts={filteredProducts}
+          hasSearched={hasSearched}
         />
-        {searchValue && !productList.length && (
-          <p className="text-red-500 font-bold text-center mt-4">
-            No products match your search! Try searching by a different name.
-          </p>
-        )}
       </Header>
       <main className="App flex-grow">
         <Switch>

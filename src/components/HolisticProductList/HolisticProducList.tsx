@@ -1,7 +1,7 @@
 import type React from "react";
 import HolisticProductCard from "../HolisticProductCard/HolisticProductCard";
 import holisticHerbalImage from "../../assets/holistic_herbal.jpg";
-import type { HolisticProductListProps } from "../../model";
+import type { HolisticProductListProps } from "../../resources/model";
 
 // interface HolisticProduct {
 //   id: number;
