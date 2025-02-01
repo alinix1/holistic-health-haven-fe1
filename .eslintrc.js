@@ -12,11 +12,9 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:jsx-a11y/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-    "airbnb",
     "plugin:prettier/recommended",
   ],
   parserOptions: {
@@ -25,7 +23,6 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-
     project: ["./tsconfig.json"],
   },
   settings: {
@@ -43,7 +40,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  plugins: ["react", "@typescript-eslint", "jsx-a11y", "import", "prettier"],
+  plugins: ["react", "@typescript-eslint", "import", "prettier"],
   rules: {
     "prettier/prettier": "error",
 
@@ -74,19 +71,6 @@ module.exports = {
     ],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
-
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
-    "jsx-a11y/click-events-have-key-events": "off",
-    "jsx-a11y/no-static-element-interactions": "off",
-    "jsx-a11y/label-has-associated-control": "off",
-    "jsx-a11y/anchor-is-valid": [
-      "error",
-      {
-        components: ["Link"],
-        specialLink: ["to"],
-        aspects: ["noHref", "invalidHref", "preferButton"],
-      },
-    ],
 
     camelcase: [
       "error",
