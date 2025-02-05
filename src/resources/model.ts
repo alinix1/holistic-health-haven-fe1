@@ -17,6 +17,11 @@ export interface CartIconProps {
   cartCount: number;
 }
 
+export interface CheckoutPageProps {
+  cartItems: HolisticProduct[];
+  removeItems: (id: number) => void;
+}
+
 export interface DropdownProps {
   handleAilmentSelect: (selectedAilment: string) => void;
   ailment: string;
@@ -25,22 +30,6 @@ export interface DropdownProps {
 export interface HeaderProps {
   children?: React.ReactNode;
   cartItems: HolisticProduct[];
-}
-
-export interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  title?: string;
-  children: React.ReactNode;
-}
-
-export interface HolisticProductProps {
-  id: number;
-  product_type: string[];
-  product_title: string;
-  img: string;
-  product_description: string;
-  price: number;
 }
 
 export interface HolisticProduct {
@@ -53,6 +42,14 @@ export interface HolisticProduct {
   quantity?: number;
 }
 
+export interface HolisticProductProps {
+  id: number;
+  product_type: string[];
+  product_title: string;
+  img: string;
+  product_description: string;
+  price: number;
+}
 export interface HolisticProductListProps {
   holisticProducts: HolisticProduct[];
 }
@@ -63,12 +60,11 @@ export interface HolisticProductPageProps {
   addToCart: (product: HolisticProduct) => void;
 }
 
-export interface SearchBarProps {
-  handleSearchInput: (value: string) => void;
-  searchValue: string;
-  handleSearch: () => void;
-  filteredProducts: HolisticProduct[];
-  hasSearched: boolean;
+export interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title?: string;
+  children: React.ReactNode;
 }
 
 export interface PaymentFormValues {
@@ -89,4 +85,12 @@ export interface Review {
   holistic_product_id: number;
   user_name: string;
   user_review: string;
+}
+
+export interface SearchBarProps {
+  handleSearchInput: (value: string) => void;
+  searchValue: string;
+  handleSearch: () => void;
+  filteredProducts: HolisticProduct[];
+  hasSearched: boolean;
 }

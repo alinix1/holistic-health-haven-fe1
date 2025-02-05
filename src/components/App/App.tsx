@@ -116,6 +116,10 @@ const App: React.FC = () => {
     setHasSearched(true);
   };
 
+  const removeItems = (id: number) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  };
+
   // Determine the products to display
   const productList =
     searchValue || ailment ? filteredProducts : holisticProducts;
@@ -223,7 +227,13 @@ const App: React.FC = () => {
             component={TermsAndConditions}
           />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
-          <Route exact path="/checkout" render={() => <CheckoutItem />} />
+          <Route
+            exact
+            path="/checkout"
+            render={() => (
+              <CheckoutItem cartItems={cartItems} removeItems={removeItems} />
+            )}
+          />
           <Route exact path="/payment" render={() => <PaymentPage />} />
           <Route exact path="/about" render={() => <AboutPage />} />
           <Route
