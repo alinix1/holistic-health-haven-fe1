@@ -1,7 +1,7 @@
 import type React from "react";
 // import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import type { HolisticProductPageProps } from "../../model";
+import type { HolisticProductPageProps } from "../../resources/model";
 import WaterDropGrid from "../WaterDropGrid/WaterDropGrid";
 import holisticMushroom from "../../assets/holistic_mushrooms.jpg";
 import holisticTree from "../../assets/holistic_tree.jpg";

@@ -1,5 +1,5 @@
 import type React from "react";
-import type { SearchBarProps } from "../../model";
+import type { SearchBarProps } from "../../resources/model";
 import searchIcon from "../../assets/magnifying-glass.svg";
 
 const SearchBar: React.FC<SearchBarProps> = ({

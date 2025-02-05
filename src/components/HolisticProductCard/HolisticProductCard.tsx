@@ -1,6 +1,6 @@
 import type React from "react";
 import { Link } from "react-router-dom";
-import type { HolisticProductProps } from "../../model";
+import type { HolisticProductProps } from "../../resources/model";
 
 const HolisticProductCard: React.FC<HolisticProductProps> = ({
   id,

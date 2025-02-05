@@ -6,7 +6,7 @@ module.exports = {
     "build",
     "coverage",
     ".eslintrc.js",
-  ], // Explicitly ignore .eslintrc.js
+  ],
   parser: "@typescript-eslint/parser",
   extends: [
     "eslint:recommended",
@@ -16,7 +16,6 @@ module.exports = {
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-    "airbnb",
     "plugin:prettier/recommended",
   ],
   parserOptions: {
@@ -25,7 +24,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    project: ["./tsconfig.json"], // Ensure this does not include .eslintrc.js
+    project: ["./tsconfig.json"],
   },
   settings: {
     react: {
@@ -74,7 +73,6 @@ module.exports = {
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
 
-    // ✅ Disable Accessibility Rules That Are Causing Issues
     "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
@@ -103,9 +101,9 @@ module.exports = {
       },
     },
     {
-      files: [".eslintrc.js"], // Explicitly override ESLint config files
+      files: [".eslintrc.js"],
       parserOptions: {
-        project: null, // Prevent TypeScript ESLint from parsing JavaScript files
+        project: null,
       },
     },
   ],

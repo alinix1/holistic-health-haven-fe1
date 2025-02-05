@@ -1,6 +1,6 @@
 import type React from "react";
 import { useHistory } from "react-router-dom";
-import type { CartDropdownProps } from "../../model";
+import type { CartDropdownProps } from "../../resources/model";
 import Button from "../Button/Button";
 import xIcon from "../../assets/x-mark.png";
 
