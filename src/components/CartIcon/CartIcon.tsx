@@ -1,5 +1,5 @@
 import type React from "react";
-import type { CartIconProps } from "../../model";
+import type { CartIconProps } from "../../resources/model";
 import cartIcon from "../../assets/shopping-cart.svg";
 
 const CartIcon: React.FC<CartIconProps> = ({

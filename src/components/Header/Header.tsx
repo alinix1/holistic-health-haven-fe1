@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/holistic_logo.png";
 import CartIcon from "../CartIcon/CartIcon";
 import CartDropdown from "../CartDropdown/CartDropdown";
-import type { HeaderProps } from "../../model";
+import type { HeaderProps } from "../../resources/model";
 
 const Header: React.FC<HeaderProps> = ({ children, cartItems }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);

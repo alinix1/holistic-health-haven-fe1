@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState, useEffect } from "react";
 import { Route, Switch, Redirect, Link } from "react-router-dom";
-import type { HolisticProduct } from "../../model";
+import type { HolisticProduct } from "../../resources/model";
 import Dropdown from "../Dropdown/Dropdown";
 import SearchBar from "../SearchBar/SearchBar";
 import Header from "../Header/Header";

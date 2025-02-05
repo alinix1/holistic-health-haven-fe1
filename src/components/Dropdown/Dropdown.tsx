@@ -1,7 +1,7 @@
 import type React from "react";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import type { DropdownProps } from "../../model";
+import type { DropdownProps } from "../../resources/model";
 
 const Dropdown: React.FC<DropdownProps> = ({
   handleAilmentSelect,
