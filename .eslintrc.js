@@ -72,6 +72,19 @@ module.exports = {
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
 
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        components: ["Link"],
+        specialLink: ["to"],
+        aspects: ["noHref", "invalidHref", "preferButton"],
+      },
+    ],
+
     camelcase: [
       "error",
       { properties: "never", allow: ["product_type", "product_title"] },
