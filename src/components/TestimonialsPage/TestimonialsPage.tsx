@@ -23,7 +23,7 @@ const TestimonialsPage: React.FC = () => {
         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url(${holisticHerbalImage})`,
       }}
     >
-      <h2 className="text-3xl mb-4 font-extrabold">Testimonials</h2>
+      <h2 className="text-3xl mb-2 font-extrabold">Testimonials</h2>
       <ul className="text-center">
         {reviews.map((review) => (
           <li key={review.id} className="mb-4 text-left">
