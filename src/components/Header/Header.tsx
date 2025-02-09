@@ -5,9 +5,11 @@ import logo from "../../assets/holistic_logo.png";
 import CartIcon from "../CartIcon/CartIcon";
 import CartDropdown from "../CartDropdown/CartDropdown";
 import type { HeaderProps } from "../../resources/model";
+import { useCart } from "../../hooks/useCart";
 
-const Header: React.FC<HeaderProps> = ({ children, cartItems }) => {
+const Header: React.FC<HeaderProps> = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const { cartItems } = useCart();
 
   const openCart = () => {
     if (!isCartOpen) {
@@ -19,7 +21,6 @@ const Header: React.FC<HeaderProps> = ({ children, cartItems }) => {
     setIsCartOpen(false);
   };
 
-  // Calculate the total cart count
   const cartCount = cartItems.reduce(
     (count, item) => count + (item.quantity || 1),
     0,

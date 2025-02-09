@@ -1,13 +1,12 @@
 import type React from "react";
 import { useHistory } from "react-router-dom";
-import type { CheckoutPageProps } from "../../resources/model";
+// import type { CheckoutPageProps } from "../../resources/model";
 import Button from "../Button/Button";
+import { useCart } from "../../hooks/useCart";
 
-const CheckoutItem: React.FC<CheckoutPageProps> = ({
-  cartItems,
-  removeItems,
-}) => {
+const CheckoutItem: React.FC = () => {
   const history = useHistory();
+  const { cartItems, dispatch } = useCart();
 
   const grandTotal = cartItems.reduce(
     (acc, item) => acc + item.price * (item.quantity || 1),
@@ -15,6 +14,10 @@ const CheckoutItem: React.FC<CheckoutPageProps> = ({
   );
   const handleProceedToPayment = () => {
     history.push("/payment");
+  };
+
+  const handleRemoveItem = (id: number) => {
+    dispatch({ type: "REMOVE_ITEM", payload: id });
   };
   return (
     <div className="min-h-screen bg-gray-100 p-8 flex flex-col items-center">
@@ -39,7 +42,7 @@ const CheckoutItem: React.FC<CheckoutPageProps> = ({
                     </span>
                     <button
                       className="text-red-500 hover:text-red-700"
-                      onClick={() => removeItems(item.id)}
+                      onClick={() => handleRemoveItem(item.id)}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

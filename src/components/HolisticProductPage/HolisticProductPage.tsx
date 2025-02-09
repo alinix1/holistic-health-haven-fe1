@@ -1,18 +1,18 @@
 import type React from "react";
-// import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import type { HolisticProductPageProps } from "../../resources/model";
 import WaterDropGrid from "../WaterDropGrid/WaterDropGrid";
 import holisticMushroom from "../../assets/holistic_mushrooms.jpg";
 import holisticTree from "../../assets/holistic_tree.jpg";
 import Button from "../Button/Button";
+import { useCart } from "../../hooks/useCart";
 // import ReviewForm from "../ReviewForm/ReviewForm";
 
 const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
   holisticProducts,
   id,
-  addToCart,
 }) => {
+  const { dispatch } = useCart();
   const selectedProduct = holisticProducts.find((product) => product.id === id);
 
   // const handleReviewSubmit = (formData: { name: string; review: string }) => {
@@ -26,6 +26,10 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
       </div>
     );
   }
+
+  const handleAddToCart = () => {
+    dispatch({ type: "ADD_ITEM", payload: selectedProduct });
+  };
 
   return (
     <div className="flex items-center justify-start">
@@ -65,9 +69,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
               focus:outline-none 
               focus:ring-0"
             style={{ width: "fit-content" }}
-            onClick={() => {
-              addToCart(selectedProduct);
-            }}
+            onClick={handleAddToCart}
           >
             Add to Cart
           </button>
