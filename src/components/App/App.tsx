@@ -36,28 +36,8 @@ const App: React.FC = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [cartItems, setCartItems] = useState<HolisticProduct[]>([]);
-
   const closeModal = () => {
     setIsModalOpen(false);
-  };
-
-  const addToCart = (item: HolisticProduct) => {
-    setCartItems((prevItems) => {
-      const existingItem = prevItems.find(
-        (cartItem) => cartItem.id === item.id,
-      );
-
-      if (existingItem) {
-        return prevItems.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: (cartItem.quantity ?? 0) + 1 }
-            : cartItem,
-        );
-      }
-
-      return [...prevItems, { ...item, quantity: 1 }];
-    });
   };
 
   useEffect(() => {
@@ -114,10 +94,6 @@ const App: React.FC = () => {
     );
     setFilteredProducts(searchResults);
     setHasSearched(true);
-  };
-
-  const removeItems = (id: number) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
   // Determine the products to display
@@ -197,7 +173,7 @@ const App: React.FC = () => {
           </p>
         </div>
       </Modal>
-      <Header cartItems={cartItems}>
+      <Header>
         <Dropdown handleAilmentSelect={handleAilmentSelect} ailment={ailment} />
         <SearchBar
           handleSearchInput={handleSearchInput}
@@ -227,13 +203,7 @@ const App: React.FC = () => {
             component={TermsAndConditions}
           />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
-          <Route
-            exact
-            path="/checkout"
-            render={() => (
-              <CheckoutItem cartItems={cartItems} removeItems={removeItems} />
-            )}
-          />
+          <Route exact path="/checkout" render={() => <CheckoutItem />} />
           <Route exact path="/payment" render={() => <PaymentPage />} />
           <Route exact path="/about" render={() => <AboutPage />} />
           <Route
@@ -243,7 +213,6 @@ const App: React.FC = () => {
               <HolisticProductPage
                 holisticProducts={holisticProducts}
                 id={Number.parseInt(match.params.id, 10)}
-                addToCart={addToCart}
               />
             )}
           />
