@@ -17,10 +17,14 @@ export interface CartIconProps {
   cartCount: number;
 }
 
-export interface CheckoutPageProps {
+export interface CartState {
   cartItems: HolisticProduct[];
-  removeItems: (id: number) => void;
 }
+
+// export interface CheckoutPageProps {
+//   cartItems: HolisticProduct[];
+//   removeItems: (id: number) => void;
+// }
 
 export interface DropdownProps {
   handleAilmentSelect: (selectedAilment: string) => void;
@@ -29,7 +33,7 @@ export interface DropdownProps {
 
 export interface HeaderProps {
   children?: React.ReactNode;
-  cartItems: HolisticProduct[];
+  // cartItems: HolisticProduct[];
 }
 
 export interface HolisticProduct {
@@ -57,7 +61,7 @@ export interface HolisticProductListProps {
 export interface HolisticProductPageProps {
   holisticProducts: HolisticProduct[];
   id: number;
-  addToCart: (product: HolisticProduct) => void;
+  // addToCart: (product: HolisticProduct) => void;
 }
 
 export interface ModalProps {
