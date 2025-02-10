@@ -1,6 +1,5 @@
 import type React from "react";
 import { useHistory } from "react-router-dom";
-// import type { CheckoutPageProps } from "../../resources/model";
 import Button from "../Button/Button";
 import { useCart } from "../../hooks/useCart";
 
