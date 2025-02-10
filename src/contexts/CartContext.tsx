@@ -3,7 +3,9 @@ import type { CartState, HolisticProduct } from "../resources/model";
 
 type CartAction =
   | { type: "ADD_ITEM"; payload: HolisticProduct }
-  | { type: "REMOVE_ITEM"; payload: number };
+  | { type: "REMOVE_ITEM"; payload: number }
+  | { type: "INCREASE_QUANTITY"; payload: number }
+  | { type: "DECREASE_QUANTITY"; payload: number };
 
 export interface CartContextProps extends CartState {
   dispatch: React.Dispatch<CartAction>;
@@ -41,6 +43,28 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
               : item,
           )
           .filter((item) => (item.quantity || 0) > 0),
+      };
+    }
+    case "INCREASE_QUANTITY": {
+      const id = action.payload;
+      return {
+        cartItems: state.cartItems.map((item) =>
+          item.id === id
+            ? { ...item, quantity: (item.quantity || 0) + 1 }
+            : item,
+        ),
+      };
+    }
+    case "DECREASE_QUANTITY": {
+      const id = action.payload;
+      return {
+        cartItems: state.cartItems
+          .map((item) =>
+            item.id === id
+              ? { ...item, quantity: Math.max((item.quantity || 0) - 1, 0) }
+              : item,
+          )
+          .filter((item) => item.quantity || 0 > 0),
       };
     }
     default:

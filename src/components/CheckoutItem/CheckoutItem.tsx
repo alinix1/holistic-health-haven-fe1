@@ -19,6 +19,14 @@ const CheckoutItem: React.FC = () => {
   const handleRemoveItem = (id: number) => {
     dispatch({ type: "REMOVE_ITEM", payload: id });
   };
+
+  const handleIncreaseItem = (id: number) => {
+    dispatch({ type: "INCREASE_QUANTITY", payload: id });
+  };
+
+  const handleDecreaseItem = (id: number) => {
+    dispatch({ type: "DECREASE_QUANTITY", payload: id });
+  };
   return (
     <div className="min-h-screen bg-gray-100 p-8 flex flex-col items-center">
       <h1 className="text-3xl font-bold mb-6">Checkout</h1>
@@ -33,7 +41,45 @@ const CheckoutItem: React.FC = () => {
                   className="flex items-center justify-between border-b pb-2"
                 >
                   <div className="flex items-center">
+                    <button
+                      className=""
+                      onClick={() => handleIncreaseItem(item.id)}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="size-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15.75 19.5 8.25 12l7.5-7.5"
+                        />
+                      </svg>
+                    </button>
                     <span className="mr-4">{item.quantity} x</span>
+                    <button
+                      className=""
+                      onClick={() => handleDecreaseItem(item.id)}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="size-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                        />
+                      </svg>
+                    </button>
                     <span className="font-medium">{item.product_title}</span>
                   </div>
                   <div className="flex items-center space-x-4">
