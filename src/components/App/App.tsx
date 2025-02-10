@@ -29,34 +29,15 @@ const App: React.FC = () => {
 
   const [loading, setLoading] = useState(true);
   const [searchValue, setSearchValue] = useState("");
+  const [hasSearched, setHasSearched] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState<HolisticProduct[]>(
     [],
   );
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [cartItems, setCartItems] = useState<HolisticProduct[]>([]);
-
   const closeModal = () => {
     setIsModalOpen(false);
-  };
-
-  const addToCart = (item: HolisticProduct) => {
-    setCartItems((prevItems) => {
-      const existingItem = prevItems.find(
-        (cartItem) => cartItem.id === item.id,
-      );
-
-      if (existingItem) {
-        return prevItems.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: (cartItem.quantity ?? 0) + 1 }
-            : cartItem,
-        );
-      }
-
-      return [...prevItems, { ...item, quantity: 1 }];
-    });
   };
 
   useEffect(() => {
@@ -92,8 +73,12 @@ const App: React.FC = () => {
 
   const handleSearchInput = (value: string) => {
     setSearchValue(value);
+
+    if (value === "") {
+      setHasSearched(false);
+    }
   };
-  // Determine which list to filter: full product list or selected ailment subgroup
+
   const handleSearch = () => {
     const mainProductList = ailment
       ? holisticProducts.filter((holisticProduct) =>
@@ -108,6 +93,7 @@ const App: React.FC = () => {
       product.product_title.toLowerCase().includes(searchValue.toLowerCase()),
     );
     setFilteredProducts(searchResults);
+    setHasSearched(true);
   };
 
   // Determine the products to display
@@ -187,18 +173,15 @@ const App: React.FC = () => {
           </p>
         </div>
       </Modal>
-      <Header cartItems={cartItems}>
+      <Header>
         <Dropdown handleAilmentSelect={handleAilmentSelect} ailment={ailment} />
         <SearchBar
           handleSearchInput={handleSearchInput}
           searchValue={searchValue}
           handleSearch={handleSearch}
+          filteredProducts={filteredProducts}
+          hasSearched={hasSearched}
         />
-        {searchValue && !productList.length && (
-          <p className="text-red-500 font-bold text-center mt-4">
-            No products match your search! Try searching by a different name.
-          </p>
-        )}
       </Header>
       <main className="App flex-grow">
         <Switch>
@@ -230,7 +213,6 @@ const App: React.FC = () => {
               <HolisticProductPage
                 holisticProducts={holisticProducts}
                 id={Number.parseInt(match.params.id, 10)}
-                addToCart={addToCart}
               />
             )}
           />

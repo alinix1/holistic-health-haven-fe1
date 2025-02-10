@@ -57,7 +57,7 @@ const PaymentPage = () => {
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
-          {({ isSubmitting }) => (
+          {({ isSubmitting, isValid, dirty }) => (
             <Form>
               <section className="mb-6">
                 <h2 className="text-xl font-semibold text-gray-700 mb-4">
@@ -103,7 +103,6 @@ const PaymentPage = () => {
                       className="text-red-500 text-sm mt-1"
                     />
                   </div>
-                  {/* <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4"> */}
                   <div>
                     <Field
                       name="city"
@@ -176,7 +175,7 @@ const PaymentPage = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !(dirty || isValid)}
                 className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition"
               >
                 Pay $54.99

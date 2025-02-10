@@ -33,20 +33,22 @@ const AboutPage: React.FC = () => {
         the way. Together, let’s cultivate a lifestyle that embraces wellness in
         harmony with the world around us.
       </p>
-      <div className="flex flex-wrap gap-8 mt-10 justify-between">
+      <div className="flex flex-wrap gap-8 mt-10 justify-between ">
         {/* Accordion */}
         <div id="accordionExample" className="w-full">
           <div className="rounded-t-lg border-2 text-white border-slate-700 bg-[#736555]">
             <h2 className="mb-0" id="headingOne">
               <button
-                className="group relative flex w-full items-center rounded-t-lg border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
+                className="group relative flex w-full items-center rounded-t-lg border-0 bg-[#ACC8E5] px-5 py-4 text-left text-base text-black transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
                 type="button"
                 data-twe-collapse-init
+                data-twe-collapse-collapsed
                 data-twe-target="#collapseOne"
                 aria-controls="collapseOne"
               >
                 How Holistic Health Haven Got Started
-                <span className="ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:me-0 group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6">
+                <span className="-me-1 ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:me-0 group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6 ">
+                  {" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -65,7 +67,7 @@ const AboutPage: React.FC = () => {
             </h2>
             <div
               id="collapseOne"
-              className="!visible"
+              className="!visible hidden"
               data-twe-collapse-item
               data-twe-collapse-show
               aria-labelledby="headingOne"
@@ -102,7 +104,7 @@ const AboutPage: React.FC = () => {
           <div className="border-2 border-t-0 border-slate-700 text-white dark:border-neutral-600 bg-[#736555]">
             <h2 className="mb-0" id="headingTwo">
               <button
-                className="group relative flex w-full items-center border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
+                className="group relative flex w-full items-center border-0 bg-[#ACC8E5] px-5 py-4 text-left text-base text-black transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
                 type="button"
                 data-twe-collapse-init
                 data-twe-collapse-collapsed
@@ -169,7 +171,7 @@ const AboutPage: React.FC = () => {
           <div className="rounded-b-lg border-2 border-t-0 text-white border-slate-700 bg-[#736555] dark:border-neutral-600">
             <h2 className="accordion-header mb-0" id="headingThree">
               <button
-                className="data-[twe-collapse-collapsed] group relative flex w-full items-center border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none data-[twe-collapse-collapsed]:rounded-b-lg dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black  dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10"
+                className="data-[twe-collapse-collapsed] group relative flex w-full items-center border-0  bg-[#ACC8E5] px-5 py-4 text-left text-base text-black transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none data-[twe-collapse-collapsed]:rounded-b-lg dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black  dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10"
                 type="button"
                 data-twe-collapse-init
                 data-twe-collapse-collapsed

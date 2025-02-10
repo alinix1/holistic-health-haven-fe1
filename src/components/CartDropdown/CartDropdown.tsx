@@ -20,7 +20,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
   };
 
   return (
-    <div className="absolute top-full right-0 mt-2 rounded bg-white border border-slate-500 p-4 shadow-lg z-[100] min-h-[10rem] max-h-[30rem]">
+    <div className="absolute top-full right-0 mt-2 rounded bg-white border border-slate-500 p-4 shadow-lg z-[100] min-h-[10rem] max-h-[70rem] w-64 flex flex-col">
       {/* Dropdown Content */}
       <div className="relative">
         <img

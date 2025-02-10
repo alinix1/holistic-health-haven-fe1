@@ -6,6 +6,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
   handleSearchInput,
   searchValue,
   handleSearch,
+  hasSearched,
+  filteredProducts,
 }) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
@@ -34,6 +36,11 @@ const SearchBar: React.FC<SearchBarProps> = ({
           />
           <span className="ml-2">Search</span>
         </button>
+        {hasSearched && filteredProducts.length === 0 && (
+          <p className="text-red-500 font-bold text-center mt-4">
+            No products match your search! Try searching by a different name.
+          </p>
+        )}
       </div>
     </section>
   );
