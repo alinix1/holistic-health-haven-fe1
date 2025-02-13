@@ -1,70 +1,66 @@
-// import React, { useState } from "react";
+import React from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import { Review, ReviewFormProps } from "../../resources/model";
 
-// const ReviewForm: React.FC<{
-//   onSubmit: (formData: { name: string; review: string }) => void;
-// }> = ({ onSubmit }) => {
-//   const [formData, setFormData] = useState({ name: "", review: "" });
+const ReviewForm: React.FC<ReviewFormProps> = ({ onSubmit }) => {
+  return (
+    <Formik
+      initialValues={{
+        id: Date.now(),
+        holistic_product_id: 1,
+        user_name: "",
+        user_review: "",
+      }}
+      validationSchema={Yup.object({
+        user_name: Yup.string().required("Name is required"),
+        user_review: Yup.string().required("Review cannot be empty"),
+      })}
+      onSubmit={(values, actions) => {
+        onSubmit(values);
+        actions.setSubmitting(false);
+        actions.resetForm();
+      }}
+    >
+      {({ isSubmitting }) => (
+        <Form className="flex flex-col max-w-md mx-auto p-4 bg-white shadow-md rounded-lg">
+          <label className="mb-2 font-bold" htmlFor="name">
+            Name:
+          </label>
+          <Field
+            type="text"
+            name="user_name"
+            className="border p-2 rounded-md"
+            placeholder="Your Name"
+          />
+          <ErrorMessage name="name" component="div" className="text-red-500" />
 
-//   const handleChange = (
-//     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-//   ) => {
-//     const { name, value } = e.target;
-//     setFormData((prevData) => ({ ...prevData, [name]: value }));
-//   };
+          <label className="mt-4 mb-2 font-bold" htmlFor="review">
+            Review:
+          </label>
+          <Field
+            as="textarea"
+            name="user_review"
+            className="border p-2 rounded-md"
+            placeholder="Write your review..."
+          />
+          <ErrorMessage
+            name="review"
+            component="div"
+            className="text-red-500"
+          />
 
-//   const handleSubmit = (e: React.FormEvent) => {
-//     e.preventDefault();
-//     // Perform any validation or additional logic before submitting if needed
-//     onSubmit(formData);
-//     // Optionally, clear the form fields after submission
-//     setFormData({ name: "", review: "" });
-//   };
+          <button
+            type="submit"
+            className="mt-4 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+            disabled={isSubmitting}
+          >
+            Submit Review
+          </button>
+        </Form>
+      )}
+    </Formik>
+  );
+};
 
-//   return (
-//     <form onSubmit={handleSubmit} className="max-w-md mx-auto my-4">
-//       <div className="mb-4">
-//         <label
-//           htmlFor="name"
-//           className="block text-gray-700 text-sm font-bold mb-2"
-//         >
-//           Your Name:
-//         </label>
-//         <input
-//           type="text"
-//           id="name"
-//           name="name"
-//           value={formData.name}
-//           onChange={handleChange}
-//           className="border border-gray-300 rounded p-2 w-full"
-//           required
-//         />
-//       </div>
-//       <div className="mb-4">
-//         <label
-//           htmlFor="review"
-//           className="block text-gray-700 text-sm font-bold mb-2"
-//         >
-//           Your Review/Description:
-//         </label>
-//         <textarea
-//           id="review"
-//           name="review"
-//           value={formData.review}
-//           onChange={handleChange}
-//           className="border border-gray-300 rounded p-2 w-full h-40"
-//           required
-//         />
-//       </div>
-//       <button
-//         type="submit"
-//         className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-//       >
-//         Submit Review
-//       </button>
-//     </form>
-//   );
-// };
-
-// export default ReviewForm;
-
-export {};
+export default ReviewForm;
