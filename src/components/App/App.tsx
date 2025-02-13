@@ -8,6 +8,7 @@ import Header from "../Header/Header";
 import HolisticProductList from "../HolisticProductList/HolisticProducList";
 import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
 import TestimonialsPage from "../TestimonialsPage/TestimonialsPage";
+import ReviewSubmit from "../ReviewSubmit/ReviewSubmit";
 import Modal from "../Modal/Modal";
 import CheckoutItem from "../CheckoutItem/CheckoutItem";
 import PaymentPage from "../PaymentPage/PaymentPage";
@@ -197,6 +198,8 @@ const App: React.FC = () => {
             path="/testimonials"
             render={() => <TestimonialsPage />}
           />
+          <Route exact path="/reviews" component={ReviewSubmit} />
+
           <Route
             exact
             path="/terms-and-conditions"
