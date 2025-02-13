@@ -3,22 +3,30 @@ import { getReviews } from "../../apiCalls";
 import type { Review } from "../../resources/model";
 import holisticHerbalImage from "../../assets/holistic_herbal.jpg";
 
+import { useLocalStorage } from "../../hooks/useLocalStorage";
+
 const TestimonialsPage: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>([]);
+  const [localReviews, setLocalReviews] = useLocalStorage<Review[]>(
+    "reviews",
+    [],
+  );
 
   useEffect(() => {
     getReviews()
       .then((data) => {
         setReviews(data);
+        setLocalReviews(data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
+        setReviews(localReviews);
       });
   }, []);
 
   return (
     <div
-      className="bg-cover bg-center bg-fixed h-screen flex flex-col items-center justify-center text-black"
+      className="bg-cover bg-center bg-fixed min-h-screen flex flex-col items-center justify-center text-black overflow-y-auto"
       style={{
         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url(${holisticHerbalImage})`,
       }}
