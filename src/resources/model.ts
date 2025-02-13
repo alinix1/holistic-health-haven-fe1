@@ -84,6 +84,10 @@ export interface Review {
   user_review: string;
 }
 
+export interface ReviewFormProps {
+  onSubmit: (values: Review) => void;
+}
+
 export interface SearchBarProps {
   handleSearchInput: (value: string) => void;
   searchValue: string;
