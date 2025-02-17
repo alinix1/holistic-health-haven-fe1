@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Review } from "./resources/model";
 
 const API_BASE_URL = "http://localhost:9000/api/v1";
 
@@ -22,4 +23,14 @@ const getReviews = async () => {
   }
 };
 
-export { getHolisticProducts, getReviews };
+const postReview = async (newReview: Review): Promise<Review> => {
+  try {
+    const response = await axios.post(`${API_BASE_URL}/reviews`, newReview);
+    return response.data;
+  } catch (error) {
+    console.error("Error posting review", error);
+    throw error;
+  }
+};
+
+export { getHolisticProducts, getReviews, postReview };

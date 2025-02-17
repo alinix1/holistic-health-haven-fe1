@@ -18,7 +18,7 @@ const TestimonialsPage: React.FC = () => {
 
   return (
     <div
-      className="bg-cover bg-center bg-fixed h-screen flex flex-col items-center justify-center text-black"
+      className="bg-cover bg-center bg-fixed min-h-screen flex flex-col items-center justify-center text-black overflow-y-auto"
       style={{
         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url(${holisticHerbalImage})`,
       }}

@@ -39,9 +39,9 @@ const CheckoutItem: React.FC = () => {
                   key={item.id}
                   className="flex items-center justify-between border-b pb-2"
                 >
-                  <div className="flex items-center">
+                  <div className="flex items-center space-x-2">
                     <button
-                      className=""
+                      className="p-1"
                       onClick={() => handleIncreaseItem(item.id)}
                     >
                       <svg
@@ -61,7 +61,7 @@ const CheckoutItem: React.FC = () => {
                     </button>
                     <span className="mr-4">{item.quantity} x</span>
                     <button
-                      className=""
+                      className="p-1"
                       onClick={() => handleDecreaseItem(item.id)}
                     >
                       <svg
@@ -83,7 +83,7 @@ const CheckoutItem: React.FC = () => {
                   </div>
                   <div className="flex items-center space-x-4">
                     <span className="font-semibold">
-                      ${item.price.toFixed(2)}
+                      ${Number(item.price).toFixed(2)}
                     </span>
                     <button
                       className="text-red-500 hover:text-red-700"

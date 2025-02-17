@@ -78,10 +78,14 @@ export interface PaymentFormValues {
 }
 
 export interface Review {
-  id: number;
+  id?: number;
   holistic_product_id: number;
   user_name: string;
   user_review: string;
+}
+
+export interface ReviewFormProps {
+  onSubmit: (values: Review) => void;
 }
 
 export interface SearchBarProps {

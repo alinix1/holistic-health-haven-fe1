@@ -6,7 +6,6 @@ import holisticMushroom from "../../assets/holistic_mushrooms.jpg";
 import holisticTree from "../../assets/holistic_tree.jpg";
 import Button from "../Button/Button";
 import { useCart } from "../../hooks/useCart";
-// import ReviewForm from "../ReviewForm/ReviewForm";
 
 const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
   holisticProducts,
@@ -14,10 +13,6 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
 }) => {
   const { dispatch } = useCart();
   const selectedProduct = holisticProducts.find((product) => product.id === id);
-
-  // const handleReviewSubmit = (formData: { name: string; review: string }) => {
-  //   console.log("Form data submitted:", formData);
-  // };
 
   if (!selectedProduct) {
     return (
@@ -90,7 +85,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
           {selectedProduct.product_description}
         </p>
         <p className="product-price font-bold">
-          ${selectedProduct.price.toFixed(2)}
+          ${Number(selectedProduct.price).toFixed(2)}
         </p>
       </article>
       <article className="flex flex-col items-end ml-10 mt-10 mb-10 gap-10 animate-[fade-in-right_1s_ease-in-out]">
@@ -105,7 +100,6 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
           alt="Holistic Tree"
         />
       </article>
-      {/* <ReviewForm onSubmit={handleReviewSubmit} /> */}
     </div>
   );
 };
