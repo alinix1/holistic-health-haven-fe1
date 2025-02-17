@@ -1,18 +1,15 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import ReviewForm from "../../components/ReviewForm/ReviewForm";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { postReview } from "../../apiCalls";
 import { Review } from "../../resources/model";
 
 const ReviewSubmit: React.FC = () => {
   const history = useHistory();
-  const [reviews, setReviews] = useLocalStorage<Review[]>("reviews", []);
 
   const handleReviewSubmit = async (values: Review) => {
     try {
-      const newReview = await postReview(values);
-      setReviews([...reviews, newReview]);
+      await postReview(values);
       history.push("/testimonials");
     } catch (error) {
       console.error("Error submitting review", error);
