@@ -39,7 +39,7 @@ const AboutPage: React.FC = () => {
           <div className="rounded-t-lg border-2 text-white border-slate-700 bg-[#736555]">
             <h2 className="mb-0" id="headingOne">
               <button
-                className="group relative flex w-full items-center rounded-t-lg border-0 bg-[#ACC8E5] px-5 py-4 text-left text-base text-black transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
+                className="group relative flex w-full items-center rounded-t-lg border-0 bg-[#ACC8E5] px-5 py-4 text-left text-base text-black transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
                 type="button"
                 data-twe-collapse-init
                 data-twe-collapse-collapsed
@@ -104,7 +104,7 @@ const AboutPage: React.FC = () => {
           <div className="border-2 border-t-0 border-slate-700 text-white dark:border-neutral-600 bg-[#736555]">
             <h2 className="mb-0" id="headingTwo">
               <button
-                className="group relative flex w-full items-center border-0 bg-[#ACC8E5] px-5 py-4 text-left text-base text-black transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
+                className="group relative flex w-full items-center border-0 bg-[#ACC8E5] px-5 py-4 text-left text-base text-black transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
                 type="button"
                 data-twe-collapse-init
                 data-twe-collapse-collapsed
