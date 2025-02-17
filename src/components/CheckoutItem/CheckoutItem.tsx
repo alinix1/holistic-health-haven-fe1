@@ -83,7 +83,7 @@ const CheckoutItem: React.FC = () => {
                   </div>
                   <div className="flex items-center space-x-4">
                     <span className="font-semibold">
-                      ${item.price.toFixed(2)}
+                      ${Number(item.price).toFixed(2)}
                     </span>
                     <button
                       className="text-red-500 hover:text-red-700"

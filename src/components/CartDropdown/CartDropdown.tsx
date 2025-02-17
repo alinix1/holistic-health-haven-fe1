@@ -51,7 +51,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
                     {item.quantity} x {item.product_title}
                   </span>
                   <span className="ml-2 font-semibold">
-                    ${item.price.toFixed(2)}
+                    ${Number(item.price).toFixed(2)}
                   </span>
                 </li>
               ))}
