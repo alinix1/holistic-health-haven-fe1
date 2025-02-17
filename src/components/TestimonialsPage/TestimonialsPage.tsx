@@ -3,24 +3,16 @@ import { getReviews } from "../../apiCalls";
 import type { Review } from "../../resources/model";
 import holisticHerbalImage from "../../assets/holistic_herbal.jpg";
 
-import { useLocalStorage } from "../../hooks/useLocalStorage";
-
 const TestimonialsPage: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>([]);
-  const [localReviews, setLocalReviews] = useLocalStorage<Review[]>(
-    "reviews",
-    [],
-  );
 
   useEffect(() => {
     getReviews()
       .then((data) => {
         setReviews(data);
-        setLocalReviews(data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
-        setReviews(localReviews);
       });
   }, []);
 
