@@ -7,7 +7,6 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onSubmit }) => {
   return (
     <Formik
       initialValues={{
-        id: Date.now(),
         holistic_product_id: 1,
         user_name: "",
         user_review: "",
