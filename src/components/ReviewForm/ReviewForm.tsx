@@ -66,7 +66,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onSubmit }) => {
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition"
+                className="w-full mt-4 bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition"
                 disabled={isSubmitting}
               >
                 Submit Review
