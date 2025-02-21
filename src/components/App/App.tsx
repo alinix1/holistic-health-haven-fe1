@@ -12,6 +12,7 @@ import ReviewSubmit from "../ReviewSubmit/ReviewSubmit";
 import Modal from "../Modal/Modal";
 import CheckoutItem from "../CheckoutItem/CheckoutItem";
 import PaymentContainer from "../PaymentContainer/PaymentContainer";
+import PaymentSuccess from "../PaymentSuccess/PaymentSuccess";
 import AboutPage from "../AboutPage/AboutPage";
 import Footer from "../Footer/Footer";
 import BadURL from "../BadURL/BadURL";
@@ -208,6 +209,11 @@ const App: React.FC = () => {
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route exact path="/checkout" render={() => <CheckoutItem />} />
           <Route exact path="/payment" render={() => <PaymentContainer />} />
+          <Route
+            exact
+            path="/payment-success"
+            render={() => <PaymentSuccess />}
+          />
           <Route exact path="/about" render={() => <AboutPage />} />
           <Route
             exact
