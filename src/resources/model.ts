@@ -77,6 +77,10 @@ export interface PaymentFormValues {
   cardholderName: string;
 }
 
+export interface PaymentPageProps {
+  clientSecret: string;
+}
+
 export interface Review {
   id?: number;
   holistic_product_id: number;

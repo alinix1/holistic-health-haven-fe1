@@ -1,10 +1,17 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
+// import * as Yup from "yup";
+import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import { useHistory } from "react-router-dom";
 import { stateData } from "../../mockData";
-import { PaymentFormValues } from "../../resources/model";
+import { PaymentFormValues, PaymentPageProps } from "../../resources/model";
 
-const PaymentPage = () => {
+const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
+  const stripe = useStripe();
+  const elements = useElements();
+  const history = useHistory();
+  const [paymentError, setPaymentError] = useState<string | null>(null);
+  const [paymentSucceeded, setPaymentSucceeded] = useState<boolean>(false);
   const initialValues: PaymentFormValues = {
     fullName: "",
     email: "",
@@ -17,34 +24,71 @@ const PaymentPage = () => {
     cvv: "",
     cardholderName: "",
   };
+  // TODO: fix validation
+  // const validationSchema = Yup.object({
+  //   fullName: Yup.string().required("Full Name is required"),
+  //   email: Yup.string()
+  //     .email("Invalid email address")
+  //     .required("Email is required"),
+  //   address: Yup.string().required("Address is required"),
+  //   city: Yup.string().required("City is required"),
+  //   state: Yup.string().required("State is required"),
+  //   postalCode: Yup.string()
+  //     .matches(/^\d{5}$/, "Invalid postal code")
+  //     .required("Postal Code is required"),
+  //   cardNumber: Yup.string()
+  //     .matches(/^\d{16}$/, "Card number must be 16 digits")
+  //     .required("Card number is required"),
+  //   expiryDate: Yup.string()
+  //     .matches(/^(0[1-9]|1[0-2])\/?([0-9]{2})$/, "MM/YY format required")
+  //     .required("Expiry date is required"),
+  //   cvv: Yup.string()
+  //     .matches(/^\d{3,4}$/, "Invalid CVV")
+  //     .required("CVV is required"),
+  //   cardholderName: Yup.string().required("Cardholder name is required"),
+  // });
 
-  const validationSchema = Yup.object({
-    fullName: Yup.string().required("Full Name is required"),
-    email: Yup.string()
-      .email("Invalid email address")
-      .required("Email is required"),
-    address: Yup.string().required("Address is required"),
-    city: Yup.string().required("City is required"),
-    state: Yup.string().required("State is required"),
-    postalCode: Yup.string()
-      .matches(/^\d{5}$/, "Invalid postal code")
-      .required("Postal Code is required"),
-    cardNumber: Yup.string()
-      .matches(/^\d{16}$/, "Card number must be 16 digits")
-      .required("Card number is required"),
-    expiryDate: Yup.string()
-      .matches(/^(0[1-9]|1[0-2])\/?([0-9]{2})$/, "MM/YY format required")
-      .required("Expiry date is required"),
-    cvv: Yup.string()
-      .matches(/^\d{3,4}$/, "Invalid CVV")
-      .required("CVV is required"),
-    cardholderName: Yup.string().required("Cardholder name is required"),
-  });
+  const handleSubmit = useCallback(
+    async (values: PaymentFormValues) => {
+      if (!stripe || !elements) {
+        return;
+      }
 
-  const handleSubmit = useCallback((values: PaymentFormValues) => {
-    // eslint-disable-next-line no-console
-    console.log("Payment details:", values);
-  }, []);
+      const cardElement = elements.getElement(CardElement);
+      if (!cardElement) {
+        return;
+      }
+
+      // confirm payment using Stripe's CardElement
+      const { error } = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: cardElement,
+          billing_details: {
+            name: values.fullName,
+            email: values.email,
+            address: {
+              line1: values.address,
+              city: values.city,
+              state: values.state,
+              postal_code: values.postalCode,
+            },
+          },
+        },
+      });
+
+      if (error) {
+        console.error("Payment error:", error);
+        setPaymentError(error.message || "Payment failed");
+        setPaymentSucceeded(false);
+      } else {
+        setPaymentError(null);
+        setPaymentSucceeded(true);
+
+        history.push("/payment-success");
+      }
+    },
+    [stripe, elements, clientSecret, history],
+  );
 
   return (
     <div className="min-h-screen flex flex-col items-center py-10 px-4 bg-[#8BA663]">
@@ -54,11 +98,15 @@ const PaymentPage = () => {
       <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-8">
         <Formik
           initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={handleSubmit}
+          // validationSchema={validationSchema}
+          onSubmit={(values, actions) => {
+            handleSubmit(values);
+            actions.setSubmitting(false);
+          }}
         >
           {({ isSubmitting, isValid, dirty }) => (
             <Form>
+              {/* Billing Information */}
               <section className="mb-6">
                 <h2 className="text-xl font-semibold text-gray-700 mb-4">
                   Billing Information
@@ -151,8 +199,22 @@ const PaymentPage = () => {
                   Payment Details
                 </h2>
                 <div className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
-                  {/* Stripe Payment */}
-                  <p className="text-gray-500">Card details goes here.</p>
+                  <CardElement
+                    options={{
+                      style: {
+                        base: {
+                          fontSize: "16px",
+                          color: "#424770",
+                          "::placeholder": {
+                            color: "#aab7c4",
+                          },
+                        },
+                        invalid: {
+                          color: "#9e2146",
+                        },
+                      },
+                    }}
+                  />
                 </div>
               </section>
 
@@ -180,6 +242,13 @@ const PaymentPage = () => {
               >
                 Pay $54.99
               </button>
+
+              {paymentError && (
+                <div className="text-red-500 mt-2">{paymentError}</div>
+              )}
+              {paymentSucceeded && (
+                <div className="text-green-500 mt-2">Payment succeeded!</div>
+              )}
             </Form>
           )}
         </Formik>

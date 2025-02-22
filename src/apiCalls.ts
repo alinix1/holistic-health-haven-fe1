@@ -33,4 +33,33 @@ const postReview = async (newReview: Review): Promise<Review> => {
   }
 };
 
-export { getHolisticProducts, getReviews, postReview };
+const getStripePublishableKey = async () => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/stripe/config`);
+    return response.data.publishableKey;
+  } catch (error) {
+    console.error("Error fetching Stripe publishable key", error);
+    throw error;
+  }
+};
+
+const createPaymentIntent = async (payload: { amount: number }) => {
+  try {
+    const response = await axios.post(
+      `${API_BASE_URL}/stripe/create-payment-intent`,
+      payload,
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error creating payment intent", error);
+    throw error;
+  }
+};
+
+export {
+  getHolisticProducts,
+  getReviews,
+  postReview,
+  getStripePublishableKey,
+  createPaymentIntent,
+};

@@ -41,9 +41,8 @@
 - ![Tailwind CSS][Tailwind-CSS-shield]
 - ![Formik][Formik-shield]
 - ![Stripe][Stripe-shield]
-- ![Testing Library][Testing-Library-shield]
-- ![Playwright][Playwright-shield]
 - ![ESLint][ESLint-shield]
+- ![Vercel][Vercel-shield]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -108,5 +107,6 @@ Ali Nix | [![LinkedIn][linkedin-shield]][linkedin-url1]
 [Testing-Library-shield]: https://img.shields.io/badge/Testing%20Library-E33332.svg?style=for-the-badge&logo=Testing-Library&logoColor=white
 [Playwright-shield]: https://img.shields.io/badge/Playwright-45ba4b?style=for-the-badge&logo=Playwright&logoColor=white
 [ESLint-shield]: https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white
+[Vercel-shield]: https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url1]: https://www.linkedin.com/in/ali-nix-38b9b9126/
