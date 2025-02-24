@@ -4,14 +4,18 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { useHistory } from "react-router-dom";
 import { stateData } from "../../mockData";
+import { useCartTotal, useCart } from "../../hooks/useCart";
 import { PaymentFormValues, PaymentPageProps } from "../../resources/model";
 
 const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
   const stripe = useStripe();
   const elements = useElements();
+  const total = useCartTotal();
+  const { cartItems } = useCart();
   const history = useHistory();
   const [paymentError, setPaymentError] = useState<string | null>(null);
   const [paymentSucceeded, setPaymentSucceeded] = useState<boolean>(false);
+
   const initialValues: PaymentFormValues = {
     fullName: "",
     email: "",
@@ -223,14 +227,20 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                 <h2 className="text-xl font-semibold text-gray-700 mb-4">
                   Order Summary
                 </h2>
-                <div className="flex justify-between items-center py-2 border-b">
+                <div className="flex justify-between items-start">
                   <span className="text-gray-600">Product Name</span>
-                  <span className="text-gray-800 font-medium">$54.99</span>
+                  <ul className="list-disc pl-4">
+                    {cartItems.map((item) => (
+                      <li key={item.id} className="text-gray-800 font-medium">
+                        {item.product_title}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
                 <div className="flex justify-between items-center py-2 border-t">
                   <span className="text-lg font-semibold">Total</span>
                   <span className="text-lg font-semibold text-gray-800">
-                    $54.99
+                    ${total.toFixed(2)}
                   </span>
                 </div>
               </section>
@@ -240,7 +250,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                 disabled={isSubmitting || !(dirty || isValid)}
                 className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition"
               >
-                Pay $54.99
+                Pay {total.toFixed(2)}
               </button>
 
               {paymentError && (
