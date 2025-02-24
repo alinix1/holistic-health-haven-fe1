@@ -1,16 +1,13 @@
 import type React from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../Button/Button";
-import { useCart } from "../../hooks/useCart";
+import { useCart, useCartTotal } from "../../hooks/useCart";
 
 const CheckoutItem: React.FC = () => {
   const history = useHistory();
   const { cartItems, dispatch } = useCart();
 
-  const grandTotal = cartItems.reduce(
-    (acc, item) => acc + item.price * (item.quantity || 1),
-    0,
-  );
+  const total = useCartTotal();
   const handleProceedToPayment = () => {
     history.push("/payment");
   };
@@ -109,12 +106,10 @@ const CheckoutItem: React.FC = () => {
               ))}
             </ul>
 
-            {/* Grand Total */}
+            {/* Total */}
             <div className="flex justify-between items-center mt-6 border-t pt-4">
               <span className="text-xl font-bold">Grand Total:</span>
-              <span className="text-xl font-bold">
-                ${grandTotal.toFixed(2)}
-              </span>
+              <span className="text-xl font-bold">${total.toFixed(2)}</span>
             </div>
 
             {/* Proceed to Payment Button */}
