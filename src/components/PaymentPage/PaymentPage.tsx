@@ -247,10 +247,11 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
               {/* Submit Button */}
               <button
                 type="submit"
-                disabled={isSubmitting || !(dirty || isValid)}
+                disabled={isSubmitting || !(dirty || isValid) || total === 0}
                 className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition"
               >
-                Pay {total.toFixed(2)}
+                Pay
+                {total > 0 ? ` $${total.toFixed(2)}` : ""}
               </button>
 
               {paymentError && (
