@@ -114,8 +114,9 @@ const CheckoutItem: React.FC = () => {
 
             {/* Proceed to Payment Button */}
             <Button
+              type="submit"
+              className="w-2/3"
               onClick={handleProceedToPayment}
-              className="mt-6 w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
             >
               Proceed to Payment
             </Button>

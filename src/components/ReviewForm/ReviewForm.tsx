@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import Button from "../Button/Button";
 import { ReviewFormProps } from "../../resources/model";
 
 const initialValues = {
@@ -64,13 +65,13 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onSubmit }) => {
                 className="text-red-500 text-sm mt-1"
               />
 
-              <button
+              <Button
                 type="submit"
-                className="w-full mt-4 bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition"
+                className="mt-4 w-full"
                 disabled={isSubmitting}
               >
                 Submit Review
-              </button>
+              </Button>
             </Form>
           )}
         </Formik>

@@ -4,6 +4,7 @@ import type { ButtonProps } from "../../resources/model";
 const Button: React.FC<ButtonProps> = ({
   children,
   className = "",
+  type = "button",
   ...props
 }) => {
   const baseButton = `
@@ -28,8 +29,25 @@ const Button: React.FC<ButtonProps> = ({
     dark:shadow-black/30
   `;
 
+  const submitButton = `
+  bg-blue-600 
+  text-white 
+  py-3 
+  rounded-lg 
+  hover:bg-blue-700 
+  transition 
+  duration-300 
+  ease-in-out 
+  focus:outline-none 
+  focus:ring-2 
+  focus:ring-blue-500 
+  focus:ring-offset-2
+  `;
+
+  const buttonStyle = type === "submit" ? submitButton : baseButton;
+
   return (
-    <button type="button" className={`${baseButton} ${className}`} {...props}>
+    <button type={type} className={`${buttonStyle} ${className}`} {...props}>
       {children}
     </button>
   );

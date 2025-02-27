@@ -5,6 +5,7 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { useHistory } from "react-router-dom";
 import { stateData } from "../../mockData";
 import { useCartTotal, useCart } from "../../hooks/useCart";
+import Button from "../Button/Button";
 import { PaymentFormValues, PaymentPageProps } from "../../resources/model";
 
 const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
@@ -245,14 +246,14 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                 </div>
               </section>
               {/* Submit Button */}
-              <button
+              <Button
                 type="submit"
                 disabled={isSubmitting || !(dirty || isValid) || total === 0}
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition"
+                className="w-full"
               >
                 Pay
                 {total > 0 ? ` $${total.toFixed(2)}` : ""}
-              </button>
+              </Button>
 
               {paymentError && (
                 <div className="text-red-500 mt-2">{paymentError}</div>

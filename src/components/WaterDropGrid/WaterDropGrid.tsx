@@ -70,16 +70,18 @@ const ErrorMessage = () => {
       <Link to="/" className="bottom-0 left-0">
         <Button className="mt-4 md:mt-0 lowercase">Home</Button>
       </Link>
-      <p className="text-white text-md font-normal">
-        In the meantime, click on the animation below.
-      </p>
+      <div className="pb-4">
+        <p className="text-white text-md font-normal">
+          In the meantime, click on the animation below.
+        </p>
+      </div>
     </div>
   );
 };
 
 const WaterDropGrid = () => {
   return (
-    <div className="relative grid place-content-center bg-[#402B18] px-8 py-12">
+    <div className="relative grid place-content-center bg-[#402B18] px-8 py-12 mt-4">
       <ErrorMessage />
       <DotGrid />
     </div>

@@ -2,6 +2,7 @@ import type React from "react";
 import { useState, useEffect } from "react";
 import { Route, Switch, Redirect, Link } from "react-router-dom";
 import type { HolisticProduct } from "../../resources/model";
+import Button from "../Button/Button";
 import Dropdown from "../Dropdown/Dropdown";
 import SearchBar from "../SearchBar/SearchBar";
 import Header from "../Header/Header";
@@ -144,12 +145,9 @@ const App: React.FC = () => {
                     className="w-full max-w-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus-ring-blue-500"
                     required
                   />
-                  <button
-                    type="button"
-                    className="ms-1 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
-                  >
+                  <Button type="submit" className="p-2 ml-2 w-2/3">
                     Subscribe
-                  </button>
+                  </Button>
                 </div>
               </form>
             </div>
