@@ -32,6 +32,7 @@
 ### Built With
 
 - ![Figma][Figma-shield]
+- ![Canva][Canva-shield]
 - ![Miro][Miro-shield]
 - ![TypeScript][TypeScript-shield]
 - ![React][React-shield]
@@ -95,6 +96,7 @@ Ali Nix | [![LinkedIn][linkedin-shield]][linkedin-url1]
 <!-- MARKDOWN LINKS & IMAGES -->
 
 [Figma-shield]: https://img.shields.io/badge/Figma-F24E1E.svg?style=for-the-badge&logo=Figma&logoColor=white
+[Canva-shield]: https://img.shields.io/badge/Canva-%2300C4CC.svg?&style=for-the-badge&logo=Canva&logoColor=white
 [Miro-shield]: https://img.shields.io/badge/Miro-050038.svg?style=for-the-badge&logo=Miro&logoColor=white
 [TypeScript-shield]: https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white
 [React-shield]: https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black
