@@ -28,10 +28,12 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <Menu as="div" className="relative inline-block text-left">
       {/* Dropdown Button */}
-
-      <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <MenuButton className="relative inline-flex w-[200px] justify-center gap-x-1.5 ml-10 rounded bg-white border border-slate-500 px-4 py-2 shadow-lg flex flex-col">
         {ailment || "Select Ailment"}
-        <ChevronDownIcon aria-hidden="true" className="w-5 h-5 text-gray-500" />
+        <ChevronDownIcon
+          aria-hidden="true"
+          className="absolute top-2 right-2 w-5 h-5 text-gray-500"
+        />
       </MenuButton>
       {/* Dropdown Items */}
       <MenuItems className="absolute max-h-80 left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none overflow-y-auto">

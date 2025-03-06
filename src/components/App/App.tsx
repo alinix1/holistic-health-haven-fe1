@@ -174,14 +174,20 @@ const App: React.FC = () => {
         </div>
       </Modal>
       <Header>
-        <Dropdown handleAilmentSelect={handleAilmentSelect} ailment={ailment} />
-        <SearchBar
-          handleSearchInput={handleSearchInput}
-          searchValue={searchValue}
-          handleSearch={handleSearch}
-          filteredProducts={filteredProducts}
-          hasSearched={hasSearched}
-        />
+        <div className="flex justify-start gap-x-4">
+          <Dropdown
+            handleAilmentSelect={handleAilmentSelect}
+            ailment={ailment}
+          />
+
+          <SearchBar
+            handleSearchInput={handleSearchInput}
+            searchValue={searchValue}
+            handleSearch={handleSearch}
+            filteredProducts={filteredProducts}
+            hasSearched={hasSearched}
+          />
+        </div>
       </Header>
       <main className="App flex-grow">
         <Switch>
