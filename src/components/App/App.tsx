@@ -6,6 +6,7 @@ import Button from "../Button/Button";
 import Dropdown from "../Dropdown/Dropdown";
 import SearchBar from "../SearchBar/SearchBar";
 import Header from "../Header/Header";
+import Carousel from "../Carousel/Carousel";
 import HolisticProductList from "../HolisticProductList/HolisticProducList";
 import HolisticProductPage from "../HolisticProductPage/HolisticProductPage";
 import TestimonialsPage from "../TestimonialsPage/TestimonialsPage";
@@ -189,6 +190,7 @@ const App: React.FC = () => {
           />
         </div>
       </Header>
+      <Carousel />
       <main className="App flex-grow">
         <Switch>
           <Route
