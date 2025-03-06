@@ -26,7 +26,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   ];
 
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative z-50 inline-block text-left">
       {/* Dropdown Button */}
       <MenuButton className="relative inline-flex w-[200px] justify-center gap-x-1.5 ml-10 rounded bg-white border border-slate-500 px-4 py-2 shadow-lg flex flex-col">
         {ailment || "Select Ailment"}
