@@ -23,13 +23,13 @@ const TestimonialsPage: React.FC = () => {
         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url(${holisticHerbalImage})`,
       }}
     >
-      <h2 className="text-3xl mb-2 font-extrabold">Testimonials</h2>
+      <h2 className="text-3xl mb-2 font-inter font-extrabold">Testimonials</h2>
       <ul className="text-center">
         {reviews.map((review) => (
           <li key={review.id} className="mb-4 text-left">
-            <p className="font-bold text-lg">
+            <p className="font-inter font-bold text-xl">
               <span
-                className="text-gray-400 font-serif text-4xl mr-2"
+                className="text-gray-400 text-4xl mr-2"
                 aria-hidden="true"
                 style={{ fontSize: "5em" }}
               >
@@ -37,7 +37,7 @@ const TestimonialsPage: React.FC = () => {
               </span>
               {review.user_name}
             </p>
-            <p className="text-xl font-semibold text-gray-700">
+            <p className="text-xl font-semibold font-jakarta text-gray-700">
               {review.user_review.split(". ").map((sentence) => (
                 <React.Fragment key={sentence}>
                   <br />
