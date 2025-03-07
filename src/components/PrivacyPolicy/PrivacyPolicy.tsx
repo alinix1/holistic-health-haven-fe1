@@ -30,7 +30,7 @@ const PrivacyPolicy: React.FC = () => {
         </p>
         <ul className="list-none pl-6 mb-4 text-left">
           <li className="flex items-start">
-            <CheckCircleIcon className="w-5 h-5 mr-2 text-green-500 flex-shrink-0" />
+            <CheckCircleIcon className="w-5 h-5 mr-2 text-[#9C3C07] flex-shrink-0" />
             <span>
               <strong>Information You Provide Directly:</strong> Name, email
               address, and and any other personal details when you subscribe,
@@ -38,14 +38,14 @@ const PrivacyPolicy: React.FC = () => {
             </span>
           </li>
           <li className="flex items-start">
-            <CheckCircleIcon className="w-5 h-5 mr-2 text-green-500" />
+            <CheckCircleIcon className="w-5 h-5 mr-2 text-[#9C3C07]" />
             <span>
               <strong>Automatically Collected Information:</strong> Usage data,
               device information, and IP address.
             </span>
           </li>
           <li className="flex items-start">
-            <CheckCircleIcon className="w-5 h-5 mr-2 text-green-500" />
+            <CheckCircleIcon className="w-5 h-5 mr-2 text-[#9C3C07]" />
             <span>
               <strong>Cookies and Tracking Technologies:</strong> Data collected
               using cookies to enhance user experience.
