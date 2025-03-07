@@ -27,75 +27,91 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
   );
 
   return (
-    <div className="bg-F2E8DF p-2 flex items-center justify-between">
-      <nav className="nav-bar flex items-center mb-60 relative">
-        <CartIcon
-          className="mr-4"
-          isCartOpen={isCartOpen}
-          toggleIsCartOpen={openCart}
-          cartCount={cartCount}
-        />
-        {/* Cart Dropdown */}
-        {isCartOpen && (
-          <CartDropdown toggleIsCartOpen={closeCart} cartItems={cartItems} />
-        )}
+    <div className="w-full bg-F2E8DF">
+      {/* Header Container: Navigation and Logo */}
+      <div className="max-w-screen-xl mx-auto flex items-start justify-between pt-0 relative">
+        {/* Left & Center Section: Cart and Nav Links */}
+        <div className="flex items-center space-x-8">
+          {/* Left Section: Cart Icon and Dropdown */}
+          <div className="flex items-center space-x-4">
+            <CartIcon
+              isCartOpen={isCartOpen}
+              toggleIsCartOpen={openCart}
+              cartCount={cartCount}
+            />
+            {isCartOpen && (
+              <CartDropdown
+                toggleIsCartOpen={closeCart}
+                cartItems={cartItems}
+              />
+            )}
+          </div>
+          {/* Center Section: Navigation Links */}
+          <div className="flex items-start space-x-4">
+            <Link to="/testimonials" className="font-extrabold">
+              <button
+                type="button"
+                className="nav-button rounded px-8 min-w-[8rem] pb-2 pt-2.5 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
+              >
+                Testimonials
+              </button>
+            </Link>
+            <Link to="/reviews" className="font-extrabold">
+              <button
+                type="button"
+                className="nav-button rounded px-8 min-w-[8rem] pb-2 pt-2.5 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
+              >
+                Review Us
+              </button>
+            </Link>
+            <Link to="/" className="font-extrabold">
+              <button
+                type="button"
+                className="nav-button rounded px-6 min-w-[8rem] pb-2 pt-2.5 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
+              >
+                Holistic Products
+              </button>
+            </Link>
+            <Link to="/payment" className="font-extrabold">
+              <button
+                type="button"
+                className="nav-button rounded px-6 min-w-[8rem] pb-2 pt-2.5 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
+              >
+                Payment
+              </button>
+            </Link>
+            <Link to="/about" className="font-extrabold">
+              <button
+                type="button"
+                className="nav-button rounded px-6 min-w-[8rem] pb-2 pt-2.5 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
+              >
+                About Us
+              </button>
+            </Link>
+          </div>
+        </div>
 
-        <Link to="/testimonials" className="mr-4 font-extrabold">
-          <button
-            type="button"
-            className="nav-button rounded px-4 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
-          >
-            Testimonials
-          </button>
-        </Link>
-        <Link to="/reviews" className="mr-4 font-extrabold">
-          <button
-            type="button"
-            className="nav-button rounded px-4 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
-          >
-            Review Us
-          </button>
-        </Link>
-        <Link to="/" className="mr-4 font-extrabold">
-          <button
-            type="button"
-            className="nav-button rounded px-4 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
-          >
-            Holistic Products
-          </button>
-        </Link>
-        <Link to="/payment" className="ml-4 font-extrabold">
-          <button
-            type="button"
-            className="nav-button rounded px-4 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
-          >
-            Payment
-          </button>
-        </Link>
-        <Link to="/about" className="ml-4 font-extrabold">
-          <button
-            type="button"
-            className="nav-button rounded px-4 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
-          >
-            About Us
-          </button>
-        </Link>
-      </nav>
-      <section className="text-start">
-        <h1 className="text-black text-4xl font-bold mb-4">
+        {/* Right Section: Logo */}
+        <div className="self-center">
+          <Link to="/">
+            <img
+              style={{ width: "12rem", height: "12rem" }}
+              src={logo}
+              alt="tree logo"
+            />
+          </Link>
+        </div>
+      </div>
+
+      {/* Title Section */}
+      <section className="text-center mt-4">
+        <h1 className="font-inter text-black text-4xl font-bold mb-10">
           Holistic Health Haven
         </h1>
-        <article className="mt-12 flex">
-          <div className="mr-5">{children}</div>
+        <article className="mb-10 flex justify-center">
+          <div>{children}</div>
         </article>
       </section>
-      <Link to="/" className="self-start">
-        <img
-          style={{ width: "12rem", height: "12rem" }}
-          src={logo}
-          alt="tree logo"
-        />
-      </Link>
     </div>
   );
 };
