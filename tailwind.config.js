@@ -6,6 +6,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        primary: ['"Inter"', "Quicksand", "sans-serif"],
+        quicksand: ["Quicksand", "sans-serif"],
+        jakarta: ["Plus Jakarta Sans", "sans-serif"],
+      },
       boxShadow: {
         "4-strong": "0 10px 30px rgba(0, 0, 0, 0.8)",
       },

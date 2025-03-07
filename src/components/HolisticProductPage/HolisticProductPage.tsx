@@ -27,7 +27,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
   };
 
   return (
-    <div className="flex items-center justify-start">
+    <div className="flex items-center justify-start bg-[#F5F5F5]">
       <section className="product-section flex flex-col items-center">
         <img
           className="product-img w-72 h-72 object-cover mr-6 ml-10 mt-10 rounded shadow-none transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
@@ -75,16 +75,16 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
         </article>
       </section>
       <article className="flex flex-col ml-4">
-        <h2 className="product-title text-lg font-bold mb-2">
+        <h2 className="product-title font-inter text-lg font-bold mb-2">
           {selectedProduct.product_title}
         </h2>
-        <p className="product-type mb-2 italic semi-bold">
+        <p className="product-type mb-2 italic font-inter font-semibold">
           {selectedProduct.product_type.join(", ")}
         </p>
-        <p className="product-description mb-4 px-4 max-w-md leading-relaxed text-center inline-block text-justify">
+        <p className="product-description mb-4 px-4 max-w-md leading-relaxed font-jakarta tracking-normal text-justify">
           {selectedProduct.product_description}
         </p>
-        <p className="product-price font-bold">
+        <p className="product-price font-inter text-lg font-bold">
           ${Number(selectedProduct.price).toFixed(2)}
         </p>
       </article>

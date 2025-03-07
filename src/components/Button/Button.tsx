@@ -14,6 +14,7 @@ const Button: React.FC<ButtonProps> = ({
     py-2 
     text-md 
     font-medium 
+    font-quicksand
     leading-normal 
     text-white
     hover:shadow-4-strong        
@@ -30,11 +31,12 @@ const Button: React.FC<ButtonProps> = ({
   `;
 
   const submitButton = `
-  bg-blue-600 
+  bg-[#B64A50]
   text-white 
+  font-inter
   py-3 
   rounded-lg 
-  hover:bg-blue-700 
+  hover:bg-[#C05C5A]
   transition 
   duration-300 
   ease-in-out 

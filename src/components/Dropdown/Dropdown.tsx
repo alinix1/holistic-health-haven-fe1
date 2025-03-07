@@ -28,7 +28,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <Menu as="div" className="relative z-50 inline-block text-left">
       {/* Dropdown Button */}
-      <MenuButton className="relative inline-flex w-[200px] justify-center gap-x-1.5 ml-10 rounded bg-white border border-slate-500 px-4 py-2 shadow-lg flex flex-col">
+      <MenuButton className="relative inline-flex w-[200px] font-inter justify-center gap-x-1.5 ml-10 rounded bg-white border border-slate-500 px-4 py-2 shadow-lg flex flex-col">
         {ailment || "Select Ailment"}
         <ChevronDownIcon
           aria-hidden="true"
@@ -36,7 +36,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         />
       </MenuButton>
       {/* Dropdown Items */}
-      <MenuItems className="absolute max-h-80 left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none overflow-y-auto">
+      <MenuItems className="absolute max-h-80 left-0 z-10 mt-2 w-56 origin-top-left rounded-md font-inter bg-white shadow-lg ring-1 ring-black/5 focus:outline-none overflow-y-auto">
         {ailments.map((ailmentOption) => (
           <MenuItem key={ailmentOption}>
             {({ active }) => (
@@ -48,7 +48,9 @@ const Dropdown: React.FC<DropdownProps> = ({
                   )
                 }
                 className={`${
-                  active ? "bg-gray-100 text-gray-900" : "text-gray-700"
+                  active
+                    ? "bg-gray-100 font-inter text-gray-900"
+                    : "text-gray-700"
                 } block w-full text-left px-4 py-2 text-sm`}
               >
                 {ailmentOption}
