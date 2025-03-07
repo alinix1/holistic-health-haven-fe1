@@ -10,7 +10,7 @@ const AboutPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="py-10 px-6 min-h-screen">
+    <div className="py-10 px-6 min-h-screen bg-[#F5F5F5]">
       {/* About Info */}
       <h1 className="text-3xl font-inter font-bold text-center text-gray-800 mb-8">
         <span className="italic font-quicksand"> About </span> Holistic Health
@@ -37,10 +37,10 @@ const AboutPage: React.FC = () => {
       <div className="flex flex-wrap gap-8 mt-10 justify-between ">
         {/* Accordion */}
         <div id="accordionExample" className="w-full">
-          <div className="rounded-t-lg border-2 text-white border-slate-700 bg-[#736555]">
+          <div className="rounded-t-lg border-2 text-black border-slate-700 bg-[#CCA498]">
             <h2 className="mb-0" id="headingOne">
               <button
-                className="group relative flex w-full items-center rounded-t-lg border-0 bg-[#ACC8E5] px-5 py-4 text-left text-black font-inter font-semibold transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
+                className="group relative flex w-full items-center rounded-t-lg border-0 bg-[#555D50] px-5 py-4 text-left text-[#E8CFC5] font-inter font-semibold transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-[#D75C0E] [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
                 type="button"
                 data-twe-collapse-init
                 data-twe-collapse-collapsed
@@ -102,10 +102,10 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="border-2 border-t-0 border-slate-700 text-white dark:border-neutral-600 bg-[#736555]">
+          <div className="border-2 border-t-0 border-slate-700 text-black dark:border-neutral-600 bg-[#CCA498]">
             <h2 className="mb-0" id="headingTwo">
               <button
-                className="group relative flex w-full items-center border-0 bg-[#ACC8E5] px-5 py-4 text-left font-inter font-semibold text-black transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
+                className="group relative flex w-full items-center border-0 bg-[#555D50] px-5 py-4 text-left font-inter font-semibold text-[#E8CFC5] transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-[#D75C0E] [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
                 type="button"
                 data-twe-collapse-init
                 data-twe-collapse-collapsed
@@ -169,10 +169,10 @@ const AboutPage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="rounded-b-lg border-2 border-t-0 text-white border-slate-700 bg-[#736555] dark:border-neutral-600">
+          <div className="rounded-b-lg border-2 border-t-0 text-black border-slate-700 bg-[#CCA498] dark:border-neutral-600">
             <h2 className="accordion-header mb-0" id="headingThree">
               <button
-                className="data-[twe-collapse-collapsed] group relative flex w-full items-center border-0  bg-[#ACC8E5] px-5 py-4 text-left font-inter font-semibold text-black transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none data-[twe-collapse-collapsed]:rounded-b-lg dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black  dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10"
+                className="data-[twe-collapse-collapsed] group relative flex w-full items-center border-0  bg-[#555D50] px-5 py-4 text-left font-inter font-semibold text-[#E8CFC5] transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none data-[twe-collapse-collapsed]:rounded-b-lg dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-[#D75C0E] [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black  dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10"
                 type="button"
                 data-twe-collapse-init
                 data-twe-collapse-collapsed
