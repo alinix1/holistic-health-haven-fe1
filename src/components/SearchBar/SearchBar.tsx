@@ -17,7 +17,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
     <section className="w-full min-w-[300px]">
       <div className="relative">
         <input
-          className="w-full bg-transparent placeholder:text-slate-600 text-slate-800 text-sm border border-slate-500 rounded-md pl-3 pr-16 py-2 transition duration-300 ease focus:outline-none focus:border-slate-700 hover:border-slate-500 shadow-sm focus:shadow"
+          className="w-full font-inter bg-transparent placeholder:text-slate-600 text-slate-800 text-sm border border-slate-500 rounded-md pl-3 pr-16 py-2 transition duration-300 ease focus:outline-none focus:border-slate-700 hover:border-slate-500 shadow-sm focus:shadow"
           placeholder="Search holistic products..."
           type="text"
           name="searchValue"
@@ -34,10 +34,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
             alt="search icon"
             className="w-4 h-4 filter brightness-0 invert"
           />
-          <span className="ml-2">Search</span>
+          <span className="ml-2 font-inter">Search</span>
         </button>
         {hasSearched && filteredProducts.length === 0 && (
-          <p className="text-red-500 font-bold text-center mt-4">
+          <p className="text-grey-700 font-bold text-center mt-4">
             No products match your search! Try searching by a different name.
           </p>
         )}
