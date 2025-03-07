@@ -7,7 +7,7 @@ const Carousel: React.FC = () => {
   return (
     <div
       id="animation-carousel"
-      className="relative w-full overflow-hidden bg-gray-900"
+      className="relative w-full overflow-hidden bg-slate-800"
       data-carousel="static"
     >
       {/* Carousel inner container and items */}
