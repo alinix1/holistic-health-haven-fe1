@@ -12,10 +12,11 @@ const AboutPage: React.FC = () => {
   return (
     <div className="py-10 px-6 min-h-screen">
       {/* About Info */}
-      <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
-        <span className="italic"> About </span> Holistic Health Haven
+      <h1 className="text-3xl font-inter font-bold text-center text-gray-800 mb-8">
+        <span className="italic font-quicksand"> About </span> Holistic Health
+        Haven
       </h1>
-      <p className="leading-relaxed">
+      <p className="leading-relaxed font-jakarta">
         At Holistic Health Haven, we believe in empowering individuals to take
         charge of their well-being through natural and sustainable practices.
         Our mission is to create a sanctuary where holistic health meets modern
@@ -25,7 +26,7 @@ const AboutPage: React.FC = () => {
         in our collection is thoughtfully sourced to support your journey toward
         balance and vitality.
       </p>
-      <p className="mt-4 leading-relaxed">
+      <p className="mt-4 leading-relaxed font-jakarta">
         We are committed to fostering a community that values self-care,
         sustainability, and conscious living. Whether you’re exploring holistic
         health for the first time or deepening your existing practices, Holistic
@@ -39,7 +40,7 @@ const AboutPage: React.FC = () => {
           <div className="rounded-t-lg border-2 text-white border-slate-700 bg-[#736555]">
             <h2 className="mb-0" id="headingOne">
               <button
-                className="group relative flex w-full items-center rounded-t-lg border-0 bg-[#ACC8E5] px-5 py-4 text-left text-base text-black transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
+                className="group relative flex w-full items-center rounded-t-lg border-0 bg-[#ACC8E5] px-5 py-4 text-left text-black font-inter font-semibold transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
                 type="button"
                 data-twe-collapse-init
                 data-twe-collapse-collapsed
@@ -73,7 +74,7 @@ const AboutPage: React.FC = () => {
               aria-labelledby="headingOne"
               data-twe-parent="#accordionExample"
             >
-              <div className="px-5 py-4 text-justify">
+              <div className="px-5 py-4 text-justify font-jakarta">
                 <p>
                   Holistic Health Haven was founded in 2018 in Denver, CO, born
                   from a passion for natural healing and a desire to create a
@@ -104,7 +105,7 @@ const AboutPage: React.FC = () => {
           <div className="border-2 border-t-0 border-slate-700 text-white dark:border-neutral-600 bg-[#736555]">
             <h2 className="mb-0" id="headingTwo">
               <button
-                className="group relative flex w-full items-center border-0 bg-[#ACC8E5] px-5 py-4 text-left text-base text-black transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
+                className="group relative flex w-full items-center border-0 bg-[#ACC8E5] px-5 py-4 text-left font-inter font-semibold text-black transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
                 type="button"
                 data-twe-collapse-init
                 data-twe-collapse-collapsed
@@ -137,7 +138,7 @@ const AboutPage: React.FC = () => {
               aria-labelledby="headingTwo"
               data-twe-parent="#accordionExample"
             >
-              <div className="px-5 py-4 text-justify">
+              <div className="px-5 py-4 text-justify font-jakarta">
                 <p>
                   Holistic Health Haven's products are carefully curated to
                   promote overall well-being while staying true to nature. We
@@ -171,7 +172,7 @@ const AboutPage: React.FC = () => {
           <div className="rounded-b-lg border-2 border-t-0 text-white border-slate-700 bg-[#736555] dark:border-neutral-600">
             <h2 className="accordion-header mb-0" id="headingThree">
               <button
-                className="data-[twe-collapse-collapsed] group relative flex w-full items-center border-0  bg-[#ACC8E5] px-5 py-4 text-left text-base text-black transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none data-[twe-collapse-collapsed]:rounded-b-lg dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black  dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10"
+                className="data-[twe-collapse-collapsed] group relative flex w-full items-center border-0  bg-[#ACC8E5] px-5 py-4 text-left font-inter font-semibold text-black transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none data-[twe-collapse-collapsed]:rounded-b-lg dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-black [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-black  dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10"
                 type="button"
                 data-twe-collapse-init
                 data-twe-collapse-collapsed
@@ -204,7 +205,7 @@ const AboutPage: React.FC = () => {
               aria-labelledby="headingThree"
               data-twe-parent="#accordionExample"
             >
-              <div className="px-5 py-4 text-justify">
+              <div className="px-5 py-4 text-justify font-jakarta">
                 <p>
                   At Holistic Health Haven, our mission is to inspire and
                   empower individuals to live healthier, more balanced lives
