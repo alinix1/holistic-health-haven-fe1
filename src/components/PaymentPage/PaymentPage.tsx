@@ -96,7 +96,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
   );
 
   return (
-    <div className="min-h-screen flex flex-col items-center py-10 px-4 bg-[#8BA663]">
+    <div className="min-h-screen flex flex-col items-center py-10 px-4 bg-[#F5F5F5]">
       <h1 className="text-3xl font-inter font-bold text-black mb-6">
         Complete Your Payment
       </h1>
