@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="footer-container flex items-center justify-center h-13.5vh w-screen p-8 bg-[#BFB2A3]">
+    <footer className="footer-container flex items-center justify-center h-13.5vh w-screen p-8 bg-[#DECDB5]">
       <span className="footer-text font-inter italic text-lg">
         &copy; 2025 by{" "}
         <a
@@ -20,7 +20,7 @@ const Footer = () => {
       >
         <button
           type="button"
-          className="nav-button rounded px-6 pb-2 pt-2.5 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
+          className="nav-button rounded px-6 pb-2 pt-2.5 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0"
         >
           Terms & Conditions
         </button>
@@ -28,7 +28,7 @@ const Footer = () => {
       <Link to="/privacy-policy" className="ml-4 font-quicksand font-extrabold">
         <button
           type="button"
-          className="nav-button rounded px-6 pb-2 pt-2.5 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-[#D9C4B2] hover:text-[#402B18] focus:text-[#402B18] focus:outline-none focus:ring-0 active:text-[#8C6645]"
+          className="nav-button rounded px-6 pb-2 pt-2.5 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0"
         >
           Privacy Policy
         </button>
