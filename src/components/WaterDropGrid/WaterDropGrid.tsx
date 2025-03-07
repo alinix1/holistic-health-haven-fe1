@@ -3,8 +3,8 @@ import anime from "animejs";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 
-const GRID_WIDTH = 20;
-const GRID_HEIGHT = 25;
+const GRID_WIDTH = 10;
+const GRID_HEIGHT = 15;
 
 const DotGrid = () => {
   const handleDotClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -64,14 +64,14 @@ const DotGrid = () => {
 const ErrorMessage = () => {
   return (
     <div className="flex flex-col items-center text-center space-y-8">
-      <h2 className="text-white text-3xl font-bold">
+      <h2 className="text-white text-3xl font-inter font-bold">
         Sorry, this URL does not exist.
       </h2>
       <Link to="/" className="bottom-0 left-0">
         <Button className="mt-4 md:mt-0 lowercase">Home</Button>
       </Link>
       <div className="pb-4">
-        <p className="text-white text-md font-normal">
+        <p className="text-white text-md font-normal font-inter">
           In the meantime, click on the animation below.
         </p>
       </div>
