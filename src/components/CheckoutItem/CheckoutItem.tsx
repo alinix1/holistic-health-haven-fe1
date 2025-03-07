@@ -25,12 +25,12 @@ const CheckoutItem: React.FC = () => {
   };
   return (
     <div className="min-h-screen bg-gray-100 p-8 flex flex-col items-center">
-      <h1 className="text-3xl font-bold mb-6">Checkout</h1>
+      <h1 className="text-3xl font-inter font-bold mb-6">Checkout</h1>
       <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-6">
         {cartItems.length > 0 ? (
           <>
             {/* List each cart item */}
-            <ul className="space-y-4">
+            <ul className="space-y-4 font-inter font-bold">
               {cartItems.map((item) => (
                 <li
                   key={item.id}
@@ -56,7 +56,9 @@ const CheckoutItem: React.FC = () => {
                         />
                       </svg>
                     </button>
-                    <span className="mr-4">{item.quantity} x</span>
+                    <span className="mr-4 font-inter font-semibold">
+                      {item.quantity} x
+                    </span>
                     <button
                       className="p-1"
                       onClick={() => handleDecreaseItem(item.id)}
@@ -79,7 +81,7 @@ const CheckoutItem: React.FC = () => {
                     <span className="font-medium">{item.product_title}</span>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <span className="font-semibold">
+                    <span className="font-inter font-semibold">
                       ${Number(item.price).toFixed(2)}
                     </span>
                     <button
@@ -108,8 +110,10 @@ const CheckoutItem: React.FC = () => {
 
             {/* Total */}
             <div className="flex justify-between items-center mt-6 border-t pt-4">
-              <span className="text-xl font-bold">Grand Total:</span>
-              <span className="text-xl font-bold">${total.toFixed(2)}</span>
+              <span className="text-xl font-inter font-bold">Grand Total:</span>
+              <span className="text-xl font-inter font-bold">
+                ${total.toFixed(2)}
+              </span>
             </div>
 
             {/* Proceed to Payment Button */}
@@ -122,7 +126,9 @@ const CheckoutItem: React.FC = () => {
             </Button>
           </>
         ) : (
-          <p className="text-center text-gray-600">Your cart is empty.</p>
+          <p className="text-center font-inter text-gray-600">
+            Your cart is empty.
+          </p>
         )}
       </div>
     </div>
