@@ -97,7 +97,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
 
   return (
     <div className="min-h-screen flex flex-col items-center py-10 px-4 bg-[#8BA663]">
-      <h1 className="text-3xl font-bold text-black mb-6">
+      <h1 className="text-3xl font-inter font-bold text-black mb-6">
         Complete Your Payment
       </h1>
       <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-8">
@@ -113,7 +113,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
             <Form>
               {/* Billing Information */}
               <section className="mb-6">
-                <h2 className="text-xl font-semibold text-gray-700 mb-4">
+                <h2 className="text-xl font-inter font-semibold text-gray-700 mb-4">
                   Billing Information
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -122,7 +122,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                       name="fullName"
                       type="text"
                       placeholder="Full Name"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full font-inter px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <ErrorMessage
                       name="fullName"
@@ -135,7 +135,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                       name="email"
                       type="email"
                       placeholder="Email Address"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full font-inter px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <ErrorMessage
                       name="email"
@@ -148,7 +148,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                       name="address"
                       type="text"
                       placeholder="Address"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full font-inter px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <ErrorMessage
                       name="address"
@@ -161,7 +161,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                       name="city"
                       type="text"
                       placeholder="City"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full font-inter px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <ErrorMessage
                       name="city"
@@ -173,7 +173,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                     as="select"
                     name="state"
                     id="state"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full font-inter px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="" label="Select your state" />
                     {stateData.map((state) => (
@@ -187,7 +187,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                       name="postalCode"
                       type="text"
                       placeholder="ZIP/Postal Code"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full font-inter px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <ErrorMessage
                       name="postalCode"
@@ -200,10 +200,10 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
 
               {/* Payment Information */}
               <section className="mb-6">
-                <h2 className="text-xl font-semibold text-gray-700 mb-4">
+                <h2 className="text-xl font-inter font-semibold text-gray-700 mb-4">
                   Payment Details
                 </h2>
-                <div className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                <div className="w-full font-inter px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
                   <CardElement
                     options={{
                       style: {
@@ -225,22 +225,27 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
 
               {/* Order Summary */}
               <section className="mb-6">
-                <h2 className="text-xl font-semibold text-gray-700 mb-4">
+                <h2 className="text-xl font-inter font-semibold text-gray-700 mb-4">
                   Order Summary
                 </h2>
                 <div className="flex justify-between items-start">
-                  <span className="text-gray-600">Product Name</span>
+                  <span className="font-inter text-gray-600">Product Name</span>
                   <ul className="list-disc pl-4">
                     {cartItems.map((item) => (
-                      <li key={item.id} className="text-gray-800 font-medium">
+                      <li
+                        key={item.id}
+                        className="text-gray-800 font-inter text-left font-medium"
+                      >
                         {item.product_title}
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className="flex justify-between items-center py-2 border-t">
-                  <span className="text-lg font-semibold">Total</span>
-                  <span className="text-lg font-semibold text-gray-800">
+                  <span className="text-lg font-inter font-semibold">
+                    Total
+                  </span>
+                  <span className="text-lg font-inter font-semibold text-gray-800">
                     ${total.toFixed(2)}
                   </span>
                 </div>
@@ -259,7 +264,9 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                 <div className="text-red-500 mt-2">{paymentError}</div>
               )}
               {paymentSucceeded && (
-                <div className="text-green-500 mt-2">Payment succeeded!</div>
+                <div className="text-green-500 font-inter mt-2">
+                  Payment succeeded!
+                </div>
               )}
             </Form>
           )}
