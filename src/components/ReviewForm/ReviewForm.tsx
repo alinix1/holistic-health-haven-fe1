@@ -30,7 +30,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onSubmit }) => {
           {({ isSubmitting }) => (
             <Form>
               <label
-                className="block mb-2 font-bold text-left"
+                className="block mb-2 font-inter font-bold text-left"
                 htmlFor="user_name"
               >
                 Name:
@@ -38,7 +38,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onSubmit }) => {
               <Field
                 type="text"
                 name="user_name"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full font-inter px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your name goes here..."
               />
               <ErrorMessage
@@ -48,7 +48,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onSubmit }) => {
               />
 
               <label
-                className="block mt-4 mb-2 font-bold text-left"
+                className="block mt-4 mb-2 font-inter font-bold text-left"
                 htmlFor="user_review"
               >
                 Review:
@@ -56,7 +56,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onSubmit }) => {
               <Field
                 as="textarea"
                 name="user_review"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full font-inter px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Please write your review..."
               />
               <ErrorMessage
@@ -67,7 +67,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onSubmit }) => {
 
               <Button
                 type="submit"
-                className="mt-4 w-full"
+                className="mt-4 w-full font-inter"
                 disabled={isSubmitting}
               >
                 Submit Review
