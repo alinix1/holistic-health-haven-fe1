@@ -27,14 +27,14 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
   };
 
   return (
-    <div className="flex items-center justify-start bg-[#F5F5F5]">
-      <section className="product-section flex flex-col items-center">
+    <div className="flex flex-col md:flex-row items-center justify-start bg-[#F5F5F5]">
+      <section className="order-2 md:order-1 product-section flex flex-col items-center">
         <img
           className="product-img w-72 h-72 object-cover mr-6 ml-10 mt-10 rounded shadow-none transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
           src={selectedProduct.img}
           alt={selectedProduct.product_title}
         />
-        <article className="flex items-center mt-5">
+        <article className="flex flex-col items-start md:flex-row items-center mt-5">
           <button
             type="button"
             className="inline-block
@@ -69,12 +69,12 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
             Add to Cart
           </button>
 
-          <Link to="/" className="link">
+          <Link to="/" className="link mt-auto">
             <Button className="mt-4 md:mt-0">Back</Button>
           </Link>
         </article>
       </section>
-      <article className="flex flex-col ml-4">
+      <article className="order-1 md:order-2 flex flex-col ml-4 text-center md:text-left">
         <h2 className="product-title font-inter text-lg font-bold mb-2">
           {selectedProduct.product_title}
         </h2>
@@ -88,7 +88,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
           ${Number(selectedProduct.price).toFixed(2)}
         </p>
       </article>
-      <article className="flex flex-col items-end ml-10 mt-10 mb-10 gap-10 animate-[fade-in-right_1s_ease-in-out]">
+      <article className="order-3 flex flex-col items-end ml-10 mt-10 mb-10 gap-10 animate-[fade-in-right_1s_ease-in-out]">
         <img
           className="w-72 h-72 object-cover mt-10 rounded border-4 border-[#402B18]"
           src={holisticMushroom}
