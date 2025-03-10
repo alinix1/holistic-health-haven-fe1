@@ -27,13 +27,13 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
   );
 
   return (
-    <div className="w-full bg-[#DECDB5]">
+    <div className="relative w-full bg-[#DECDB5]">
       {/* Header Container: Navigation and Logo */}
-      <div className="max-w-screen-xl mx-auto flex flex-wrap items-start justify-between pt-0 relative">
+      <div className="max-w-screen-xl mx-auto flex flex-wrap items-start pt-0">
         {/* Left & Center Section: Cart and Nav Links */}
-        <div className="flex flex-col md:flex-row items-start justify-start gap-y-2 gap-x-4">
+        <div className="flex flex-col md:flex-row items-start justify-start">
           {/* Left Section: Cart Icon and Dropdown */}
-          <div className="flex items-start md:items-center justify-start space-x-4">
+          <div className="relative flex items-start md:items-center justify-start space-x-4">
             <CartIcon
               isCartOpen={isCartOpen}
               toggleIsCartOpen={openCart}
@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
             )}
           </div>
           {/* Center Section: Navigation Links */}
-          <div className="w-full text-left flex flex-col md:flex-row items-start justify-start gap-y-2 gap-x-4">
+          <div className="w-full text-left flex flex-col md:flex-row items-start justify-start">
             <Link to="/testimonials" className="font-extrabold">
               <button
                 type="button"
@@ -90,17 +90,16 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
             </Link>
           </div>
         </div>
-
-        {/* Right Section: Logo */}
-        <div className="flex">
-          <Link to="/">
-            <img
-              className="w-full max-w-[12rem] h-auto"
-              src={logo}
-              alt="tree logo"
-            />
-          </Link>
-        </div>
+      </div>
+      {/* Right Section: Logo */}
+      <div className="absolute top-0 right-0 hidden md:block">
+        <Link to="/">
+          <img
+            className="w-full max-w-[7rem] h-auto"
+            src={logo}
+            alt="tree logo"
+          />
+        </Link>
       </div>
 
       {/* Title Section */}
