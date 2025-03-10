@@ -229,7 +229,7 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
           {/* Images */}
-          <div className="w-full flex flex-col md:flex-row justify-evenly overflow-x-hidden">
+          <div className="w-full items-center flex flex-col md:flex-row justify-evenly overflow-x-hidden">
             <img
               src={holisticProductsImg}
               alt="Holistic products"
