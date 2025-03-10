@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
   return (
     <div className="w-full bg-[#DECDB5]">
       {/* Header Container: Navigation and Logo */}
-      <div className="max-w-screen-xl mx-auto flex items-start justify-between pt-0 relative">
+      <div className="max-w-screen-xl mx-auto flex flex-wrap items-start justify-between pt-0 relative">
         {/* Left & Center Section: Cart and Nav Links */}
         <div className="flex flex-col md:flex-row items-start justify-start gap-y-2 gap-x-4">
           {/* Left Section: Cart Icon and Dropdown */}
@@ -92,10 +92,10 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
         </div>
 
         {/* Right Section: Logo */}
-        <div className="self-center">
+        <div className="flex">
           <Link to="/">
             <img
-              style={{ width: "12rem", height: "12rem" }}
+              className="w-full max-w-[12rem] h-auto"
               src={logo}
               alt="tree logo"
             />
