@@ -24,7 +24,7 @@ const CheckoutItem: React.FC = () => {
     dispatch({ type: "DECREASE_QUANTITY", payload: id });
   };
   return (
-    <div className="min-h-screen bg-gray-100 p-8 flex flex-col items-center">
+    <div className="bg-gray-100 p-4 md:p-8 flex flex-col items-center">
       <h1 className="text-3xl font-inter font-bold mb-6">Checkout</h1>
       <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-6">
         {cartItems.length > 0 ? (
@@ -119,7 +119,7 @@ const CheckoutItem: React.FC = () => {
             {/* Proceed to Payment Button */}
             <Button
               type="submit"
-              className="w-2/3"
+              className="w-2/3 mt-4"
               onClick={handleProceedToPayment}
             >
               Proceed to Payment

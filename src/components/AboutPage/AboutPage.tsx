@@ -34,7 +34,7 @@ const AboutPage: React.FC = () => {
         the way. Together, let’s cultivate a lifestyle that embraces wellness in
         harmony with the world around us.
       </p>
-      <div className="flex flex-wrap gap-8 mt-10 justify-between ">
+      <div className="flex flex-wrap gap-8 mt-10 justify-between">
         {/* Accordion */}
         <div id="accordionExample" className="w-full">
           <div className="rounded-t-lg border-2 text-black border-slate-700 bg-[#CCA498]">
@@ -229,7 +229,7 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
           {/* Images */}
-          <div className="w-full flex flex-col md:flex-row justify-evenly overflow-x-hidden">
+          <div className="w-full items-center flex flex-col md:flex-row justify-evenly overflow-x-hidden">
             <img
               src={holisticProductsImg}
               alt="Holistic products"

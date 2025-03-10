@@ -27,7 +27,7 @@ const TestimonialsPage: React.FC = () => {
       <ul className="text-center">
         {reviews.map((review) => (
           <li key={review.id} className="mb-4 text-left">
-            <p className="font-inter font-bold text-xl">
+            <p className="font-inter font-bold text-md md:text-xl">
               <span
                 className="text-gray-400 text-4xl mr-2"
                 aria-hidden="true"
@@ -37,7 +37,7 @@ const TestimonialsPage: React.FC = () => {
               </span>
               {review.user_name}
             </p>
-            <p className="text-xl font-semibold font-jakarta text-gray-700">
+            <p className="text-md md:text-xl font-semibold font-jakarta text-gray-700">
               {review.user_review.split(". ").map((sentence) => (
                 <React.Fragment key={sentence}>
                   <br />

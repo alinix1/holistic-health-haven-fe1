@@ -15,7 +15,7 @@ const validationSchema = Yup.object({
 });
 const ReviewForm: React.FC<ReviewFormProps> = ({ onSubmit }) => {
   return (
-    <div className="min-h-screen flex flex-col items-center py-10 px-4 bg-[#C29266]">
+    <div className="flex flex-col items-center py-4 px-2 md:py-10 px-4 bg-[#C29266]">
       <h1 className="text-3xl font-bold text-black mb-6">Submit a Review</h1>
       <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-8">
         <Formik
