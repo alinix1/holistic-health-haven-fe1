@@ -34,7 +34,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
           src={selectedProduct.img}
           alt={selectedProduct.product_title}
         />
-        <article className="flex flex-col items-start md:flex-row items-center mt-5">
+        <article className="flex items-center mt-5 gap-4">
           <button
             type="button"
             className="inline-block
@@ -70,7 +70,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
           </button>
 
           <Link to="/" className="link mt-auto">
-            <Button className="mt-4 md:mt-0">Back</Button>
+            <Button className="md:mt-4">Back</Button>
           </Link>
         </article>
       </section>
@@ -88,7 +88,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
           ${Number(selectedProduct.price).toFixed(2)}
         </p>
       </article>
-      <article className="order-3 flex flex-col items-end ml-10 mt-10 mb-10 gap-10 animate-[fade-in-right_1s_ease-in-out]">
+      <article className="order-3 flex flex-col items-end ml-10 mt-10 mb-10 gap-10 animate-[fade-in-up_1s_ease-in-out] md:animate-[fade-in-right_1s_ease-in-out]">
         <img
           className="w-72 h-72 object-cover mt-10 rounded border-4 border-[#402B18]"
           src={holisticMushroom}
