@@ -175,7 +175,7 @@ const App: React.FC = () => {
         </div>
       </Modal>
       <Header>
-        <div className="flex justify-start gap-x-4">
+        <div className="flex flex-col md:flex-row items-center justify-start gap-4">
           <Dropdown
             handleAilmentSelect={handleAilmentSelect}
             ailment={ailment}
