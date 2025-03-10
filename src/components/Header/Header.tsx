@@ -31,9 +31,9 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
       {/* Header Container: Navigation and Logo */}
       <div className="max-w-screen-xl mx-auto flex items-start justify-between pt-0 relative">
         {/* Left & Center Section: Cart and Nav Links */}
-        <div className="flex items-center space-x-8">
+        <div className="flex flex-col md:flex-row items-start justify-start gap-y-2 gap-x-4">
           {/* Left Section: Cart Icon and Dropdown */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-start md:items-center justify-start space-x-4">
             <CartIcon
               isCartOpen={isCartOpen}
               toggleIsCartOpen={openCart}
@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
             )}
           </div>
           {/* Center Section: Navigation Links */}
-          <div className="flex items-start space-x-4">
+          <div className="w-full text-left flex flex-col md:flex-row items-start justify-start gap-y-2 gap-x-4">
             <Link to="/testimonials" className="font-extrabold">
               <button
                 type="button"
