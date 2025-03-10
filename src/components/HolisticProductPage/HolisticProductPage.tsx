@@ -40,7 +40,6 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
             className="inline-block
              rounded bg-[#5A7340]
               text-[#fff] 
-              mr-5
               px-5 
               py-2 
               text-md 
@@ -69,12 +68,12 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
             Add to Cart
           </button>
 
-          <Link to="/" className="link mt-auto">
-            <Button className="md:mt-4">Back</Button>
+          <Link to="/" className="link">
+            <Button>Back</Button>
           </Link>
         </article>
       </section>
-      <article className="order-1 md:order-2 flex flex-col ml-4 text-center md:text-left">
+      <article className="order-1 md:order-2 flex items-center flex-col ml-4 text-center md:text-left">
         <h2 className="product-title font-inter text-lg font-bold mb-2">
           {selectedProduct.product_title}
         </h2>
