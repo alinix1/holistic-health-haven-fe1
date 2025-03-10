@@ -27,6 +27,7 @@ module.exports = {
   safelist: [
     "animate-[fade-in_1s_ease-in-out]",
     "animate-[fade-in-right_1s_ease-in-out]",
+    "animate-[fade-in-up_1s_ease-in-out]",
   ],
   plugins: [require("tw-elements/plugin.cjs")],
 };
