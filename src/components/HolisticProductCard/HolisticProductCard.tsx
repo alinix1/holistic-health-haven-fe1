@@ -11,7 +11,7 @@ const HolisticProductCard: React.FC<HolisticProductProps> = ({
   return (
     <Link to={`/${id}`}>
       <div
-        className="product-card box-border flex flex-col items-center sm:items-center gap-7 m-4 p-4 px-8 w-3/4 sm:min-h-[30rem] h-auto rounded-lg shadow-xl bg-white overflow-hidden"
+        className="product-card box-border flex flex-col items-center sm:items-center gap-7 m-4 p-4 px-8 max-w-sm w-3/4 sm:min-h-[30rem] rounded-lg shadow-xl bg-white overflow-hidden"
         key={id}
       >
         <h1 className="product-title mt-3 font-inter text-2xl font-bold">
