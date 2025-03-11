@@ -91,15 +91,15 @@ https://github.com/alinix1/holistic-health-haven-fe1.git
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-![Screenshot 2025-03-11 at 2 49 26 PM](https://gist.github.com/user-attachments/assets/815efa04-2184-4236-8f80-373195b9073a)
+![Image](https://gist.github.com/user-attachments/assets/815efa04-2184-4236-8f80-373195b9073a)
 
-![Screenshot 2025-03-11 at 1 55 39 PM](https://gist.github.com/user-attachments/assets/148bfe16-41bf-44de-8d3a-59c431eac8cf)
+![Image](https://gist.github.com/user-attachments/assets/148bfe16-41bf-44de-8d3a-59c431eac8cf)
 
-![Screenshot 2025-03-11 at 1 56 20 PM](https://gist.github.com/user-attachments/assets/32e7dd4a-6a67-4624-a947-aefe6d30042e)
+![Image](https://gist.github.com/user-attachments/assets/32e7dd4a-6a67-4624-a947-aefe6d30042e)
 
-![Screenshot 2025-03-11 at 1 58 46 PM](https://gist.github.com/user-attachments/assets/44d1d771-0990-4016-a05a-f7d9a27ac9de)
+![Image](https://gist.github.com/user-attachments/assets/44d1d771-0990-4016-a05a-f7d9a27ac9de)
 
-![Screenshot 2025-03-11 at 2 48 37 PM](https://gist.github.com/user-attachments/assets/44eae9ac-2dec-42e8-b3ac-53792c317d2a)
+![Image](https://gist.github.com/user-attachments/assets/44eae9ac-2dec-42e8-b3ac-53792c317d2a)
 
 ## Feature Overview
 
