@@ -2,6 +2,12 @@
 
 <!-- PROJECT LOGO -->
 
+<br />
+<div align="left">
+  <a href="https://github.com/alinix1/showcase-project-fe">
+    <img src="./src/assets/holistic_logo.png" alt="Logo" width="100" height="100">
+  </a>
+
   <!-- HEADER -->
 
 <!-- TABLE OF CONTENTS -->
@@ -9,15 +15,11 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project / App</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
+      <a href="#about-the-project">About The Project</a>
+    <li><a href="#built-with">Built With</a></li>  
     <li><a href="#setup">Setup</a></li>
     <li><a href="#usage">Installation</a></li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#notes">Notes</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#roadmap">Acknowledgments</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -27,7 +29,13 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project / App
+## About The Project
+
+This is an e-commerce web application built to provide a curated selection of holistic health products for purchase, offering a seamless and user-friendly shopping experience.
+
+Many individuals struggle to find natural and sustainable products that truly support their well-being. <strong>Holistic Health Haven</strong> addresses this need by offering organic remedies, herbal supplements, and mindfulness tools designed to empower users to embrace a balanced, conscious lifestyle.
+
+This full-stack project demonstrates modern web development practices using the <strong>PERN stack (PostgreSQL, Express, React, Node.js)</strong> and <strong>TypeScript</strong>. It serves both as a practical solution for holistic product retail and a learning endeavor to deepen my understanding of full-stack web development.
 
 ### Built With
 
@@ -51,11 +59,31 @@
 
 ## Setup
 
+<!-- DEPLOYMENT LINKS -->
+
+<iframe width="450" height="300" src="https://miro.com/app/live-embed/uXjVNE2x8xc=/?moveToViewport=-18777,-3658,22606,10992&embedId=565526013409" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="450" height="300" src="https://embed.figma.com/design/DMkEzup6oRWF9PHeNBfU4Y/Holistic-Health-App?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- INSTALLATION -->
 
 ## Installation
+
+1. <strong>Clone down frontend repository:</strong>
+
+```
+https://github.com/alinix1/holistic-health-haven-fe1.git
+```
+
+2. <strong>Install npm packages:</strong>
+
+`npm install` or `npm i`
+
+3. <strong>`cd` into directory and run:</strong>
+
+`npm start`
 
 <!-- USAGE -->
 
@@ -63,15 +91,72 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- NOTES -->
+<img width="1339" alt="Screenshot 2025-03-11 at 2 49 26 PM" src="https://gist.github.com/user-attachments/assets/815efa04-2184-4236-8f80-373195b9073a" />
 
-## Notes
+<img width="1214" alt="Screenshot 2025-03-11 at 1 55 39 PM" src="https://gist.github.com/user-attachments/assets/148bfe16-41bf-44de-8d3a-59c431eac8cf" />
+
+<img width="1417" alt="Screenshot 2025-03-11 at 1 56 20 PM" src="https://gist.github.com/user-attachments/assets/32e7dd4a-6a67-4624-a947-aefe6d30042e" />
+
+<img width="861" alt="Screenshot 2025-03-11 at 1 58 46 PM" src="https://gist.github.com/user-attachments/assets/44d1d771-0990-4016-a05a-f7d9a27ac9de" />
+
+<img width="850" alt="Screenshot 2025-03-11 at 2 48 37 PM" src="https://gist.github.com/user-attachments/assets/44eae9ac-2dec-42e8-b3ac-53792c317d2a" />
+
+![2025-03-11 14 58 18](https://gist.github.com/user-attachments/assets/6728ad3b-0c7a-4e05-98f4-f1400308b2da)
 
 ## Feature Overview
 
+<ul>
+ <li><strong>UI/UX Features:</strong>
+ <ul>
+<li>Carousel using Flowbite</li>
+<li>Controlled form using Formik</li>
+<li>Dropdown menu of ailments</li>
+<li>Search bar</li>
+<li>Cart dropdown menu</li>
+<li>Accordion</li>
+<li>Modal</li>
+<li>Tailwind CSS animations</li>
+</ul>
+</li>
+</br>
+<li><strong>Payment Integration:</strong>
+<ul>
+<li>Stripe integration for payment</li>
+</ul>
+</li>
+</br>
+<li><strong>Testing and Quality:</strong>
+<ul>
+<li>ESLint configuration</li>
+</ul>
+</li>
+</br>
+<li><strong>Pages:</strong> 
+<ul>
+<li>Holistic products page</li>
+<li>Holistic details page</li>
+<li>Testimonials page</li>
+<li>Review page</li>
+<li>About page</li>
+<li>Privacy policy page</li>
+<li>Terms  &amp; conditions page</li>
+<li>Checkout page</li>
+<li>Payment page</li>
+<li>Bad URL page</li>
+</ul>
+</li>
+</ul>
+
 ## Wins:
 
+- Successfully implemented a full-stack application
+- Successfully integrated Stripe for a one-time payment
+- Achieved responsive web design using Tailwind CSS
+
 ## Challenges:
+
+- Gaining deeper familiarity with TypeScript
+- Refining design architecture for React components and database schema (ERD)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,11 +164,9 @@
 
 ## Roadmap
 
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-Used the following resources during the project:
+- [ ] End-to-end testing using Playwright
+- [ ] Unit and integration testing using React Testing Library
+- [ ] Email subscription, login, and authorization/authentication
 
 <!-- CONTACT -->
 
