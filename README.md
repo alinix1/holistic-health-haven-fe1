@@ -91,15 +91,19 @@ https://github.com/alinix1/holistic-health-haven-fe1.git
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-![Image](https://gist.github.com/user-attachments/assets/815efa04-2184-4236-8f80-373195b9073a)
+<img width="1307" alt="Image" src="https://github.com/user-attachments/assets/229f6f63-77c8-4ec0-9365-5adfe89ce4af" />
 
-![Image](https://gist.github.com/user-attachments/assets/148bfe16-41bf-44de-8d3a-59c431eac8cf)
+<img width="1177" alt="Image" src="https://github.com/user-attachments/assets/b2db4b0d-e298-4d42-9c4f-4ced36273e3e" />
 
-![Image](https://gist.github.com/user-attachments/assets/32e7dd4a-6a67-4624-a947-aefe6d30042e)
+<img width="1115" alt="Image" src="https://github.com/user-attachments/assets/9c5e4f76-6f3e-4986-967b-b701a447a7cc" />
 
-![Image](https://gist.github.com/user-attachments/assets/44d1d771-0990-4016-a05a-f7d9a27ac9de)
+<img width="1422" alt="Image" src="https://github.com/user-attachments/assets/ed159e55-1a7b-4c2d-a049-c30e26a37626" />
 
-![Image](https://gist.github.com/user-attachments/assets/44eae9ac-2dec-42e8-b3ac-53792c317d2a)
+<img width="1414" alt="Image" src="https://github.com/user-attachments/assets/2e52fde3-87f4-4aaa-8041-d12e39b5e747" />
+
+<img width="882" alt="Image" src="https://github.com/user-attachments/assets/121c6c2a-4d76-4e6b-acc5-8df5bf7ded03" />
+
+<img width="902" alt="Image" src="https://github.com/user-attachments/assets/8b5681a9-cd35-475e-b7df-b13e80f9f408" />
 
 ## Feature Overview
 
