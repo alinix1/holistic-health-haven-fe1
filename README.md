@@ -61,9 +61,9 @@ This full-stack project demonstrates modern web development practices using the 
 
 <!-- DEPLOYMENT LINKS -->
 
-<iframe width="450" height="300" src="https://miro.com/app/live-embed/uXjVNE2x8xc=/?moveToViewport=-18777,-3658,22606,10992&embedId=565526013409" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+[View Miro](https://miro.com/app/live-embed/uXjVNE2x8xc=/?moveToViewport=-18777,-3658,22606,10992&embedId=565526013409)
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="450" height="300" src="https://embed.figma.com/design/DMkEzup6oRWF9PHeNBfU4Y/Holistic-Health-App?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+[View Figma](https://embed.figma.com/design/DMkEzup6oRWF9PHeNBfU4Y/Holistic-Health-App?node-id=0-1&embed-host=share)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -91,17 +91,15 @@ https://github.com/alinix1/holistic-health-haven-fe1.git
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<img width="1339" alt="Screenshot 2025-03-11 at 2 49 26 PM" src="https://gist.github.com/user-attachments/assets/815efa04-2184-4236-8f80-373195b9073a" />
+![Screenshot 2025-03-11 at 2 49 26 PM](https://gist.github.com/user-attachments/assets/815efa04-2184-4236-8f80-373195b9073a)
 
-<img width="1214" alt="Screenshot 2025-03-11 at 1 55 39 PM" src="https://gist.github.com/user-attachments/assets/148bfe16-41bf-44de-8d3a-59c431eac8cf" />
+![Screenshot 2025-03-11 at 1 55 39 PM](https://gist.github.com/user-attachments/assets/148bfe16-41bf-44de-8d3a-59c431eac8cf)
 
-<img width="1417" alt="Screenshot 2025-03-11 at 1 56 20 PM" src="https://gist.github.com/user-attachments/assets/32e7dd4a-6a67-4624-a947-aefe6d30042e" />
+![Screenshot 2025-03-11 at 1 56 20 PM](https://gist.github.com/user-attachments/assets/32e7dd4a-6a67-4624-a947-aefe6d30042e)
 
-<img width="861" alt="Screenshot 2025-03-11 at 1 58 46 PM" src="https://gist.github.com/user-attachments/assets/44d1d771-0990-4016-a05a-f7d9a27ac9de" />
+![Screenshot 2025-03-11 at 1 58 46 PM](https://gist.github.com/user-attachments/assets/44d1d771-0990-4016-a05a-f7d9a27ac9de)
 
-<img width="850" alt="Screenshot 2025-03-11 at 2 48 37 PM" src="https://gist.github.com/user-attachments/assets/44eae9ac-2dec-42e8-b3ac-53792c317d2a" />
-
-![2025-03-11 14 58 18](https://gist.github.com/user-attachments/assets/6728ad3b-0c7a-4e05-98f4-f1400308b2da)
+![Screenshot 2025-03-11 at 2 48 37 PM](https://gist.github.com/user-attachments/assets/44eae9ac-2dec-42e8-b3ac-53792c317d2a)
 
 ## Feature Overview
 
