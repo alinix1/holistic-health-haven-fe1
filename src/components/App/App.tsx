@@ -125,17 +125,20 @@ const App: React.FC = () => {
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <div className="flex flex-col h-full px-4 py-6">
           {/* Title Section */}
-          <div className="text-left">
-            <h2 className="text-2xl font-bold mb-8">
+          <div className="relative">
+            <h2
+              className="absolute top-6 left-6 text-sm md:text-2xl font-bold text-white bg-black px-2 py-1 rounded-sm 
+    rotate-[-40deg] translate-x-[-40%] translate-y-[-35%] z-50 md:static md:rotate-0 md:translate-x-0 md:translate-y-0 md:bg-transparent md:text-black"
+            >
               15% off your first order
             </h2>
           </div>
 
           {/* Form Container */}
-          <div className="flex-grow flex items-center justify-center mt-20">
-            <div className="w-full max-w-md p-4 border border-gray-200 rounded-lg bg-white shadow">
+          <div className="flex-grow flex items-center justify-center">
+            <div className="w-full max-w-md p-4 border border-gray-200 rounded-lg bg-white shadow mt-40">
               <form>
-                <div className="flex items-center justify-between w-full">
+                <div className="flex flex-col md:flex-col items-center md:flex-row gap-4 w-full">
                   <label htmlFor="email" className="text-sm font-medium">
                     Enter your email to subscribe:
                   </label>
@@ -143,7 +146,7 @@ const App: React.FC = () => {
                     id="email"
                     type="email"
                     placeholder="Your email address"
-                    className="w-full max-w-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus-ring-blue-500"
+                    className="w-full md:flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus-ring-blue-500"
                     required
                   />
                   <Button type="submit" className="p-2 ml-2 w-2/3">

@@ -4,7 +4,7 @@
 
 <br />
 <div align="left">
-  <a href="https://github.com/alinix1/showcase-project-fe">
+  <a href="https://github.com/alinix1/holistic-health-haven-fe1">
     <img src="./src/assets/holistic_logo.png" alt="Logo" width="100" height="100">
   </a>
 

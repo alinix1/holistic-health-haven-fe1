@@ -11,7 +11,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
       {/* Modal Container */}
       <div
         onClick={(event) => event.stopPropagation()}
-        className="bg-white rounded-lg shadow-xl p-6 w-[90%] max-w-lg h-[70%] relative z-50"
+        className="bg-white rounded-lg shadow-xl p-6 w-[90%] max-w-lg xs:h-[80%] md:h-[90%] lg:h-[90%] xl:h-[80%] overflow-y-auto overflow-x-hidden relative z-50"
       >
         <img
           src={discount}
