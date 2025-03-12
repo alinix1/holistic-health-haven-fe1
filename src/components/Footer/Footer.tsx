@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="footer-container flex items-center justify-center h-13.5vh w-screen p-8 bg-[#DECDB5]">
-      <span className="footer-text font-inter italic text-lg">
-        &copy; 2025 by{" "}
+    <footer className="footer-container flex justify-center items-center h-13.5vh w-screen p-4 bg-[#DECDB5]">
+      <p className="text-left footer-text font-inter italic text-sm md:text-lg">
+        &copy; 2025 by&nbsp;
         <a
           href="https://github.com/alinix1/holistic-health-haven-fe1"
           className="text-[#402B18] hover:underline"
@@ -13,7 +13,7 @@ const Footer = () => {
           Ali Nix
         </a>
         . All rights reserved.
-      </span>
+      </p>
       <Link
         to="/terms-and-conditions"
         className="ml-4 font-quicksand font-extrabold"
