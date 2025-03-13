@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import ReviewForm from "../../components/ReviewForm/ReviewForm";
+import ReviewForm from "../../pages/ReviewForm";
 import { postReview } from "../../apiCalls";
 import { Review } from "../../resources/model";
 
