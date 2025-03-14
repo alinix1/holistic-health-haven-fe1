@@ -2,6 +2,7 @@ import type React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/holistic_logo.png";
+import Dropdown, { MobileNavMenu } from "../Dropdown/Dropdown";
 import CartIcon from "../CartIcon/CartIcon";
 import CartDropdown from "../CartDropdown/CartDropdown";
 import type { HeaderProps } from "../../resources/model";
@@ -9,6 +10,7 @@ import { useCart } from "../../hooks/useCart";
 
 const Header: React.FC<HeaderProps> = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const { cartItems } = useCart();
 
   const openCart = () => {
@@ -27,68 +29,63 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
   );
 
   return (
-    <div className="relative w-full bg-[#DECDB5]">
-      {/* Header Container: Navigation and Logo */}
-      <div className="max-w-screen-xl mx-auto flex flex-wrap items-start pt-0">
-        {/* Left & Center Section: Cart and Nav Links */}
-        <div className="flex flex-col md:flex-row items-start justify-start">
-          {/* Left Section: Cart Icon and Dropdown */}
-          <div className="relative flex items-start md:items-center justify-start space-x-4">
-            <CartIcon
-              isCartOpen={isCartOpen}
-              toggleIsCartOpen={openCart}
-              cartCount={cartCount}
-            />
-            {isCartOpen && (
-              <CartDropdown
-                toggleIsCartOpen={closeCart}
-                cartItems={cartItems}
-              />
-            )}
-          </div>
-          {/* Center Section: Navigation Links */}
-          <div className="w-full text-left flex flex-col md:flex-row items-start justify-start">
-            <Link to="/testimonials" className="font-extrabold">
-              <button
-                type="button"
-                className="nav-button rounded px-8 min-w-[8rem] pb-2 pt-2.5 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0"
-              >
-                Testimonials
-              </button>
-            </Link>
-            <Link to="/reviews" className="font-extrabold">
-              <button
-                type="button"
-                className="nav-button rounded px-8 min-w-[8rem] pb-2 pt-2.5 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0"
-              >
-                Review Us
-              </button>
-            </Link>
-            <Link to="/" className="font-extrabold">
-              <button
-                type="button"
-                className="nav-button rounded px-6 min-w-[8rem] pb-2 pt-2.5 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0"
-              >
-                Holistic Products
-              </button>
-            </Link>
-            <Link to="/payment" className="font-extrabold">
-              <button
-                type="button"
-                className="nav-button rounded px-6 min-w-[8rem] pb-2 pt-2.5 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0"
-              >
-                Payment
-              </button>
-            </Link>
-            <Link to="/about" className="font-extrabold">
-              <button
-                type="button"
-                className="nav-button rounded px-6 min-w-[8rem] pb-2 pt-2.5 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0 "
-              >
-                About Us
-              </button>
-            </Link>
-          </div>
+    <div className="w-full bg-[#DECDB5]">
+      {/* Header Container: Cart Icon and Nav Links */}
+      <div className="relative flex flex-col md:flex-row items-start justify-start">
+        {/* Cart Icon & Dropdown */}
+        <div className="flex items-start justify-start px-2">
+          <CartIcon
+            isCartOpen={isCartOpen}
+            toggleIsCartOpen={openCart}
+            cartCount={cartCount}
+          />
+          {isCartOpen && (
+            <CartDropdown toggleIsCartOpen={closeCart} cartItems={cartItems} />
+          )}
+        </div>
+
+        {/* Navigation Links */}
+        <div className="hidden custom:hidden md:flex flex-row items-center md:gap-x-4">
+          <Link to="/testimonials" className="font-extrabold">
+            <button
+              type="button"
+              className="nav-button text-left rounded px-2 py-2 md:px-8 pb-2 pt-2 gap-x-2 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0"
+            >
+              Testimonials
+            </button>
+          </Link>
+          <Link to="/reviews" className="font-extrabold">
+            <button
+              type="button"
+              className="nav-button text-left rounded px-2 py-2 md:px-8 pb-2 pt-2 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0"
+            >
+              Review Us
+            </button>
+          </Link>
+          <Link to="/" className="font-extrabold">
+            <button
+              type="button"
+              className="nav-button text-left rounded px-2 py-2 md:px-8 pb-2 pt-2 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0"
+            >
+              Holistic Products
+            </button>
+          </Link>
+          <Link to="/payment" className="font-extrabold">
+            <button
+              type="button"
+              className="nav-button text-left rounded px-2 py-2 md:px-8 pb-2 pt-2 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0"
+            >
+              Payment
+            </button>
+          </Link>
+          <Link to="/about" className="font-extrabold">
+            <button
+              type="button"
+              className="nav-button text-left rounded px-2 py-2 md:px-8 pb-2 pt-2 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0 "
+            >
+              About Us
+            </button>
+          </Link>
         </div>
       </div>
       {/* Right Section: Logo */}
@@ -101,7 +98,38 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
           />
         </Link>
       </div>
-
+      {/* Mobile Menu Toggle Button */}
+      <div className=" block custom:block md:hidden">
+        <button
+          type="button"
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+          className="absolute p-2 text-black "
+        >
+          {/* Hamburger icon */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+            />
+          </svg>
+        </button>
+      </div>
+      {/* Mobile Navigation Menu */}
+      {isOpen && (
+        <div className="relative z-20 block custom:block md:hidden">
+          <MobileNavMenu />
+        </div>
+      )}
       {/* Title Section */}
       <section className="text-center mt-4">
         <h1 className="font-inter text-black text-4xl font-bold mb-10">
