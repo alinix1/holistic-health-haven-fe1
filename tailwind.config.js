@@ -22,6 +22,9 @@ module.exports = {
         "custom-dark": "#402B18",
         "custom-light": "#FFFFF0",
       },
+      screens: {
+        custom: { min: "700px", max: "999px" },
+      },
     },
   },
   safelist: [
