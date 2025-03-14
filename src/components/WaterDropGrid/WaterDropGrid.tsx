@@ -64,14 +64,14 @@ const DotGrid = () => {
 const ErrorMessage = () => {
   return (
     <div className="flex flex-col items-center text-center space-y-8">
-      <h2 className="text-white text-3xl font-inter font-bold">
+      <h2 className="text-black text-3xl font-inter font-bold">
         Sorry, this URL does not exist.
       </h2>
       <Link to="/" className="bottom-0 left-0">
         <Button className="mt-4 md:mt-0 lowercase">Home</Button>
       </Link>
       <div className="pb-4">
-        <p className="text-white text-md font-normal font-inter">
+        <p className="text-black text-md font-normal font-inter">
           In the meantime, click on the animation below.
         </p>
       </div>
@@ -81,7 +81,7 @@ const ErrorMessage = () => {
 
 const WaterDropGrid = () => {
   return (
-    <div className="relative grid place-content-center bg-[#402B18] px-8 py-12 mt-4">
+    <div className="relative grid place-content-center bg-[#F1EDE5] px-8 py-12">
       <ErrorMessage />
       <DotGrid />
     </div>

@@ -1,4 +1,5 @@
 import type React from "react";
+import { Link } from "react-router-dom";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import type { DropdownProps } from "../../resources/model";
@@ -60,6 +61,37 @@ const Dropdown: React.FC<DropdownProps> = ({
         ))}
       </MenuItems>
     </Menu>
+  );
+};
+
+// Mobile Navigation Menu (for smaller screens)
+export const MobileNavMenu: React.FC = () => {
+  const navLinks = [
+    { name: "Testimonials", to: "/testimonials" },
+    { name: "Review Us", to: "/reviews" },
+    { name: "Holistic Products", to: "/" },
+    { name: "Payment", to: "/payment" },
+    { name: "About Us", to: "/about" },
+  ];
+
+  return (
+    <div
+      className="absolute top-10 
+          left-2 
+          w-30 right-0 mt-2 w-56 origin-top-right bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
+    >
+      <div className="flex flex-col gap-y-2 px-2 py-2">
+        {navLinks.map((link) => (
+          <Link
+            key={link.name}
+            to={link.to}
+            className="block rounded px-2 py-2 text-xs uppercase text-black hover:bg-slate-700 hover:text-white"
+          >
+            {link.name}
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 };
 

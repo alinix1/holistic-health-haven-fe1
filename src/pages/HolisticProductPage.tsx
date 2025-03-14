@@ -1,11 +1,11 @@
 import type React from "react";
 import { Link } from "react-router-dom";
-import type { HolisticProductPageProps } from "../../resources/model";
-import WaterDropGrid from "../WaterDropGrid/WaterDropGrid";
-import holisticMushroom from "../../assets/holistic_mushrooms.jpg";
-import holisticTree from "../../assets/holistic_tree.jpg";
-import Button from "../Button/Button";
-import { useCart } from "../../hooks/useCart";
+import type { HolisticProductPageProps } from "../resources/model";
+import WaterDropGrid from "../components/WaterDropGrid/WaterDropGrid";
+import holisticMushroom from "../assets/holistic_mushrooms.jpg";
+import holisticTree from "../assets/holistic_tree.jpg";
+import Button from "../components/Button/Button";
+import { useCart } from "../hooks/useCart";
 
 const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
   holisticProducts,
@@ -30,11 +30,11 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
     <div className="flex flex-col md:flex-row items-center justify-start bg-[#F5F5F5]">
       <section className="order-2 md:order-1 product-section flex flex-col items-center">
         <img
-          className="product-img w-72 h-72 object-cover mr-6 ml-10 mt-10 rounded shadow-none transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
+          className="product-img w-72 h-72 object-cover md:mr-6 md:ml-10 md:mt-10 rounded shadow-none transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
           src={selectedProduct.img}
           alt={selectedProduct.product_title}
         />
-        <article className="flex items-center mt-5 gap-4">
+        <article className="flex items-start justify-center mt-5 gap-4">
           <button
             type="button"
             className="inline-block
@@ -80,14 +80,14 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
         <p className="product-type mb-2 italic font-inter font-semibold">
           {selectedProduct.product_type.join(", ")}
         </p>
-        <p className="product-description mb-4 px-4 max-w-md leading-relaxed font-jakarta tracking-normal text-justify">
+        <p className="product-description mb-4 px-4 max-w-md leading-relaxed font-jakarta tracking-normal md:text-justify">
           {selectedProduct.product_description}
         </p>
         <p className="product-price font-inter text-lg font-bold">
           ${Number(selectedProduct.price).toFixed(2)}
         </p>
       </article>
-      <article className="order-3 flex flex-col items-end ml-10 mt-10 mb-10 gap-10 animate-[fade-in-up_1s_ease-in-out] md:animate-[fade-in-right_1s_ease-in-out]">
+      <article className="order-3 flex flex-col items-center md:items-end md:ml-10 mt-10 mb-10 gap-10 animate-[fade-in-up_1s_ease-in-out] md:animate-[fade-in-right_1s_ease-in-out]">
         <img
           className="w-72 h-72 object-cover mt-10 rounded border-4 border-[#402B18]"
           src={holisticMushroom}

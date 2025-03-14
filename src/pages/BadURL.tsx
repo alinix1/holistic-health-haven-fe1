@@ -1,5 +1,5 @@
 import React from "react";
-import WaterDropGrid from "../WaterDropGrid/WaterDropGrid";
+import WaterDropGrid from "../components/WaterDropGrid/WaterDropGrid";
 
 const BadURL: React.FC = () => {
   return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { loadStripe, Stripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import PaymentPage from "../PaymentPage/PaymentPage";
+import PaymentPage from "../../pages/PaymentPage";
 import { getStripePublishableKey, createPaymentIntent } from "../../apiCalls";
 import spinner from "../../assets/Yin_and_Yang.gif";
 

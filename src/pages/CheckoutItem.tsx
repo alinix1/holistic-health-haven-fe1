@@ -1,7 +1,7 @@
 import type React from "react";
 import { useHistory } from "react-router-dom";
-import Button from "../Button/Button";
-import { useCart, useCartTotal } from "../../hooks/useCart";
+import Button from "../components/Button/Button";
+import { useCart, useCartTotal } from "../hooks/useCart";
 
 const CheckoutItem: React.FC = () => {
   const history = useHistory();
@@ -25,7 +25,9 @@ const CheckoutItem: React.FC = () => {
   };
   return (
     <div className="bg-gray-100 p-4 md:p-8 flex flex-col items-center">
-      <h1 className="text-3xl font-inter font-bold mb-6">Checkout</h1>
+      <h1 className="text-3xl text-black font-inter font-bold mb-6">
+        Checkout
+      </h1>
       <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-6">
         {cartItems.length > 0 ? (
           <>

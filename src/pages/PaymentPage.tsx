@@ -3,10 +3,10 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 // import * as Yup from "yup";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { useHistory } from "react-router-dom";
-import { stateData } from "../../mockData";
-import { useCartTotal, useCart } from "../../hooks/useCart";
-import Button from "../Button/Button";
-import { PaymentFormValues, PaymentPageProps } from "../../resources/model";
+import { stateData } from "../mockData";
+import { useCartTotal, useCart } from "../hooks/useCart";
+import Button from "../components/Button/Button";
+import { PaymentFormValues, PaymentPageProps } from "../resources/model";
 
 const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
   const stripe = useStripe();

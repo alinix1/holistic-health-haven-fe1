@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { getReviews } from "../../apiCalls";
-import type { Review } from "../../resources/model";
-import holisticHerbalImage from "../../assets/holistic_herbal.jpg";
+import { getReviews } from "../apiCalls";
+import type { Review } from "../resources/model";
+import holisticHerbalImage from "../assets/holistic_herbal.jpg";
 
 const TestimonialsPage: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -38,12 +38,7 @@ const TestimonialsPage: React.FC = () => {
               {review.user_name}
             </p>
             <p className="text-md md:text-xl font-semibold font-jakarta text-gray-700">
-              {review.user_review.split(". ").map((sentence) => (
-                <React.Fragment key={sentence}>
-                  <br />
-                  {sentence}
-                </React.Fragment>
-              ))}
+              {review.user_review}
             </p>
           </li>
         ))}
