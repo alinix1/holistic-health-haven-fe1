@@ -41,16 +41,11 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
       }
       return { cartItems: [...state.cartItems, { ...item, quantity: 1 }] };
     }
-    case "REMOVE_ITEM": {
+    case "REMOVE_ITEM":
+    case "DECREASE_QUANTITY": {
       const id = action.payload;
       return {
-        cartItems: state.cartItems
-          .map((item) =>
-            item.id === id
-              ? { ...item, quantity: (item.quantity || 0) - 1 }
-              : item,
-          )
-          .filter((item) => (item.quantity || 0) > 0),
+        cartItems: decreaseItemQuantity(state.cartItems, id),
       };
     }
     case "INCREASE_QUANTITY": {
