@@ -104,7 +104,7 @@ const App: React.FC = () => {
     }
   };
 
-  const handleSearch = () => {
+  const handleSearch = (): void => {
     setFilteredProducts(filterProducts(ailment, searchValue));
     setHasSearched(true);
   };
