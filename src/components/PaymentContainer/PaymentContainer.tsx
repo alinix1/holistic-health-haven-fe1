@@ -11,7 +11,7 @@ const PaymentContainer: React.FC = () => {
   const [clientSecret, setClientSecret] = useState<string>("");
 
   useEffect(() => {
-    const fetchPublishableKey = async () => {
+    const fetchPublishableKey = async (): Promise<void> => {
       try {
         const key = await getStripePublishableKey();
         setStripePromise(loadStripe(key));
