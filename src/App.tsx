@@ -58,7 +58,10 @@ const App: React.FC = () => {
       });
   }, [openModal]);
 
-  const filterProducts = (ailmentValue: string, searchTerm = "") => {
+  const filterProducts = (
+    ailmentValue: string,
+    searchTerm = "",
+  ): HolisticProduct[] => {
     const formattedAilment = ailmentValue?.toLowerCase().trim() || "";
     const formattedSearch = searchTerm.toLowerCase();
 
