@@ -1,27 +1,22 @@
 import type React from "react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/holistic_logo.png";
-import Dropdown, { MobileNavMenu } from "../Dropdown/Dropdown";
+import { MobileNavMenu } from "../Dropdown/Dropdown";
 import CartIcon from "../CartIcon/CartIcon";
 import CartDropdown from "../CartDropdown/CartDropdown";
 import type { HeaderProps } from "../../resources/model";
 import { useCart } from "../../hooks/useCart";
+import { useToggle } from "../../hooks/useToggle";
 
 const Header: React.FC<HeaderProps> = ({ children }) => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
   const { cartItems } = useCart();
+  const {
+    isOpen: isCartOpen,
+    open: openCart,
+    close: closeCart,
+  } = useToggle(false);
 
-  const openCart = () => {
-    if (!isCartOpen) {
-      setIsCartOpen(true);
-    }
-  };
-
-  const closeCart = () => {
-    setIsCartOpen(false);
-  };
+  const { isOpen: isMenuOpen, toggle: toggleMenu } = useToggle(false);
 
   const cartCount = cartItems.reduce(
     (count, item) => count + (item.quantity || 1),
