@@ -118,7 +118,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
         </button>
       </div>
       {/* Mobile Navigation Menu */}
-      {isOpen && (
+      {isMenuOpen && (
         <div className="relative z-20 block custom:block md:hidden">
           <MobileNavMenu />
         </div>
