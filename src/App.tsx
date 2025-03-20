@@ -56,7 +56,26 @@ const App: React.FC = () => {
         console.error("Error fetching data:", error);
         setLoading(false);
       });
-  }, []);
+  }, [openModal]);
+
+  const filterProducts = (ailmentValue: string, searchTerm = "") => {
+    const formattedAilment = ailmentValue?.toLowerCase().trim() || "";
+    const formattedSearch = searchTerm.toLowerCase();
+
+    const productsFilteredByAilment = formattedAilment
+      ? holisticProducts.filter((product) =>
+          product.product_type.some(
+            (type) => type.toLowerCase().trim() === formattedAilment,
+          ),
+        )
+      : holisticProducts;
+
+    return !formattedSearch
+      ? productsFilteredByAilment
+      : productsFilteredByAilment.filter((product) =>
+          product.product_title.toLowerCase().includes(formattedSearch),
+        );
+  };
 
   const handleAilmentSelect = (selectedAilment: string) => {
     if (!selectedAilment) {
