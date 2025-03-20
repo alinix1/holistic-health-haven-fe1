@@ -8,19 +8,19 @@ const CheckoutItem: React.FC = () => {
   const { cartItems, dispatch } = useCart();
 
   const total = useCartTotal();
-  const handleProceedToPayment = () => {
+  const handleProceedToPayment = (): void => {
     history.push("/payment");
   };
 
-  const handleRemoveItem = (id: number) => {
+  const handleRemoveItem = (id: number): void => {
     dispatch({ type: "REMOVE_ITEM", payload: id });
   };
 
-  const handleIncreaseItem = (id: number) => {
+  const handleIncreaseItem = (id: number): void => {
     dispatch({ type: "INCREASE_QUANTITY", payload: id });
   };
 
-  const handleDecreaseItem = (id: number) => {
+  const handleDecreaseItem = (id: number): void => {
     dispatch({ type: "DECREASE_QUANTITY", payload: id });
   };
   return (
