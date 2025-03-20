@@ -79,7 +79,7 @@ const ErrorMessage = (): JSX.Element => {
   );
 };
 
-const WaterDropGrid = () => {
+const WaterDropGrid = (): JSX.Element => {
   return (
     <div className="relative grid place-content-center bg-[#F1EDE5] px-8 py-12">
       <ErrorMessage />
