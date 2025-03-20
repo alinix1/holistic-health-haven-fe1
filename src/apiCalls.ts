@@ -13,7 +13,7 @@ const getHolisticProducts = async (): Promise<HolisticProduct[]> => {
   }
 };
 
-const getReviews = async () => {
+const getReviews = async (): Promise<Review> => {
   try {
     const response = await axios.get(`${API_BASE_URL}/reviews`);
     return response.data;
