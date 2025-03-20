@@ -43,7 +43,9 @@ const getStripePublishableKey = async (): Promise<string> => {
   }
 };
 
-const createPaymentIntent = async (payload: { amount: number }) => {
+const createPaymentIntent = async (payload: {
+  amount: number;
+}): Promise<PaymentPageProps> => {
   try {
     const response = await axios.post(
       `${API_BASE_URL}/stripe/create-payment-intent`,
