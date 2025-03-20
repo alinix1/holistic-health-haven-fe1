@@ -22,7 +22,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
     );
   }
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (): void => {
     dispatch({ type: "ADD_ITEM", payload: selectedProduct });
   };
 
