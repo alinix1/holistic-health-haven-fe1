@@ -1,6 +1,7 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="footer-container flex justify-center items-center h-13.5vh w-screen p-4 bg-[#DECDB5]">
       <p className="text-left footer-text font-inter italic text-sm md:text-lg">

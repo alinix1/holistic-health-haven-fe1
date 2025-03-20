@@ -6,8 +6,8 @@ import Button from "../Button/Button";
 const GRID_WIDTH = 10;
 const GRID_HEIGHT = 15;
 
-const DotGrid = () => {
-  const handleDotClick = (event: React.MouseEvent<HTMLDivElement>) => {
+const DotGrid = (): JSX.Element => {
+  const handleDotClick = (event: React.MouseEvent<HTMLDivElement>): void => {
     const target = event.currentTarget as HTMLDivElement;
     const { index } = target.dataset;
 
@@ -61,7 +61,7 @@ const DotGrid = () => {
   );
 };
 
-const ErrorMessage = () => {
+const ErrorMessage = (): JSX.Element => {
   return (
     <div className="flex flex-col items-center text-center space-y-8">
       <h2 className="text-black text-3xl font-inter font-bold">
@@ -79,7 +79,7 @@ const ErrorMessage = () => {
   );
 };
 
-const WaterDropGrid = () => {
+const WaterDropGrid = (): JSX.Element => {
   return (
     <div className="relative grid place-content-center bg-[#F1EDE5] px-8 py-12">
       <ErrorMessage />

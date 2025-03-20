@@ -1,9 +1,9 @@
 import axios from "axios";
-import { Review } from "./resources/model";
+import { Review, HolisticProduct, PaymentPageProps } from "./resources/model";
 
 const API_BASE_URL = "http://localhost:9000/api/v1";
 
-const getHolisticProducts = async () => {
+const getHolisticProducts = async (): Promise<HolisticProduct[]> => {
   try {
     const response = await axios.get(`${API_BASE_URL}/products`);
     return response.data;
@@ -13,7 +13,7 @@ const getHolisticProducts = async () => {
   }
 };
 
-const getReviews = async () => {
+const getReviews = async (): Promise<Review> => {
   try {
     const response = await axios.get(`${API_BASE_URL}/reviews`);
     return response.data;
@@ -33,7 +33,7 @@ const postReview = async (newReview: Review): Promise<Review> => {
   }
 };
 
-const getStripePublishableKey = async () => {
+const getStripePublishableKey = async (): Promise<string> => {
   try {
     const response = await axios.get(`${API_BASE_URL}/stripe/config`);
     return response.data.publishableKey;
@@ -43,7 +43,9 @@ const getStripePublishableKey = async () => {
   }
 };
 
-const createPaymentIntent = async (payload: { amount: number }) => {
+const createPaymentIntent = async (payload: {
+  amount: number;
+}): Promise<PaymentPageProps> => {
   try {
     const response = await axios.post(
       `${API_BASE_URL}/stripe/create-payment-intent`,

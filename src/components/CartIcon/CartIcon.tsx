@@ -7,7 +7,7 @@ const CartIcon: React.FC<CartIconProps> = ({
   cartCount,
   className,
 }) => {
-  const handleClick = () => {
+  const handleClick = (): void => {
     toggleIsCartOpen();
   };
   return (

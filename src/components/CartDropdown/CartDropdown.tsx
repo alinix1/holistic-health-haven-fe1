@@ -12,7 +12,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
   const history = useHistory();
   const total = useCartTotal();
 
-  const handleCheckout = () => {
+  const handleCheckout = (): void => {
     history.push("/checkout");
   };
 

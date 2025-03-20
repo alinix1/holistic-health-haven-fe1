@@ -58,7 +58,10 @@ const App: React.FC = () => {
       });
   }, [openModal]);
 
-  const filterProducts = (ailmentValue: string, searchTerm = "") => {
+  const filterProducts = (
+    ailmentValue: string,
+    searchTerm = "",
+  ): HolisticProduct[] => {
     const formattedAilment = ailmentValue?.toLowerCase().trim() || "";
     const formattedSearch = searchTerm.toLowerCase();
 
@@ -77,7 +80,7 @@ const App: React.FC = () => {
         );
   };
 
-  const handleAilmentSelect = (selectedAilment: string) => {
+  const handleAilmentSelect = (selectedAilment: string): void => {
     if (!selectedAilment) {
       setAilment("");
       setFilteredProducts([]);
@@ -89,7 +92,7 @@ const App: React.FC = () => {
     setFilteredProducts(filteredResults);
   };
 
-  const handleSearchInput = (value: string) => {
+  const handleSearchInput = (value: string): void => {
     setSearchValue(value);
 
     if (value === "") {
@@ -101,7 +104,7 @@ const App: React.FC = () => {
     }
   };
 
-  const handleSearch = () => {
+  const handleSearch = (): void => {
     setFilteredProducts(filterProducts(ailment, searchValue));
     setHasSearched(true);
   };
