@@ -15,7 +15,10 @@ const initialState: CartState = {
   cartItems: [],
 };
 
-const decreaseItemQuantity = (cartItems: HolisticProduct[], id: number) => {
+const decreaseItemQuantity = (
+  cartItems: HolisticProduct[],
+  id: number,
+): HolisticProduct[] => {
   return cartItems
     .map((item) =>
       item.id === id ? { ...item, quantity: (item.quantity || 0) - 1 } : item,
