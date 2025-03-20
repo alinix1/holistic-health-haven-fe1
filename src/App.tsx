@@ -94,23 +94,15 @@ const App: React.FC = () => {
 
     if (value === "") {
       setHasSearched(false);
+
+      if (ailment) {
+        setFilteredProducts(filterProducts(ailment, ""));
+      }
     }
   };
 
   const handleSearch = () => {
-    const mainProductList = ailment
-      ? holisticProducts.filter((holisticProduct) =>
-          holisticProduct.product_type.some(
-            (type) =>
-              type.toLowerCase().trim() === ailment.toLowerCase().trim(),
-          ),
-        )
-      : holisticProducts;
-
-    const searchResults = mainProductList.filter((product) =>
-      product.product_title.toLowerCase().includes(searchValue.toLowerCase()),
-    );
-    setFilteredProducts(searchResults);
+    setFilteredProducts(filterProducts(ailment, searchValue));
     setHasSearched(true);
   };
 
