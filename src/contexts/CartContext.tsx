@@ -15,6 +15,14 @@ const initialState: CartState = {
   cartItems: [],
 };
 
+const decreaseItemQuantity = (cartItems: HolisticProduct[], id: number) => {
+  return cartItems
+    .map((item) =>
+      item.id === id ? { ...item, quantity: (item.quantity || 0) - 1 } : item,
+    )
+    .filter((item) => (item.quantity || 0) > 0);
+};
+
 const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
     case "ADD_ITEM": {
@@ -33,16 +41,11 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
       }
       return { cartItems: [...state.cartItems, { ...item, quantity: 1 }] };
     }
-    case "REMOVE_ITEM": {
+    case "REMOVE_ITEM":
+    case "DECREASE_QUANTITY": {
       const id = action.payload;
       return {
-        cartItems: state.cartItems
-          .map((item) =>
-            item.id === id
-              ? { ...item, quantity: (item.quantity || 0) - 1 }
-              : item,
-          )
-          .filter((item) => (item.quantity || 0) > 0),
+        cartItems: decreaseItemQuantity(state.cartItems, id),
       };
     }
     case "INCREASE_QUANTITY": {
@@ -53,18 +56,6 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
             ? { ...item, quantity: (item.quantity || 0) + 1 }
             : item,
         ),
-      };
-    }
-    case "DECREASE_QUANTITY": {
-      const id = action.payload;
-      return {
-        cartItems: state.cartItems
-          .map((item) =>
-            item.id === id
-              ? { ...item, quantity: Math.max((item.quantity || 0) - 1, 0) }
-              : item,
-          )
-          .filter((item) => item.quantity || 0 > 0),
       };
     }
     default:

@@ -2,6 +2,7 @@ import type React from "react";
 import { useState, useEffect } from "react";
 import { Route, Switch, Redirect, Link } from "react-router-dom";
 import type { HolisticProduct } from "./resources/model";
+import { useToggle } from "./hooks/useToggle";
 import Button from "./components/Button/Button";
 import Dropdown from "./components/Dropdown/Dropdown";
 import SearchBar from "./components/SearchBar/SearchBar";
@@ -19,9 +20,9 @@ import AboutPage from "./pages/AboutPage";
 import Footer from "./components/Footer/Footer";
 import BadURL from "./pages/BadURL";
 import spinner from "./assets/Yin_and_Yang.gif";
-import { getHolisticProducts } from "./apiCalls";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import { getHolisticProducts } from "./apiCalls";
 
 import "./App.css";
 
@@ -38,14 +39,14 @@ const App: React.FC = () => {
     [],
   );
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const {
+    isOpen: isModalOpen,
+    close: closeModal,
+    open: openModal,
+  } = useToggle(false);
 
   useEffect(() => {
-    setIsModalOpen(true);
+    openModal();
     getHolisticProducts()
       .then((data) => {
         setHolisticProducts(data);
@@ -55,7 +56,26 @@ const App: React.FC = () => {
         console.error("Error fetching data:", error);
         setLoading(false);
       });
-  }, []);
+  }, [openModal]);
+
+  const filterProducts = (ailmentValue: string, searchTerm = "") => {
+    const formattedAilment = ailmentValue?.toLowerCase().trim() || "";
+    const formattedSearch = searchTerm.toLowerCase();
+
+    const productsFilteredByAilment = formattedAilment
+      ? holisticProducts.filter((product) =>
+          product.product_type.some(
+            (type) => type.toLowerCase().trim() === formattedAilment,
+          ),
+        )
+      : holisticProducts;
+
+    return !formattedSearch
+      ? productsFilteredByAilment
+      : productsFilteredByAilment.filter((product) =>
+          product.product_title.toLowerCase().includes(formattedSearch),
+        );
+  };
 
   const handleAilmentSelect = (selectedAilment: string) => {
     if (!selectedAilment) {
@@ -64,15 +84,9 @@ const App: React.FC = () => {
       return;
     }
     setAilment(selectedAilment);
+    const filteredResults = filterProducts(selectedAilment, searchValue);
 
-    const formattedAilment = selectedAilment.toLowerCase().trim();
-    const filtered = holisticProducts.filter((holisticProduct) =>
-      holisticProduct.product_type.some(
-        (type) => type.toLowerCase().trim() === formattedAilment,
-      ),
-    );
-
-    setFilteredProducts(filtered);
+    setFilteredProducts(filteredResults);
   };
 
   const handleSearchInput = (value: string) => {
@@ -80,23 +94,15 @@ const App: React.FC = () => {
 
     if (value === "") {
       setHasSearched(false);
+
+      if (ailment) {
+        setFilteredProducts(filterProducts(ailment, ""));
+      }
     }
   };
 
   const handleSearch = () => {
-    const mainProductList = ailment
-      ? holisticProducts.filter((holisticProduct) =>
-          holisticProduct.product_type.some(
-            (type) =>
-              type.toLowerCase().trim() === ailment.toLowerCase().trim(),
-          ),
-        )
-      : holisticProducts;
-
-    const searchResults = mainProductList.filter((product) =>
-      product.product_title.toLowerCase().includes(searchValue.toLowerCase()),
-    );
-    setFilteredProducts(searchResults);
+    setFilteredProducts(filterProducts(ailment, searchValue));
     setHasSearched(true);
   };
 
