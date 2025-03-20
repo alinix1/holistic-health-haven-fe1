@@ -92,7 +92,7 @@ const App: React.FC = () => {
     setFilteredProducts(filteredResults);
   };
 
-  const handleSearchInput = (value: string) => {
+  const handleSearchInput = (value: string): void => {
     setSearchValue(value);
 
     if (value === "") {
