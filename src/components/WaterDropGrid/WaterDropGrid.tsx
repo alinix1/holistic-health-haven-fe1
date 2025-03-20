@@ -6,8 +6,8 @@ import Button from "../Button/Button";
 const GRID_WIDTH = 10;
 const GRID_HEIGHT = 15;
 
-const DotGrid = () => {
-  const handleDotClick = (event: React.MouseEvent<HTMLDivElement>) => {
+const DotGrid = (): JSX.Element => {
+  const handleDotClick = (event: React.MouseEvent<HTMLDivElement>): void => {
     const target = event.currentTarget as HTMLDivElement;
     const { index } = target.dataset;
 
