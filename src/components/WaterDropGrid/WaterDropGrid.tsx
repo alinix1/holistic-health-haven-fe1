@@ -61,7 +61,7 @@ const DotGrid = (): JSX.Element => {
   );
 };
 
-const ErrorMessage = () => {
+const ErrorMessage = (): JSX.Element => {
   return (
     <div className="flex flex-col items-center text-center space-y-8">
       <h2 className="text-black text-3xl font-inter font-bold">
