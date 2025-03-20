@@ -23,7 +23,7 @@ const PaymentContainer: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const createIntent = async () => {
+    const createIntent = async (): Promise<void> => {
       try {
         const data = await createPaymentIntent({ amount: 2000 });
         setClientSecret(data.clientSecret);
