@@ -80,7 +80,7 @@ const App: React.FC = () => {
         );
   };
 
-  const handleAilmentSelect = (selectedAilment: string) => {
+  const handleAilmentSelect = (selectedAilment: string): void => {
     if (!selectedAilment) {
       setAilment("");
       setFilteredProducts([]);
