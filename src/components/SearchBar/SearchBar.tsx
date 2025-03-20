@@ -9,7 +9,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
   hasSearched,
   filteredProducts,
 }) => {
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
     const { value } = event.target;
     handleSearchInput(value);
   };
