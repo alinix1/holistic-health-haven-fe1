@@ -15,7 +15,8 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 2020,
@@ -40,7 +41,13 @@
     "es2021": true,
     "jest": true
   },
-  "plugins": ["react", "@typescript-eslint", "import", "prettier"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "import",
+    "prettier",
+    "react-hooks"
+  ],
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
@@ -98,7 +105,9 @@
       {
         "allow": ["warn", "error"]
       }
-    ]
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "overrides": [
     {
