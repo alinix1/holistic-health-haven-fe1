@@ -20,9 +20,9 @@ import AboutPage from "./pages/AboutPage";
 import Footer from "./components/Footer/Footer";
 import BadURL from "./pages/BadURL";
 import spinner from "./assets/Yin_and_Yang.gif";
-import { getHolisticProducts } from "./apiCalls";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import { getHolisticProducts } from "./apiCalls";
 
 import "./App.css";
 
