@@ -10,11 +10,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
   cartItems,
 }) => {
   const history = useHistory();
-
-  const total = cartItems.reduce(
-    (acc, item) => acc + item.price * (item.quantity || 1),
-    0,
-  );
+  const total = useCartTotal();
 
   const handleCheckout = () => {
     history.push("/checkout");
