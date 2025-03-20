@@ -2,6 +2,7 @@ import type React from "react";
 import { useState, useEffect } from "react";
 import { Route, Switch, Redirect, Link } from "react-router-dom";
 import type { HolisticProduct } from "./resources/model";
+import { useToggle } from "./hooks/useToggle";
 import Button from "./components/Button/Button";
 import Dropdown from "./components/Dropdown/Dropdown";
 import SearchBar from "./components/SearchBar/SearchBar";
