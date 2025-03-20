@@ -84,15 +84,9 @@ const App: React.FC = () => {
       return;
     }
     setAilment(selectedAilment);
+    const filteredResults = filterProducts(selectedAilment, searchValue);
 
-    const formattedAilment = selectedAilment.toLowerCase().trim();
-    const filtered = holisticProducts.filter((holisticProduct) =>
-      holisticProduct.product_type.some(
-        (type) => type.toLowerCase().trim() === formattedAilment,
-      ),
-    );
-
-    setFilteredProducts(filtered);
+    setFilteredProducts(filteredResults);
   };
 
   const handleSearchInput = (value: string) => {
