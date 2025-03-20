@@ -15,6 +15,14 @@ const initialState: CartState = {
   cartItems: [],
 };
 
+const decreaseItemQuantity = (cartItems: HolisticProduct[], id: number) => {
+  return cartItems
+    .map((item) =>
+      item.id === id ? { ...item, quantity: (item.quantity || 0) - 1 } : item,
+    )
+    .filter((item) => (item.quantity || 0) > 0);
+};
+
 const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
     case "ADD_ITEM": {
