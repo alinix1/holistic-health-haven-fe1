@@ -7,7 +7,7 @@ import { Review } from "../../resources/model";
 const ReviewSubmit: React.FC = () => {
   const history = useHistory();
 
-  const handleReviewSubmit = async (values: Review) => {
+  const handleReviewSubmit = async (values: Review): Promise<void> => {
     try {
       await postReview(values);
       history.push("/testimonials");
