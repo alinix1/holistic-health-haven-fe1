@@ -39,14 +39,14 @@ const App: React.FC = () => {
     [],
   );
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const {
+    isOpen: isModalOpen,
+    close: closeModal,
+    open: openModal,
+  } = useToggle(false);
 
   useEffect(() => {
-    setIsModalOpen(true);
+    openModal();
     getHolisticProducts()
       .then((data) => {
         setHolisticProducts(data);
