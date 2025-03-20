@@ -33,7 +33,7 @@ const postReview = async (newReview: Review): Promise<Review> => {
   }
 };
 
-const getStripePublishableKey = async () => {
+const getStripePublishableKey = async (): Promise<string> => {
   try {
     const response = await axios.get(`${API_BASE_URL}/stripe/config`);
     return response.data.publishableKey;
