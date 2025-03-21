@@ -17,7 +17,7 @@ const CartIcon: React.FC<CartIconProps> = ({
       className={`relative flex cursor-pointer items-center justify-center ${className}`}
       aria-label="Toggle Cart Dropdown"
     >
-      <img className="w-10 h-10" src={cartIcon} alt="Cart Icon" />
+      <img className="w-10 h-10" src={cartIcon} alt="Shopping Cart" />
       {cartCount > 0 && <span className="absolute bottom-3">{cartCount}</span>}
     </button>
   );
