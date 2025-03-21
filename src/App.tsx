@@ -171,14 +171,14 @@ const App: React.FC = () => {
             By subscribing you agree with our{" "}
             <Link
               to="/terms-and-conditions"
-              className="text-blue-500 underline hover:text-blue-700"
+              className="text-[#0056b3] underline hover:text-blue-700"
             >
               terms & conditions
             </Link>{" "}
             and{" "}
             <Link
               to="/privacy-policy"
-              className="text-blue-500 underline hover:text-blue-700"
+              className="text-[#0056b3] underline hover:text-blue-700"
             >
               privacy policy
             </Link>
