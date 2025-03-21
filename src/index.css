@@ -20,3 +20,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.accessible-carousel [data-testid="carousel-indicator"] button,
+div[data-testid="carousel"] button.h-3.w-3.rounded-full,
+button.h-3.w-3.rounded-full {
+  min-width: 18px !important;
+  min-height: 18px !important;
+  margin: 0 3px !important;
+  /* This maintains the visual size but increases the touch target */
+  position: relative;
+  z-index: 50;
+  /* Center the visible dot within the larger touch area */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
