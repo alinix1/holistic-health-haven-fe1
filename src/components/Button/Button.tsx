@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import type { ButtonProps } from "../../resources/model";
 
 const Button: React.FC<ButtonProps> = ({
