@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { loadStripe, Stripe } from "@stripe/stripe-js";
+import type React from "react";
+import { useState, useEffect, useMemo } from "react";
+import { loadStripe, type Stripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentPage from "../../pages/PaymentPage";
 import { getStripePublishableKey, createPaymentIntent } from "../../apiCalls";
