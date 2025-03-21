@@ -1,5 +1,9 @@
 import axios from "axios";
-import { Review, HolisticProduct, PaymentPageProps } from "./resources/model";
+import type {
+  Review,
+  HolisticProduct,
+  PaymentPageProps,
+} from "./resources/model";
 
 const API_BASE_URL = "http://localhost:9000/api/v1";
 
