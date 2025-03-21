@@ -89,7 +89,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
           <img
             className="w-full max-w-[7rem] h-auto"
             src={logo}
-            alt="tree logo"
+            alt="company name homepage"
           />
         </Link>
       </div>
