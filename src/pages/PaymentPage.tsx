@@ -209,6 +209,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                           color: "#9e2146",
                         },
                       },
+                      hidePostalCode: true,
                     }}
                   />
                 </div>
