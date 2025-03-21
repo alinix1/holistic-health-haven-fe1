@@ -36,13 +36,20 @@ const PaymentContainer: React.FC = () => {
     createIntent();
   }, []);
 
+  // Memoize the Elements component to prevent unnecessary re-creation
+  const memoizedElements = useMemo(() => {
+    if (!stripePromise || !clientSecret) return null;
+
+    return (
+      <Elements stripe={stripePromise} options={{ clientSecret }}>
+        <PaymentPage clientSecret={clientSecret} />
+      </Elements>
+    );
+  }, [stripePromise, clientSecret]);
+
   return (
     <div>
-      {stripePromise && clientSecret ? (
-        <Elements stripe={stripePromise} options={{ clientSecret }}>
-          <PaymentPage clientSecret={clientSecret} />
-        </Elements>
-      ) : (
+      {memoizedElements || (
         <div className="flex items-center justify-center">
           <img
             src={spinner}
