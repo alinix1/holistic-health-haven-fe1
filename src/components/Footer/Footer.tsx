@@ -1,14 +1,14 @@
-import React from "react";
+import type React from "react";
 import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
     <footer className="footer-container flex justify-center items-center h-13.5vh w-screen p-4 bg-[#DECDB5]">
-      <p className="text-left footer-text font-inter italic text-sm md:text-lg">
+      <p className="text-black text-left footer-text font-inter italic text-sm md:text-lg">
         &copy; 2025 by&nbsp;
         <a
           href="https://github.com/alinix1/holistic-health-haven-fe1"
-          className="text-[#402B18] hover:underline"
+          className="text-[#0040a0] font-medium hover:underline"
         >
           Ali Nix
         </a>
