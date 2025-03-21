@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { loadStripe, Stripe } from "@stripe/stripe-js";
+import type React from "react";
+import { useState, useEffect, useMemo } from "react";
+import { loadStripe, type Stripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentPage from "../../pages/PaymentPage";
 import { getStripePublishableKey, createPaymentIntent } from "../../apiCalls";
@@ -35,13 +36,20 @@ const PaymentContainer: React.FC = () => {
     createIntent();
   }, []);
 
+  // Memoize the Elements component to prevent unnecessary re-creation
+  const memoizedElements = useMemo(() => {
+    if (!stripePromise || !clientSecret) return null;
+
+    return (
+      <Elements stripe={stripePromise} options={{ clientSecret }}>
+        <PaymentPage clientSecret={clientSecret} />
+      </Elements>
+    );
+  }, [stripePromise, clientSecret]);
+
   return (
     <div>
-      {stripePromise && clientSecret ? (
-        <Elements stripe={stripePromise} options={{ clientSecret }}>
-          <PaymentPage clientSecret={clientSecret} />
-        </Elements>
-      ) : (
+      {memoizedElements || (
         <div className="flex items-center justify-center">
           <img
             src={spinner}

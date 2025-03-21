@@ -1,8 +1,8 @@
-import React from "react";
+import type React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Button from "../components/Button/Button";
-import { ReviewFormProps } from "../resources/model";
+import type { ReviewFormProps } from "../resources/model";
 
 const initialValues = {
   holistic_product_id: 1,

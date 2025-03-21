@@ -1,5 +1,9 @@
 import axios from "axios";
-import { Review, HolisticProduct, PaymentPageProps } from "./resources/model";
+import type {
+  Review,
+  HolisticProduct,
+  PaymentPageProps,
+} from "./resources/model";
 
 const API_BASE_URL = "http://localhost:9000/api/v1";
 
@@ -13,7 +17,7 @@ const getHolisticProducts = async (): Promise<HolisticProduct[]> => {
   }
 };
 
-const getReviews = async (): Promise<Review> => {
+const getReviews = async (): Promise<Review[]> => {
   try {
     const response = await axios.get(`${API_BASE_URL}/reviews`);
     return response.data;

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useState, useEffect } from "react";
 import { getReviews } from "../apiCalls";
 import type { Review } from "../resources/model";
 import holisticHerbalImage from "../assets/holistic_herbal.jpg";

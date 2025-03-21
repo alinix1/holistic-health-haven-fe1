@@ -1,12 +1,13 @@
-import React, { useCallback, useState } from "react";
+import type React from "react";
+import { useCallback, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-// import * as Yup from "yup";
+import * as Yup from "yup";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { useHistory } from "react-router-dom";
 import { stateData } from "../mockData";
 import { useCartTotal, useCart } from "../hooks/useCart";
 import Button from "../components/Button/Button";
-import { PaymentFormValues, PaymentPageProps } from "../resources/model";
+import type { PaymentFormValues, PaymentPageProps } from "../resources/model";
 
 const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
   const stripe = useStripe();
@@ -29,29 +30,19 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
     cvv: "",
     cardholderName: "",
   };
-  // TODO: fix validation
-  // const validationSchema = Yup.object({
-  //   fullName: Yup.string().required("Full Name is required"),
-  //   email: Yup.string()
-  //     .email("Invalid email address")
-  //     .required("Email is required"),
-  //   address: Yup.string().required("Address is required"),
-  //   city: Yup.string().required("City is required"),
-  //   state: Yup.string().required("State is required"),
-  //   postalCode: Yup.string()
-  //     .matches(/^\d{5}$/, "Invalid postal code")
-  //     .required("Postal Code is required"),
-  //   cardNumber: Yup.string()
-  //     .matches(/^\d{16}$/, "Card number must be 16 digits")
-  //     .required("Card number is required"),
-  //   expiryDate: Yup.string()
-  //     .matches(/^(0[1-9]|1[0-2])\/?([0-9]{2})$/, "MM/YY format required")
-  //     .required("Expiry date is required"),
-  //   cvv: Yup.string()
-  //     .matches(/^\d{3,4}$/, "Invalid CVV")
-  //     .required("CVV is required"),
-  //   cardholderName: Yup.string().required("Cardholder name is required"),
-  // });
+
+  const validationSchema = Yup.object({
+    fullName: Yup.string().required("Full Name is required"),
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
+    address: Yup.string().required("Address is required"),
+    city: Yup.string().required("City is required"),
+    state: Yup.string().required("State is required"),
+    postalCode: Yup.string()
+      .matches(/^\d{5}$/, "Invalid postal code")
+      .required("Postal Code is required"),
+  });
 
   const handleSubmit = useCallback(
     async (values: PaymentFormValues) => {
@@ -218,6 +209,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                           color: "#9e2146",
                         },
                       },
+                      hidePostalCode: true,
                     }}
                   />
                 </div>

@@ -89,7 +89,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
           <img
             className="w-full max-w-[7rem] h-auto"
             src={logo}
-            alt="tree logo"
+            alt="company name homepage"
           />
         </Link>
       </div>
@@ -97,6 +97,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
       <div className=" block custom:block md:hidden">
         <button
           type="button"
+          aria-label="Open menu"
           onClick={toggleMenu}
           className="absolute p-2 text-black "
         >
@@ -108,6 +109,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
             strokeWidth="1.5"
             stroke="currentColor"
             className="w-6 h-6"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
