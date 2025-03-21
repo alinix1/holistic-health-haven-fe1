@@ -19,6 +19,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
     <section className="w-full min-w-[300px]">
       <div className="relative">
         <input
+          aria-label="Search holistic products"
           className="w-full font-inter bg-transparent placeholder:text-slate-600 text-slate-800 text-sm border border-slate-500 rounded-md pl-3 pr-16 py-2 transition duration-300 ease focus:outline-none focus:border-slate-700 hover:border-slate-500 shadow-sm focus:shadow"
           placeholder="Search holistic products..."
           type="text"
