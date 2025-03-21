@@ -97,6 +97,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
       <div className=" block custom:block md:hidden">
         <button
           type="button"
+          aria-label="Open menu"
           onClick={toggleMenu}
           className="absolute p-2 text-black "
         >
