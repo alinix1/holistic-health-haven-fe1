@@ -119,6 +119,7 @@ const App: React.FC = () => {
         <img
           src={spinner}
           alt="loading spinner Yin & Yang"
+          loading="lazy"
           className="loading-image w-20 h-20"
         />
         <h4 className="mt-4">
