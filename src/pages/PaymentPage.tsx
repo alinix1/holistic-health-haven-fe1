@@ -80,10 +80,10 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
         setPaymentError(null);
         setPaymentSucceeded(true);
 
-        history.push("/payment-success");
+        navigate("/payment-success");
       }
     },
-    [stripe, elements, clientSecret, history],
+    [stripe, elements, clientSecret, navigate],
   );
 
   return (
