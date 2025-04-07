@@ -9,11 +9,11 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
   toggleIsCartOpen,
   cartItems,
 }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const total = useCartTotal();
 
   const handleCheckout = (): void => {
-    history.push("/checkout");
+    navigate("/checkout");
   };
 
   return (
