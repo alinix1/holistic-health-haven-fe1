@@ -1,5 +1,6 @@
 import type React from "react";
 import { Link } from "react-router-dom";
+import { Menu, MenuButton } from "@headlessui/react";
 import logo from "../../assets/holistic_logo.png";
 import { MobileNavMenu } from "../Dropdown/Dropdown";
 import CartIcon from "../CartIcon/CartIcon";
