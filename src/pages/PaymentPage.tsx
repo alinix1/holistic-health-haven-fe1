@@ -251,7 +251,12 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                 Pay
                 {total > 0 ? ` $${total.toFixed(2)}` : ""}
               </Button>
-
+              {total === 0 && (
+                <div className="text-red-500 mt-2">
+                  Your cart is empty. Please add items before proceeding to
+                  payment.
+                </div>
+              )}
               {paymentError && (
                 <div className="text-red-500 mt-2">{paymentError}</div>
               )}
