@@ -1,6 +1,7 @@
 {
   "name": "holistic-health-haven-fe1",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^2.2.0",
@@ -15,13 +16,13 @@
     "@types/node": "^16.18.68",
     "animejs": "^3.2.2",
     "axios": "^1.6.2",
-    "flowbite-react": "^0.10.2",
     "formik": "^2.4.6",
     "nth-check": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^5.3.0",
+    "react-router-dom": "6.22.3",
     "react-scripts": "^5.0.1",
+    "swiper": "^11.2.6",
     "tw-elements": "^2.0.0",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
