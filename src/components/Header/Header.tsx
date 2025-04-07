@@ -17,8 +17,6 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
     close: closeCart,
   } = useToggle(false);
 
-  const { isOpen: isMenuOpen, toggle: toggleMenu } = useToggle(false);
-
   const cartCount = cartItems.reduce(
     (count, item) => count + (item.quantity || 1),
     0,
