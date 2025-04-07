@@ -54,7 +54,7 @@ export interface HolisticProductListProps {
 
 export interface HolisticProductPageProps {
   holisticProducts: HolisticProduct[];
-  id: number;
+  id?: number;
 }
 
 export interface ModalProps {
