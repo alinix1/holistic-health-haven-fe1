@@ -14,7 +14,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
   const elements = useElements();
   const total = useCartTotal();
   const { cartItems } = useCart();
-  const history = useHistory();
+  const navigate = useNavigate();
   const [paymentError, setPaymentError] = useState<string | null>(null);
   const [paymentSucceeded, setPaymentSucceeded] = useState<boolean>(false);
 
