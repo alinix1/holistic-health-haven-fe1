@@ -9,10 +9,14 @@ import { useCart } from "../hooks/useCart";
 
 const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
   holisticProducts,
-  id,
 }) => {
+  const { id } = useParams()
   const { dispatch } = useCart();
-  const selectedProduct = holisticProducts.find((product) => product.id === id);
+
+  const productId = id ? Number.parseInt(id, 10) : null;
+  const selectedProduct = productId 
+  ? holisticProducts.find((product) => product.id === productId)
+  : null;
 
   if (!selectedProduct) {
     return (
