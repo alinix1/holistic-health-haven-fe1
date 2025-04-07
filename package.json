@@ -38,7 +38,8 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
     "extends": [
@@ -79,6 +80,7 @@
     "playwright": "^1.50.1",
     "postcss": "^8.5.1",
     "prettier": "^3.4.2",
+    "source-map-explorer": "^2.5.3",
     "tailwindcss": "^3.3.6"
   }
 }
