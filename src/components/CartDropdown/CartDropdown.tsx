@@ -1,5 +1,5 @@
 import type React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import type { CartDropdownProps } from "../../resources/model";
 import { useCartTotal } from "../../hooks/useCart";
 import Button from "../Button/Button";
@@ -9,11 +9,11 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
   toggleIsCartOpen,
   cartItems,
 }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const total = useCartTotal();
 
   const handleCheckout = (): void => {
-    history.push("/checkout");
+    navigate("/checkout");
   };
 
   return (

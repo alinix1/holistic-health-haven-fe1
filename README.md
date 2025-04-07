@@ -81,11 +81,11 @@ https://github.com/alinix1/holistic-health-haven-fe1.git
 
 2. <strong>Install npm packages:</strong>
 
-`npm install` or `npm i`
+`yarn install` or `yarn i`
 
 3. <strong>`cd` into directory and run:</strong>
 
-`npm start`
+`yarn start`
 
 <!-- USAGE -->
 

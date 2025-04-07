@@ -1,5 +1,6 @@
 import type React from "react";
 import { Link } from "react-router-dom";
+import { Menu, MenuButton } from "@headlessui/react";
 import logo from "../../assets/holistic_logo.png";
 import { MobileNavMenu } from "../Dropdown/Dropdown";
 import CartIcon from "../CartIcon/CartIcon";
@@ -15,8 +16,6 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
     open: openCart,
     close: closeCart,
   } = useToggle(false);
-
-  const { isOpen: isMenuOpen, toggle: toggleMenu } = useToggle(false);
 
   const cartCount = cartItems.reduce(
     (count, item) => count + (item.quantity || 1),
@@ -95,36 +94,33 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
       </div>
       {/* Mobile Menu Toggle Button */}
       <div className=" block custom:block md:hidden">
-        <button
-          type="button"
-          aria-label="Open menu"
-          onClick={toggleMenu}
-          className="absolute p-2 text-black "
-        >
-          {/* Hamburger icon */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="w-6 h-6"
-            aria-hidden="true"
+        <Menu>
+          <MenuButton
+            as="button"
+            type="button"
+            aria-label="Open menu"
+            className="p-2 text-black "
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
-            />
-          </svg>
-        </button>
-      </div>
-      {/* Mobile Navigation Menu */}
-      {isMenuOpen && (
-        <div className="relative z-20 block custom:block md:hidden">
+            {/* Hamburger icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+              />
+            </svg>
+          </MenuButton>
           <MobileNavMenu />
-        </div>
-      )}
+        </Menu>
+      </div>
       {/* Title Section */}
       <section className="text-center mt-4">
         <h1 className="font-inter text-black text-4xl font-bold mb-10">

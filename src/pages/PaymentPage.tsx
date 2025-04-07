@@ -3,7 +3,7 @@ import { useCallback, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { stateData } from "../mockData";
 import { useCartTotal, useCart } from "../hooks/useCart";
 import Button from "../components/Button/Button";
@@ -14,7 +14,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
   const elements = useElements();
   const total = useCartTotal();
   const { cartItems } = useCart();
-  const history = useHistory();
+  const navigate = useNavigate();
   const [paymentError, setPaymentError] = useState<string | null>(null);
   const [paymentSucceeded, setPaymentSucceeded] = useState<boolean>(false);
 
@@ -80,10 +80,10 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
         setPaymentError(null);
         setPaymentSucceeded(true);
 
-        history.push("/payment-success");
+        navigate("/payment-success");
       }
     },
-    [stripe, elements, clientSecret, history],
+    [stripe, elements, clientSecret, navigate],
   );
 
   return (
@@ -251,7 +251,12 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                 Pay
                 {total > 0 ? ` $${total.toFixed(2)}` : ""}
               </Button>
-
+              {total === 0 && (
+                <div className="text-red-500 mt-2">
+                  Your cart is empty. Please add items before proceeding to
+                  payment.
+                </div>
+              )}
               {paymentError && (
                 <div className="text-red-500 mt-2">{paymentError}</div>
               )}

@@ -75,23 +75,24 @@ export const MobileNavMenu: React.FC = () => {
   ];
 
   return (
-    <div
-      className="absolute top-10 
-          left-2 
-          w-30 right-0 mt-2 w-56 origin-top-right bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
-    >
+    <MenuItems className="absolute top-10 left-2 w-40 bg-white shadow-lg rounded ring-1 ring-black/5 focus:outline-none z-[60]">
       <div className="flex flex-col gap-y-2 px-2 py-2">
         {navLinks.map((link) => (
-          <Link
-            key={link.name}
-            to={link.to}
-            className="block rounded px-2 py-2 text-xs uppercase text-black hover:bg-slate-700 hover:text-white"
-          >
-            {link.name}
-          </Link>
+          <MenuItem key={link.name}>
+            {({ active }: { active: boolean }) => (
+              <Link
+                to={link.to}
+                className={`${
+                  active ? "bg-slate-700 text-white" : "text-black"
+                } block rounded px-2 py-2 text-xs uppercase hover:bg-slate-700 hover:text-white`}
+              >
+                {link.name}
+              </Link>
+            )}
+          </MenuItem>
         ))}
       </div>
-    </div>
+    </MenuItems>
   );
 };
 

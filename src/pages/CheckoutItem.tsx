@@ -1,15 +1,15 @@
 import type React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button/Button";
 import { useCart, useCartTotal } from "../hooks/useCart";
 
 const CheckoutItem: React.FC = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { cartItems, dispatch } = useCart();
 
   const total = useCartTotal();
   const handleProceedToPayment = (): void => {
-    history.push("/payment");
+    navigate("/payment");
   };
 
   const handleRemoveItem = (id: number): void => {
