@@ -205,48 +205,46 @@ const App: React.FC = () => {
       </Header>
       <CarouselSection />
       <main className="App flex-grow">
-        <Switch>
-          <Route
-            exact
+        <Routes>
+          <Route 
             path="/"
-            render={() => (
-              <HolisticProductList holisticProducts={productList} />
-            )}
+            element={
+              <HolisticProductList holisticProducts={productList} />}
           />
           <Route
-            exact
             path="/testimonials"
-            render={() => <TestimonialsPage />}
+           element={<TestimonialsPage />}
           />
-          <Route exact path="/reviews" component={ReviewSubmit} />
-
+          <Route path="/reviews" element={<ReviewSubmit />}
+          />
           <Route
-            exact
             path="/terms-and-conditions"
-            component={TermsAndConditions}
+            element={<TermsAndConditions />}
           />
-          <Route exact path="/privacy-policy" component={PrivacyPolicy} />
-          <Route exact path="/checkout" render={() => <CheckoutItem />} />
-          <Route exact path="/payment" render={() => <PaymentContainer />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />}
+          />
+          <Route path="/checkout" element={<CheckoutItem />} 
+          />
+          <Route path="/payment" element={<PaymentContainer />} 
+          />
           <Route
-            exact
             path="/payment-success"
-            render={() => <PaymentSuccess />}
+            element={<PaymentSuccess />}
           />
-          <Route exact path="/about" render={() => <AboutPage />} />
-          <Route
-            exact
-            path="/:id"
-            render={({ match }) => (
-              <HolisticProductPage
-                holisticProducts={holisticProducts}
-                id={Number.parseInt(match.params.id, 10)}
-              />
-            )}
+          <Route path="/about" element={<AboutPage />} 
           />
-          <Route path="/badURL" component={BadURL} />
-          <Redirect from="*" to="/badURL" />
-        </Switch>
+        <Route 
+          path="/:id" 
+          element={<HolisticProductPage holisticProducts={holisticProducts}
+           />} 
+          />
+        <Route path="/badURL" element={<BadURL />} 
+          />
+        <Route 
+          path="*" 
+          element={<Navigate to="/badURL" replace />} 
+        />
+        </Routes>
       </main>
       <Footer />
     </div>
