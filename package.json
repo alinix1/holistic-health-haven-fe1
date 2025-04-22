@@ -1,7 +1,9 @@
 {
   "name": "holistic-health-haven-fe1",
   "version": "0.1.0",
-  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
   "private": true,
   "dependencies": {
     "@headlessui/react": "^2.2.0",
