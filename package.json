@@ -78,9 +78,13 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^4.6.2",
     "playwright": "^1.50.1",
-    "postcss": "^8.5.1",
     "prettier": "^3.4.2",
     "source-map-explorer": "^2.5.3",
-    "tailwindcss": "^3.3.6"
+    "tailwindcss": "^3.3.6",
+    "react-scripts": "^5.0.1"
+  },
+  "resolutions": {
+    "postcss": "^8.4.31",
+    "nth-check": "^2.1.1"
   }
 }
