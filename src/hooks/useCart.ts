@@ -18,6 +18,7 @@ export const useCartTotal = (): number => {
         (acc, item) => acc + item.price * (item.quantity || 1),
         0,
       ) || 0
+      
     );
   }, [context?.cartItems]);
 };
