@@ -94,7 +94,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
       <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-8">
         <Formik
           initialValues={initialValues}
-          // validationSchema={validationSchema}
+          validationSchema={validationSchema}
           onSubmit={(values, actions) => {
             handleSubmit(values);
             actions.setSubmitting(false);
