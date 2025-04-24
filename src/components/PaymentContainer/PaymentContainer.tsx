@@ -1,8 +1,9 @@
 import type React from "react";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { loadStripe, type Stripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentPage from "../../pages/PaymentPage";
+import { useCartTotal } from '../../hooks/useCart';
 import { getStripePublishableKey, createPaymentIntent } from "../../apiCalls";
 import spinner from "../../assets/Yin_and_Yang.gif";
 
