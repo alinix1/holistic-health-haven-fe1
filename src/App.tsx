@@ -195,46 +195,11 @@ const App: React.FC = () => {
       </Header>
       <CarouselSection />
       <main className="App flex-grow">
-        <Routes>
-          <Route 
-            path="/"
-            element={
-              <HolisticProductList holisticProducts={productList} />}
-          />
-          <Route
-            path="/testimonials"
-           element={<TestimonialsPage />}
-          />
-          <Route path="/reviews" element={<ReviewSubmit />}
-          />
-          <Route
-            path="/terms-and-conditions"
-            element={<TermsAndConditions />}
-          />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />}
-          />
-          <Route path="/checkout" element={<CheckoutItem />} 
-          />
-          <Route path="/payment" element={<PaymentContainer />} 
-          />
-          <Route
-            path="/payment-success"
-            element={<PaymentSuccess />}
-          />
-          <Route path="/about" element={<AboutPage />} 
-          />
-        <Route 
-          path="/:id" 
-          element={<HolisticProductPage holisticProducts={holisticProducts}
-           />} 
-          />
-        <Route path="/badURL" element={<BadURL />} 
-          />
-        <Route 
-          path="*" 
-          element={<Navigate to="/badURL" replace />} 
+        <AppRoutes
+        holisticProducts={holisticProducts}
+        productList={productList}
+        loading={loading}
         />
-        </Routes>
       </main>
       <Footer />
     </div>
