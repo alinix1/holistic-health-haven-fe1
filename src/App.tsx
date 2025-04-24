@@ -1,6 +1,6 @@
 import type React from "react";
 import { useState, useEffect } from "react";
-import { Route, Routes, Navigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import type { HolisticProduct } from "./resources/model";
 import { useToggle } from "./hooks/useToggle";
 import Button from "./components/Button/Button";
