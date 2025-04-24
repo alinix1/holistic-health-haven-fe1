@@ -11,6 +11,8 @@ const PaymentContainer: React.FC = () => {
   const [stripePromise, setStripePromise] =
     useState<Promise<Stripe | null> | null>(null);
   const [clientSecret, setClientSecret] = useState<string>("");
+  const [loading, setLoading] = useState(true);
+  const total = useCartTotal()
 
   useEffect(() => {
     const fetchPublishableKey = async (): Promise<void> => {
