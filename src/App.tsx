@@ -8,21 +8,11 @@ import Dropdown from "./components/Dropdown/Dropdown";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Header from "./components/Header/Header";
 import CarouselSection from "./components/CarouselSection/CarouselSection";
-import HolisticProductList from "./pages/HolisticProducList";
-import HolisticProductPage from "./pages/HolisticProductPage";
-import TestimonialsPage from "./pages/TestimonialsPage";
-import ReviewSubmit from "./components/ReviewSubmit/ReviewSubmit";
 import Modal from "./components/Modal/Modal";
-import CheckoutItem from "./pages/CheckoutItem";
-import PaymentContainer from "./components/PaymentContainer/PaymentContainer";
-import PaymentSuccess from "./pages/PaymentSuccess";
-import AboutPage from "./pages/AboutPage";
 import Footer from "./components/Footer/Footer";
-import BadURL from "./pages/BadURL";
 import spinner from "./assets/Yin_and_Yang.gif";
-import TermsAndConditions from "./pages/TermsAndConditions";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { getHolisticProducts } from "./apiCalls";
+import { AppRoutes } from "./routes/AppRoutes";
 
 import "./App.css";
 
