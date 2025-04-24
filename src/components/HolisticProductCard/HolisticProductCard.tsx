@@ -21,6 +21,7 @@ const HolisticProductCard: React.FC<HolisticProductProps> = ({
           className="product-img w-80 h-48 object-cover rounded-lg shadow-none transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
           src={img}
           alt={product_title}
+          loading="lazy"
         />
         <p className="product-type font-jakarta font-semibold mb-5">
           {product_type.join(", ")}
