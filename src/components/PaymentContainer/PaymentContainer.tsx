@@ -29,38 +29,42 @@ const PaymentContainer: React.FC = () => {
   useEffect(() => {
     const createIntent = async (): Promise<void> => {
       try {
-        const data = await createPaymentIntent({ amount: 2000 });
+        const amountInCents = Math.max(50, Math.round(total * 100))
+        const data = await createPaymentIntent({ amount: amountInCents });
         setClientSecret(data.clientSecret);
       } catch (error) {
         console.error("Error creating payment intent", error);
+      } finally {
+        setLoading(false);
       }
     };
+    if (stripePromise) {
+      createIntent();
+    }
+    
+  }, [total, stripePromise]);
 
-    createIntent();
-  }, []);
-
-  // Memoize the Elements component to prevent unnecessary re-creation
-  const memoizedElements = useMemo(() => {
-    if (!stripePromise || !clientSecret) return null;
-
+  if (loading || !clientSecret || !stripePromise) {
     return (
-      <Elements stripe={stripePromise} options={{ clientSecret }}>
-        <PaymentPage clientSecret={clientSecret} />
-      </Elements>
+      <div className="flex items-center justify-center">
+        <img
+          src={spinner}
+          className="w-20 h-20"
+          alt="loading spinner Yin & Yang"
+        />
+      </div>
     );
-  }, [stripePromise, clientSecret]);
+  }
 
   return (
     <div>
-      {memoizedElements || (
-        <div className="flex items-center justify-center">
-          <img
-            src={spinner}
-            className="w-20 h-20"
-            alt="loading spinner Yin & Yang"
-          />
-        </div>
-      )}
+      <Elements 
+        stripe={stripePromise} 
+        options={{ clientSecret }} 
+        key={clientSecret}
+      >
+        <PaymentPage clientSecret={clientSecret} />
+      </Elements>
     </div>
   );
 };
