@@ -23,7 +23,7 @@ const CarouselSection: React.FC = () => {
           <img
             src={aboutProduct}
             alt="Holistic health products arranged on display"
-            loading="lazy"
+            data-fetchpriority="high"
             className="w-full h-full object-cover"
           />
         </SwiperSlide>
