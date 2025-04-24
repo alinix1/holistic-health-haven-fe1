@@ -4,9 +4,10 @@ import { Navigation, Pagination, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import aboutProduct from "../../assets/about_product.jpg";
+import aboutProduct from "../../assets/about_product.png";
 import sage from "../../assets/sage.jpg";
 import yoga from "../../assets/yoga.jpg";
+
 const CarouselSection: React.FC = () => {
   return (
     <div className="relative w-full bg-slate-800 h-56 sm:h-64 xl:h-80 2xl:h-96 accessible-carousel">
@@ -22,7 +23,7 @@ const CarouselSection: React.FC = () => {
           <img
             src={aboutProduct}
             alt="Holistic health products arranged on display"
-            loading="lazy"
+            data-fetchpriority="high"
             className="w-full h-full object-cover"
           />
         </SwiperSlide>

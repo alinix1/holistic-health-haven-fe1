@@ -1,31 +1,23 @@
 {
   "name": "holistic-health-haven-fe1",
   "version": "0.1.0",
-  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
   "private": true,
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
     "@stripe/react-stripe-js": "^3.1.1",
     "@stripe/stripe-js": "^5.6.0",
-    "@svgr/webpack": "^8.1.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.68",
     "animejs": "^3.2.2",
     "axios": "^1.6.2",
     "formik": "^2.4.6",
-    "nth-check": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "6.22.3",
-    "react-scripts": "^5.0.1",
     "swiper": "^11.2.6",
     "tw-elements": "^2.0.0",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4",
     "yup": "^1.6.1"
   },
   "scripts": {
@@ -63,7 +55,9 @@
     "@babel/core": "^7.26.0",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-env": "^7.26.0",
+    "@svgr/webpack": "^8.1.0",
     "@types/animejs": "^3.1.0",
+    "@types/node": "^22.14.1",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.2.18",
     "@types/react-router-dom": "^5.3.3",
@@ -77,10 +71,15 @@
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "playwright": "^1.50.1",
-    "postcss": "^8.5.1",
     "prettier": "^3.4.2",
+    "react-scripts": "^5.0.1",
     "source-map-explorer": "^2.5.3",
-    "tailwindcss": "^3.3.6"
+    "tailwindcss": "^3.3.6",
+    "typescript": "^5.8.3",
+    "web-vitals": "^4.2.4"
+  },
+  "resolutions": {
+    "postcss": "^8.4.31",
+    "nth-check": "^2.1.1"
   }
 }

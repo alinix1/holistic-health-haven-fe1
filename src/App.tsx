@@ -1,6 +1,6 @@
 import type React from "react";
 import { useState, useEffect } from "react";
-import { Route, Routes, Navigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import type { HolisticProduct } from "./resources/model";
 import { useToggle } from "./hooks/useToggle";
 import Button from "./components/Button/Button";
@@ -8,21 +8,11 @@ import Dropdown from "./components/Dropdown/Dropdown";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Header from "./components/Header/Header";
 import CarouselSection from "./components/CarouselSection/CarouselSection";
-import HolisticProductList from "./pages/HolisticProducList";
-import HolisticProductPage from "./pages/HolisticProductPage";
-import TestimonialsPage from "./pages/TestimonialsPage";
-import ReviewSubmit from "./components/ReviewSubmit/ReviewSubmit";
 import Modal from "./components/Modal/Modal";
-import CheckoutItem from "./pages/CheckoutItem";
-import PaymentContainer from "./components/PaymentContainer/PaymentContainer";
-import PaymentSuccess from "./pages/PaymentSuccess";
-import AboutPage from "./pages/AboutPage";
 import Footer from "./components/Footer/Footer";
-import BadURL from "./pages/BadURL";
 import spinner from "./assets/Yin_and_Yang.gif";
-import TermsAndConditions from "./pages/TermsAndConditions";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { getHolisticProducts } from "./apiCalls";
+import { AppRoutes } from "./routes/AppRoutes";
 
 import "./App.css";
 
@@ -205,46 +195,11 @@ const App: React.FC = () => {
       </Header>
       <CarouselSection />
       <main className="App flex-grow">
-        <Routes>
-          <Route 
-            path="/"
-            element={
-              <HolisticProductList holisticProducts={productList} />}
-          />
-          <Route
-            path="/testimonials"
-           element={<TestimonialsPage />}
-          />
-          <Route path="/reviews" element={<ReviewSubmit />}
-          />
-          <Route
-            path="/terms-and-conditions"
-            element={<TermsAndConditions />}
-          />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />}
-          />
-          <Route path="/checkout" element={<CheckoutItem />} 
-          />
-          <Route path="/payment" element={<PaymentContainer />} 
-          />
-          <Route
-            path="/payment-success"
-            element={<PaymentSuccess />}
-          />
-          <Route path="/about" element={<AboutPage />} 
-          />
-        <Route 
-          path="/:id" 
-          element={<HolisticProductPage holisticProducts={holisticProducts}
-           />} 
-          />
-        <Route path="/badURL" element={<BadURL />} 
-          />
-        <Route 
-          path="*" 
-          element={<Navigate to="/badURL" replace />} 
+        <AppRoutes
+        holisticProducts={holisticProducts}
+        productList={productList}
+        loading={loading}
         />
-        </Routes>
       </main>
       <Footer />
     </div>
