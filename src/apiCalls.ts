@@ -27,8 +27,8 @@ const getHolisticProducts = async (): Promise<HolisticProduct[]> => {
 
 const getReviews = async (): Promise<Review[]> => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/reviews`);
-    return response.data;
+    const response = await fetch(`${API_BASE_URL}/reviews`);
+    return await handleResponse(response);
   } catch (error) {
     console.error("Error fetching reviews", error);
     throw error;
