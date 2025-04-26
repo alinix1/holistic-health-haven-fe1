@@ -66,11 +66,14 @@ const createPaymentIntent = async (payload: {
   amount: number;
 }): Promise<PaymentPageProps> => {
   try {
-    const response = await axios.post(
-      `${API_BASE_URL}/stripe/create-payment-intent`,
-      payload,
-    );
-    return response.data;
+    const response = await fetch(`${API_BASE_URL}/stripe/create-payment-intent`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+    return await handleResponse(response);
   } catch (error) {
     console.error("Error creating payment intent", error);
     throw error;
