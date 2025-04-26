@@ -37,8 +37,14 @@ const getReviews = async (): Promise<Review[]> => {
 
 const postReview = async (newReview: Review): Promise<Review> => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/reviews`, newReview);
-    return response.data;
+    const response = await fetch(`${API_BASE_URL}/reviews`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newReview),
+    });
+    return await handleResponse(response);
   } catch (error) {
     console.error("Error posting review", error);
     throw error;
