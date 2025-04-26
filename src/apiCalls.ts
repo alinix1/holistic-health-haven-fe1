@@ -6,10 +6,19 @@ import type {
 
 const API_BASE_URL = "http://localhost:9000/api/v1";
 
+// Helper function to handle responses
+const handleResponse = async <T> (response: Response): Promise<T> => {
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`HTTP error! Status: ${response.status} - ${errorText}`);
+  }
+  return response.json();
+};
+
 const getHolisticProducts = async (): Promise<HolisticProduct[]> => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/products`);
-    return response.data;
+    const response = await fetch(`${API_BASE_URL}/products`);
+    return await handleResponse(response);
   } catch (error) {
     console.error("Error fetching holistic products", error);
     throw error;
