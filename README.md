@@ -45,7 +45,6 @@ This full-stack project demonstrates modern web development practices using the 
 - ![TypeScript][TypeScript-shield]
 - ![React][React-shield]
 - ![React Router][React-Router-shield]
-- ![Axios][Axios-shield]
 - ![Context API][Context-API-shield]
 - ![Tailwind CSS][Tailwind-CSS-shield]
 - ![Formik][Formik-shield]

@@ -25,7 +25,7 @@ interface AppRoutesProps {
 }
 
 // Loading component to use with Suspense
-const LoadingSpinner = () => (
+const LoadingSpinner = (): JSX.Element => (
     <div className="flex flex-col items-center justify-center h-full mt-20">
       <img
         src={spinner}
