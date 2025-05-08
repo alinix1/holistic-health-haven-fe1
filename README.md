@@ -108,7 +108,7 @@ https://github.com/alinix1/holistic-health-haven-fe1.git
 
 <img width="902" alt="Image" src="https://github.com/user-attachments/assets/8b5681a9-cd35-475e-b7df-b13e80f9f408" />
 
-![Success page](src="https://gist.github.com/user-attachments/assets/6a1710e0-900e-4848-9306-57300313da16")
+![Success page](https://gist.github.com/user-attachments/assets/6a1710e0-900e-4848-9306-57300313da16)
 
 ## Feature Overview
 
