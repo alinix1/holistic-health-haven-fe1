@@ -1,7 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import aboutProduct from "../../assets/about_product.png";
-import sage from "../../assets/sage.jpg";
-import yoga from "../../assets/yoga.jpg";
+import { getOptimizedImageUrl } from "../../apiCalls";
 
 const CarouselSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
