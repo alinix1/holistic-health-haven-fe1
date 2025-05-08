@@ -1,6 +1,6 @@
 import type React from "react";
 import type { ModalProps } from "../../resources/model";
-import discount from "../../assets/discount.jpg";
+import discount from "../../assets/discount1.webp";
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
   if (!isOpen) {

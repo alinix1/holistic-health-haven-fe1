@@ -1,7 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import aboutProduct from "../../assets/about_product.png";
-import sage from "../../assets/sage.jpg";
-import yoga from "../../assets/yoga.jpg";
+import { getOptimizedImageUrl } from "../../apiCalls";
 
 const CarouselSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,15 +7,15 @@ const CarouselSection: React.FC = () => {
   
   const images = [
     {
-      src: aboutProduct,
+      src: getOptimizedImageUrl('static', 'about_product1', 1200, 80),
       alt: "Holistic health products arranged on display",
     },
     {
-      src: sage,
+      src: getOptimizedImageUrl('static', 'sage1', 1200, 80),
       alt: "Dried sage bundle for aromatherapy and cleansing",
     },
     {
-      src: yoga,
+      src: getOptimizedImageUrl('static', 'yoga1', 1200, 80),
       alt: "Yoga mat and accessories for wellness practice",
     }
   ];
@@ -120,7 +118,7 @@ const CarouselSection: React.FC = () => {
         {images.map((_, index) => (
           <button
             key={index}
-            className={`w-2.5 h-2.5 rounded-full focus:outline-none focus:ring-2 focus:ring-white ${
+            className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full focus:outline-none focus:ring-2 focus:ring-white ${
               index === currentIndex ? "bg-white" : "bg-white/40"
             }`}
             onClick={() => setCurrentIndex(index)}

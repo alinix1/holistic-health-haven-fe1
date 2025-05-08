@@ -15,6 +15,24 @@ const handleResponse = async <T> (response: Response): Promise<T> => {
   return response.json();
 };
 
+/**
+ * Get optimized image URL
+ * @param source - 'db' or 'static'
+ * @param id - Image ID or filename
+ * @param width - Desired width in pixels
+ * @param quality - Image quality (1-100)
+ * @returns URL to the optimized image
+ */
+const getOptimizedImageUrl = (
+  source: 'db' | 'static',
+  id: string | number,
+  width = 800,
+  quality = 80
+): string => {
+  return `${API_BASE_URL}/images/optimize?source=${source}&id=${id}&width=${width}&quality=${quality}`;
+};
+
+
 const getHolisticProducts = async (): Promise<HolisticProduct[]> => {
   try {
     const response = await fetch(`${API_BASE_URL}/products`);
@@ -86,5 +104,7 @@ export {
   postReview,
   getStripePublishableKey,
   createPaymentIntent,
+  getOptimizedImageUrl
+
 };
 

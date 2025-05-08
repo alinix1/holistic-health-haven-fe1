@@ -1,6 +1,6 @@
 import type React from "react";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
-import flowerFieldImage from "../assets/flower_field.png";
+import flowerFieldImage from "../assets/flower_field1.webp";
 
 const PrivacyPolicy: React.FC = () => {
   return (

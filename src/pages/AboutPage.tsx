@@ -2,8 +2,8 @@ import type React from "react";
 import { useEffect } from "react";
 import { Collapse, initTWE } from "tw-elements";
 import Accordion from "../components/Accordion/Accordion";
-import holisticProductsImg from "../assets/holistic_products.jpg";
-import productsBackgroundImg from "../assets/products_background.jpg";
+import holisticProductsImg from "../assets/holistic_products1.webp";
+import productsBackgroundImg from "../assets/products_background1.webp";
 
 const AboutPage: React.FC = () => {
   useEffect(() => {

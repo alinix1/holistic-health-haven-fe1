@@ -1,5 +1,5 @@
 import type React from "react";
-import flowerFieldImage from "../assets/flower_field.png";
+import flowerFieldImage from "../assets/flower_field1.webp";
 
 const TermsAndConditions: React.FC = () => {
   return (
