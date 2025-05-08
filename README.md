@@ -170,7 +170,7 @@ https://github.com/alinix1/holistic-health-haven-fe1.git
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<img width="895" alt="Lighthouse Eval" src="https://gist.github.com/user-attachments/assets/8cdb2d87-3ad0-42af-9ccd-687be0da4684" />
+![Lighthouse Eval](https://github.com/user-attachments/assets/95b11f30-b2d6-498c-876c-85ba63773143)
 
 <!-- ROADMAP -->
 
