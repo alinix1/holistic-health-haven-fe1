@@ -7,15 +7,15 @@ const CarouselSection: React.FC = () => {
   
   const images = [
     {
-      src: aboutProduct,
+      src: getOptimizedImageUrl('static', 'about_product1', 1200, 80),
       alt: "Holistic health products arranged on display",
     },
     {
-      src: sage,
+      src: getOptimizedImageUrl('static', 'sage1', 1200, 80),
       alt: "Dried sage bundle for aromatherapy and cleansing",
     },
     {
-      src: yoga,
+      src: getOptimizedImageUrl('static', 'yoga1', 1200, 80),
       alt: "Yoga mat and accessories for wellness practice",
     }
   ];
