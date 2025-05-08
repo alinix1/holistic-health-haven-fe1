@@ -1,11 +1,13 @@
 import type React from "react";
 import HolisticProductCard from "../components/HolisticProductCard/HolisticProductCard";
-import holisticHerbalImage from "../assets/holistic_herbal.jpg";
+import { getOptimizedImageUrl } from "../apiCalls";
 import type { HolisticProductListProps } from "../resources/model";
 
 const HolisticProductCards: React.FC<HolisticProductListProps> = ({
   holisticProducts,
 }) => {
+   
+   const holisticHerbalImage = getOptimizedImageUrl('static', 'holistic_herbal', 1920, 70);
   const holisticCards = holisticProducts.map((product) => (
     <HolisticProductCard
       id={product.id}
