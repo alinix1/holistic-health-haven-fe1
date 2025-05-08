@@ -102,17 +102,21 @@ https://github.com/alinix1/holistic-health-haven-fe1.git
 
 <img width="1414" alt="Image" src="https://github.com/user-attachments/assets/2e52fde3-87f4-4aaa-8041-d12e39b5e747" />
 
+<img width="501" alt="responsive" src="https://gist.github.com/user-attachments/assets/db47b7b3-f124-48cd-b2ed-418bcc4865b5" />
+
 <img width="882" alt="Image" src="https://github.com/user-attachments/assets/121c6c2a-4d76-4e6b-acc5-8df5bf7ded03" />
 
 <img width="902" alt="Image" src="https://github.com/user-attachments/assets/8b5681a9-cd35-475e-b7df-b13e80f9f408" />
+
+<img width="659" alt="Screenshot 2025-05-08 at 1 06 43 PM" src="https://gist.github.com/user-attachments/assets/6a1710e0-900e-4848-9306-57300313da16" />
 
 ## Feature Overview
 
 <ul>
  <li><strong>UI/UX Features:</strong>
  <ul>
-<li>Carousel using Flowbite</li>
-<li>Controlled form using Formik</li>
+<li>Custom Carousel</li>
+<li>Controlled form using Formik + Yup</li>
 <li>Dropdown menu of ailments</li>
 <li>Search bar</li>
 <li>Cart dropdown menu</li>
@@ -145,6 +149,7 @@ https://github.com/alinix1/holistic-health-haven-fe1.git
 <li>Terms  &amp; conditions page</li>
 <li>Checkout page</li>
 <li>Payment page</li>
+<li> Successful payment page</li>
 <li>Bad URL page</li>
 </ul>
 </li>
@@ -154,14 +159,18 @@ https://github.com/alinix1/holistic-health-haven-fe1.git
 
 - Successfully implemented a full-stack application
 - Successfully integrated Stripe for a one-time payment
+- Optimized and significantly improved performance of the application
 - Achieved responsive web design using Tailwind CSS
 
 ## Challenges:
 
 - Gaining deeper familiarity with TypeScript
 - Refining design architecture for React components and database schema (ERD)
+- Optimizing and increasing Lighthouse score
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<img width="895" alt="Lighthouse Eval" src="https://gist.github.com/user-attachments/assets/8cdb2d87-3ad0-42af-9ccd-687be0da4684" />
 
 <!-- ROADMAP -->
 
