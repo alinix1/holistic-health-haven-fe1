@@ -104,5 +104,7 @@ export {
   postReview,
   getStripePublishableKey,
   createPaymentIntent,
+  getOptimizedImageUrl
+
 };
 
