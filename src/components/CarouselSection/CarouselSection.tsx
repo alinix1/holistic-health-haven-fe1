@@ -1,24 +1,38 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { getOptimizedImageUrl } from "../../apiCalls";
 
 const CarouselSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  
-  const images = [
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = (): void => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+
+  const images = useMemo(() => [
     {
       src: getOptimizedImageUrl('static', 'about_product1', 1200, 80),
+      mobileSrc: getOptimizedImageUrl('static', 'about_product1', 400, 80),
       alt: "Holistic health products arranged on display",
     },
     {
       src: getOptimizedImageUrl('static', 'sage1', 1200, 80),
+      mobileSrc: getOptimizedImageUrl('static', 'sage1', 400, 80), 
       alt: "Dried sage bundle for aromatherapy and cleansing",
     },
     {
       src: getOptimizedImageUrl('static', 'yoga1', 1200, 80),
+      mobileSrc: getOptimizedImageUrl('static', 'yoga1', 400, 80),
       alt: "Yoga mat and accessories for wellness practice",
     }
-  ];
+  ], []);
 
   // Move to the next slide
   const nextSlide = useCallback(() => {
