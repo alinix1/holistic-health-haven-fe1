@@ -8,11 +8,12 @@ import Dropdown from "./components/Dropdown/Dropdown";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Header from "./components/Header/Header";
 import CarouselSection from "./components/CarouselSection/CarouselSection";
-import Modal from "./components/Modal/Modal";
 import Footer from "./components/Footer/Footer";
 import spinner from "./assets/Yin_and_Yang.gif";
 import { getHolisticProducts } from "./apiCalls";
 import { AppRoutes } from "./routes/AppRoutes";
+
+const Modal = lazy(() => import("./components/Modal/Modal"));
 
 import "./App.css";
 
