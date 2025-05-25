@@ -126,7 +126,9 @@ const App: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Modal */}
+      {/* Modal with Suspense */}
+      {isModalOpen && (
+      <Suspense fallback={<div className="hidden"></div>}>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <div className="flex flex-col h-full px-4 py-6">
           {/* Title Section */}
@@ -138,7 +140,7 @@ const App: React.FC = () => {
               15% off your first order
             </h2>
           </div>
-
+          
           {/* Form Container */}
           <div className="flex-grow flex items-center justify-center">
             <div className="w-full max-w-md p-4 border border-gray-200 rounded-lg bg-white shadow mt-40">
@@ -182,6 +184,8 @@ const App: React.FC = () => {
           </p>
         </div>
       </Modal>
+      </Suspense>
+      )}
       <Header>
         <div className="flex flex-col md:flex-row items-center justify-start gap-4">
           <Dropdown
