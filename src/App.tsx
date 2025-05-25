@@ -37,11 +37,15 @@ const App: React.FC = () => {
   } = useToggle(false);
 
   useEffect(() => {
-    openModal();
+
     getHolisticProducts()
       .then((data) => {
         setHolisticProducts(data);
         setLoading(false);
+
+        setTimeout(() => {
+          openModal();
+        }, 2000);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
