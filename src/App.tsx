@@ -15,8 +15,6 @@ import { AppRoutes } from "./routes/AppRoutes";
 
 const Modal = lazy(() => import("./components/Modal/Modal"));
 
-import "./App.css";
-
 const App: React.FC = () => {
   const [holisticProducts, setHolisticProducts] = useState<HolisticProduct[]>(
     [],
