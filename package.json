@@ -22,7 +22,6 @@
     "dev": "react-scripts start",
     "start": "ESLINT_NO_DEV_ERRORS=true react-scripts start",
     "build": "react-scripts build",
-    "build:css": "tailwindcss build -o output.css",
     "test": "react-scripts test --watch",
     "test:ci": "react-scripts test --coverage",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
