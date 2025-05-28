@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { useNavigate } from "react-router-dom";
-import { stateData } from "../mockData";
+import { stateData } from "../utils";
 import { useCartTotal, useCart } from "../hooks/useCart";
 import Button from "../components/Button/Button";
 import type { PaymentFormValues, PaymentPageProps } from "../resources/model";
