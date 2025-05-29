@@ -11,13 +11,13 @@ const AboutPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="py-10 px-6 min-h-screen bg-[#F5F5F5]">
+    <div className="min-h-screen bg-[#F5F5F5] px-6 py-10">
       {/* About Info */}
-      <h1 className="text-3xl font-inter font-bold text-center text-gray-800 mb-8">
-        <span className="italic font-quicksand"> About </span> Holistic Health
+      <h1 className="font-inter mb-8 text-center text-3xl font-bold text-gray-800">
+        <span className="font-quicksand italic"> About </span> Holistic Health
         Haven
       </h1>
-      <p className="leading-relaxed font-jakarta">
+      <p className="font-jakarta leading-relaxed">
         At Holistic Health Haven, we believe in empowering individuals to take
         charge of their well-being through natural and sustainable practices.
         Our mission is to create a sanctuary where holistic health meets modern
@@ -27,7 +27,7 @@ const AboutPage: React.FC = () => {
         in our collection is thoughtfully sourced to support your journey toward
         balance and vitality.
       </p>
-      <p className="mt-4 leading-relaxed font-jakarta">
+      <p className="mt-4 font-jakarta leading-relaxed">
         We are committed to fostering a community that values self-care,
         sustainability, and conscious living. Whether you’re exploring holistic
         health for the first time or deepening your existing practices, Holistic
@@ -35,19 +35,20 @@ const AboutPage: React.FC = () => {
         the way. Together, let’s cultivate a lifestyle that embraces wellness in
         harmony with the world around us.
       </p>
-      <div className="flex flex-wrap gap-8 mt-10 justify-between">
+      <div className="mt-10 flex flex-wrap justify-between">
         <Accordion />
+
         {/* Images */}
-        <div className="w-full items-center flex flex-col md:flex-row justify-evenly overflow-x-hidden">
+        <div className="flex w-full flex-col items-center justify-evenly md:flex-row">
           <img
             src={holisticProductsImg}
             alt="Holistic products"
-            className="w-full max-w-sm rounded-lg shadow-none mt-12 object-cover transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
+            className="mt-12 w-full max-w-sm rounded-lg object-cover shadow-none transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
           />
           <img
             src={productsBackgroundImg}
             alt="Products background"
-            className="w-full max-w-sm rounded-lg shadow-none mt-12 gap:3 object-cover transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
+            className="mt-12 w-full max-w-sm rounded-lg object-cover shadow-none transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
           />
         </div>
       </div>
