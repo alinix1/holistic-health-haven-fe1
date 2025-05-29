@@ -12,12 +12,12 @@ const Button: React.FC<ButtonProps> = ({
     bg-[#5A7340] 
     px-8 
     py-2 
-    text-md 
+    text-base 
     font-medium 
     font-quicksand
     leading-normal 
     text-white
-    hover:shadow-4-strong        
+    hover:shadow-4-strong      
     transition 
     duration-150 
     ease-in-out 
