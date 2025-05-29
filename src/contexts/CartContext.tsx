@@ -11,9 +11,27 @@ export interface CartContextProps extends CartState {
   dispatch: React.Dispatch<CartAction>;
 }
 
-const initialState: CartState = {
-  cartItems: [],
+const loadCartFromStorage = (): HolisticProduct[] => {
+  try {
+    const savedCart = localStorage.getItem("cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  } catch (error) {
+    console.error("Error loading cart", error);
+    return [];
+  }
 };
+
+const saveCartToStorage = (cartItems: HolisticProduct[]): void => {
+  try {
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  } catch (error) {
+    console.error("Error saving cart", error);
+  }
+};
+
+const initializeState = (): CartState => ({
+  cartItems: loadCartFromStorage(),
+});
 
 const decreaseItemQuantity = (
   cartItems: HolisticProduct[],
