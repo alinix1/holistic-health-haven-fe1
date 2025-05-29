@@ -15,11 +15,7 @@ const ReviewSubmit: React.FC = () => {
       console.error("Error submitting review", error);
     }
   };
-  return (
-    <div>
-      <ReviewForm onSubmit={handleReviewSubmit} />
-    </div>
-  );
+  return <ReviewForm onSubmit={handleReviewSubmit} />;
 };
 
 export default ReviewSubmit;
