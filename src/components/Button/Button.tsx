@@ -25,8 +25,7 @@ const Button: React.FC<ButtonProps> = ({
     hover:text-black
     focus:bg-[#8BA663]
     focus:outline-none 
-    focus:ring-0 
-    active:bg-[#8BA663]-600 
+    active:bg-[#8BA663] 
     dark:shadow-black/30
   `;
 
