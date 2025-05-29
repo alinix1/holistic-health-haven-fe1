@@ -45,6 +45,8 @@ const decreaseItemQuantity = (
 };
 
 const cartReducer = (state: CartState, action: CartAction): CartState => {
+  let newState: CartState;
+
   switch (action.type) {
     case "ADD_ITEM": {
       const item = action.payload;
@@ -52,36 +54,45 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
         (cartItem) => cartItem.id === item.id,
       );
       if (existingItem) {
-        return {
+        newState = {
           cartItems: state.cartItems.map((cartItem) =>
             cartItem.id === item.id
               ? { ...cartItem, quantity: (cartItem.quantity || 0) + 1 }
               : cartItem,
           ),
         };
+      } else {
+        newState = {
+          cartItems: [...state.cartItems, { ...item, quantity: 1 }],
+        };
       }
-      return { cartItems: [...state.cartItems, { ...item, quantity: 1 }] };
+      break;
     }
     case "REMOVE_ITEM":
     case "DECREASE_QUANTITY": {
       const id = action.payload;
-      return {
+      newState = {
         cartItems: decreaseItemQuantity(state.cartItems, id),
       };
+      break;
     }
     case "INCREASE_QUANTITY": {
       const id = action.payload;
-      return {
+      newState = {
         cartItems: state.cartItems.map((item) =>
           item.id === id
             ? { ...item, quantity: (item.quantity || 0) + 1 }
             : item,
         ),
       };
+      break;
     }
     default:
       return state;
   }
+
+  saveCartToStorage(newState.cartItems);
+  return newState;
 };
 
 export const CartContext = createContext<CartContextProps | undefined>(
