@@ -102,7 +102,7 @@ export const CartContext = createContext<CartContextProps | undefined>(
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [state, dispatch] = useReducer(cartReducer, initialState);
+  const [state, dispatch] = useReducer(cartReducer, undefined, initializeState);
 
   return (
     <CartContext.Provider value={{ cartItems: state.cartItems, dispatch }}>
