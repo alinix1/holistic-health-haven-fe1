@@ -46,10 +46,8 @@ const Dropdown: React.FC<DropdownProps> = ({
                   )
                 }
                 className={`${
-                  active
-                    ? "bg-gray-100 font-inter text-gray-900"
-                    : "text-gray-700"
-                } block w-full text-left px-4 py-2 text-sm`}
+                  active ? "bg-gray-100 text-gray-900" : "text-gray-700"
+                } block w-full px-4 py-2 text-left text-sm`}
               >
                 {ailmentOption}
               </button>
@@ -72,7 +70,7 @@ export const MobileNavMenu: React.FC = () => {
   ];
 
   return (
-    <MenuItems className="absolute top-10 left-2 w-40 bg-white shadow-lg rounded ring-1 ring-black/5 focus:outline-none z-[60]">
+    <MenuItems className="absolute left-2 top-10 z-[60] w-40 rounded bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
       <div className="flex flex-col gap-y-2 px-2 py-2">
         {navLinks.map((link) => (
           <MenuItem key={link.name}>
