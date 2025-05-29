@@ -87,11 +87,11 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
   );
 
   return (
-    <div className="flex flex-col items-center py-4 px-2 md:py-10 px-4 bg-[#F5F5F5]">
-      <h1 className="text-3xl font-inter font-bold text-black mb-6">
+    <div className="flex flex-col items-center bg-[#F5F5F5] px-2 px-4 py-4 md:py-10">
+      <h1 className="font-inter mb-6 text-3xl font-bold text-black">
         Complete Your Payment
       </h1>
-      <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-8">
+      <div className="w-full max-w-3xl rounded-lg bg-white p-8 shadow-md">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
