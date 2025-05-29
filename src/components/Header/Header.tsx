@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
   return (
     <div className="w-full bg-[#DECDB5]">
       {/* Header Container: Cart Icon and Nav Links */}
-      <div className="relative flex flex-col md:flex-row items-start justify-start">
+      <div className="relative flex flex-col items-start justify-start md:flex-row">
         {/* Cart Icon & Dropdown */}
         <div className="flex items-start justify-start px-2">
           <CartIcon
@@ -39,11 +39,11 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
         </div>
 
         {/* Navigation Links */}
-        <div className="hidden custom:hidden md:flex flex-row items-center md:gap-x-4">
+        <div className="hidden flex-row items-center md:flex md:gap-x-4 custom:hidden">
           <Link to="/testimonials" className="font-extrabold">
             <button
               type="button"
-              className="nav-button text-left rounded px-2 py-2 md:px-8 pb-2 pt-2 gap-x-2 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0"
+              className="nav-button gap-x-2 rounded px-2 py-2 pb-2 pt-2 text-left text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0 md:px-8"
             >
               Testimonials
             </button>
@@ -51,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
           <Link to="/reviews" className="font-extrabold">
             <button
               type="button"
-              className="nav-button text-left rounded px-2 py-2 md:px-8 pb-2 pt-2 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0"
+              className="nav-button rounded px-2 py-2 pb-2 pt-2 text-left text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0 md:px-8"
             >
               Review Us
             </button>
@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
           <Link to="/" className="font-extrabold">
             <button
               type="button"
-              className="nav-button text-left rounded px-2 py-2 md:px-8 pb-2 pt-2 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0"
+              className="nav-button rounded px-2 py-2 pb-2 pt-2 text-left text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0 md:px-8"
             >
               Holistic Products
             </button>
@@ -67,7 +67,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
           <Link to="/payment" className="font-extrabold">
             <button
               type="button"
-              className="nav-button text-left rounded px-2 py-2 md:px-8 pb-2 pt-2 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0"
+              className="nav-button rounded px-2 py-2 pb-2 pt-2 text-left text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0 md:px-8"
             >
               Payment
             </button>
@@ -75,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
           <Link to="/about" className="font-extrabold">
             <button
               type="button"
-              className="nav-button text-left rounded px-2 py-2 md:px-8 pb-2 pt-2 text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0 "
+              className="nav-button rounded px-2 py-2 pb-2 pt-2 text-left text-xs uppercase text-black transition duration-150 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-0 md:px-8"
             >
               About Us
             </button>
@@ -83,23 +83,23 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
         </div>
       </div>
       {/* Right Section: Logo */}
-      <div className="absolute top-0 right-0 hidden md:block">
+      <div className="absolute right-0 top-0 hidden md:block">
         <Link to="/">
           <img
-            className="w-full max-w-[7rem] h-auto"
+            className="h-auto w-full max-w-[7rem]"
             src={logo}
             alt="company name homepage"
           />
         </Link>
       </div>
       {/* Mobile Menu Toggle Button */}
-      <div className=" block custom:block md:hidden">
+      <div className="block md:hidden custom:block">
         <Menu>
           <MenuButton
             as="button"
             type="button"
             aria-label="Open menu"
-            className="p-2 text-black "
+            className="p-2 text-black"
           >
             {/* Hamburger icon */}
             <svg
@@ -108,7 +108,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-6 h-6"
+              className="h-6 w-6"
               aria-hidden="true"
             >
               <path
@@ -122,8 +122,8 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
         </Menu>
       </div>
       {/* Title Section */}
-      <section className="text-center mt-4">
-        <h1 className="font-inter text-black text-4xl font-bold mb-10">
+      <section className="mt-4 text-center">
+        <h1 className="font-inter mb-10 text-4xl font-bold text-black">
           Holistic Health Haven
         </h1>
         <article className="mb-10 flex justify-center">
