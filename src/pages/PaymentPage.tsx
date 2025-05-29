@@ -104,21 +104,21 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
             <Form>
               {/* Billing Information */}
               <section className="mb-6">
-                <h2 className="text-xl font-inter font-semibold text-gray-700 mb-4">
+                <h2 className="font-inter mb-4 text-xl font-semibold text-gray-700">
                   Billing Information
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
                     <Field
                       name="fullName"
                       type="text"
                       placeholder="Full Name"
-                      className="w-full font-inter px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="font-inter w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <ErrorMessage
                       name="fullName"
                       component="div"
-                      className="text-red-500 text-sm mt-1"
+                      className="mt-1 text-sm text-red-500"
                     />
                   </div>
                   <div>
@@ -126,12 +126,12 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                       name="email"
                       type="email"
                       placeholder="Email Address"
-                      className="w-full font-inter px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="font-inter w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <ErrorMessage
                       name="email"
                       component="div"
-                      className="text-red-500 text-sm mt-1"
+                      className="mt-1 text-sm text-red-500"
                     />
                   </div>
                   <div>
@@ -139,12 +139,12 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                       name="address"
                       type="text"
                       placeholder="Address"
-                      className="w-full font-inter px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="font-inter w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <ErrorMessage
                       name="address"
                       component="div"
-                      className="text-red-500 text-sm mt-1"
+                      className="mt-1 text-sm text-red-500"
                     />
                   </div>
                   <div>
@@ -152,19 +152,19 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                       name="city"
                       type="text"
                       placeholder="City"
-                      className="w-full font-inter px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="font-inter w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <ErrorMessage
                       name="city"
                       component="div"
-                      className="text-red-500 text-sm mt-1"
+                      className="mt-1 text-sm text-red-500"
                     />
                   </div>
                   <Field
                     as="select"
                     name="state"
                     id="state"
-                    className="w-full font-inter px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="font-inter w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="" label="Select your state" />
                     {stateData.map((state) => (
@@ -178,12 +178,12 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                       name="postalCode"
                       type="text"
                       placeholder="ZIP/Postal Code"
-                      className="w-full font-inter px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="font-inter w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <ErrorMessage
                       name="postalCode"
                       component="div"
-                      className="text-red-500 text-sm mt-1"
+                      className="mt-1 text-sm text-red-500"
                     />
                   </div>
                 </div>
@@ -191,10 +191,10 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
 
               {/* Payment Information */}
               <section className="mb-6">
-                <h2 className="text-xl font-inter font-semibold text-gray-700 mb-4">
+                <h2 className="font-inter mb-4 text-xl font-semibold text-gray-700">
                   Payment Details
                 </h2>
-                <div className="w-full font-inter px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                <div className="font-inter w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none">
                   <CardElement
                     options={{
                       style: {
@@ -217,27 +217,27 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
 
               {/* Order Summary */}
               <section className="mb-6">
-                <h2 className="text-xl font-inter font-semibold text-gray-700 mb-4">
+                <h2 className="font-inter mb-4 text-xl font-semibold text-gray-700">
                   Order Summary
                 </h2>
-                <div className="flex justify-between items-start">
+                <div className="flex items-start justify-between">
                   <span className="font-inter text-gray-600">Product Name</span>
                   <ul className="list-disc pl-4">
                     {cartItems.map((item) => (
                       <li
                         key={item.id}
-                        className="text-gray-800 font-inter text-left font-medium"
+                        className="font-inter text-left font-medium text-gray-800"
                       >
                         {item.product_title}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="flex justify-between items-center py-2 border-t">
-                  <span className="text-lg font-inter font-semibold">
+                <div className="flex items-center justify-between border-t py-2">
+                  <span className="font-inter text-lg font-semibold">
                     Total
                   </span>
-                  <span className="text-lg font-inter font-semibold text-gray-800">
+                  <span className="font-inter text-lg font-semibold text-gray-800">
                     ${total.toFixed(2)}
                   </span>
                 </div>
@@ -252,16 +252,16 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
                 {total > 0 ? ` $${total.toFixed(2)}` : ""}
               </Button>
               {total === 0 && (
-                <div className="text-red-500 mt-2">
+                <div className="mt-2 text-center text-red-500">
                   Your cart is empty. Please add items before proceeding to
                   payment.
                 </div>
               )}
               {paymentError && (
-                <div className="text-red-500 mt-2">{paymentError}</div>
+                <div className="mt-2 text-red-500">{paymentError}</div>
               )}
               {paymentSucceeded && (
-                <div className="text-green-500 font-inter mt-2">
+                <div className="font-inter mt-2 text-green-500">
                   Payment succeeded!
                 </div>
               )}
