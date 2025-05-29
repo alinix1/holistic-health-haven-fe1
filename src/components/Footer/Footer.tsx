@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer-container flex justify-center items-center h-13.5vh w-screen p-4 bg-[#DECDB5]">
-      <p className="text-black text-left footer-text font-inter italic text-sm md:text-lg">
+    <footer className="footer-container flex h-[13.5vh] w-full items-center justify-center bg-[#DECDB5] p-4">
+      <p className="footer-text font-inter text-left text-sm italic text-black md:text-lg">
         &copy; 2025 by&nbsp;
         <a
           href="https://github.com/alinix1/holistic-health-haven-fe1"
-          className="text-[#0040a0] font-medium hover:underline"
+          className="font-medium text-[#0040a0] hover:underline"
         >
           Ali Nix
         </a>
