@@ -248,7 +248,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
               {/* Submit Button */}
               <Button
                 type="submit"
-                disabled={isSubmitting || !(dirty || isValid) || total === 0}
+                disabled={isSubmitting || !isValid || !dirty || total === 0}
                 className="w-full"
               >
                 Pay
