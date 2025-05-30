@@ -4,10 +4,11 @@ import type {
   PaymentPageProps,
 } from "./resources/model";
 
-const API_BASE_URL = "http://localhost:9000/api/v1";
+const API_BASE_URL =
+  process.env.REACT_APP_SERVER_URL || "http://localhost:9000/api/v1";
 
 // Helper function to handle responses
-const handleResponse = async <T> (response: Response): Promise<T> => {
+const handleResponse = async <T>(response: Response): Promise<T> => {
   if (!response.ok) {
     const errorText = await response.text();
     throw new Error(`HTTP error! Status: ${response.status} - ${errorText}`);
@@ -24,14 +25,13 @@ const handleResponse = async <T> (response: Response): Promise<T> => {
  * @returns URL to the optimized image
  */
 const getOptimizedImageUrl = (
-  source: 'db' | 'static',
+  source: "db" | "static",
   id: string | number,
   width = 800,
-  quality = 80
+  quality = 80,
 ): string => {
   return `${API_BASE_URL}/images/optimize?source=${source}&id=${id}&width=${width}&quality=${quality}`;
 };
-
 
 const getHolisticProducts = async (): Promise<HolisticProduct[]> => {
   try {
@@ -72,7 +72,7 @@ const postReview = async (newReview: Review): Promise<Review> => {
 const getStripePublishableKey = async (): Promise<string> => {
   try {
     const response = await fetch(`${API_BASE_URL}/stripe/config`);
-    const data = await handleResponse<{ publishableKey: string}>(response);
+    const data = await handleResponse<{ publishableKey: string }>(response);
     return data.publishableKey;
   } catch (error) {
     console.error("Error fetching Stripe publishable key", error);
@@ -84,13 +84,16 @@ const createPaymentIntent = async (payload: {
   amount: number;
 }): Promise<PaymentPageProps> => {
   try {
-    const response = await fetch(`${API_BASE_URL}/stripe/create-payment-intent`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      `${API_BASE_URL}/stripe/create-payment-intent`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       },
-      body: JSON.stringify(payload),
-    });
+    );
     return await handleResponse(response);
   } catch (error) {
     console.error("Error creating payment intent", error);
@@ -104,7 +107,5 @@ export {
   postReview,
   getStripePublishableKey,
   createPaymentIntent,
-  getOptimizedImageUrl
-
+  getOptimizedImageUrl,
 };
-
