@@ -29,7 +29,6 @@ export interface DropdownProps {
 export interface HeaderProps {
   children?: React.ReactNode;
 }
-
 export interface HolisticProduct {
   id: number;
   product_type: string[];
@@ -39,7 +38,6 @@ export interface HolisticProduct {
   price: number;
   quantity?: number;
 }
-
 export interface HolisticProductProps {
   id: number;
   product_type: string[];
@@ -71,10 +69,6 @@ export interface PaymentFormValues {
   city: string;
   state: string;
   postalCode: string;
-  cardNumber: string;
-  expireDate: string;
-  cvv: string;
-  cardholderName: string;
 }
 
 export interface PaymentPageProps {
