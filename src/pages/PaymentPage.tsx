@@ -25,10 +25,6 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
     city: "",
     state: "",
     postalCode: "",
-    cardNumber: "",
-    expireDate: "",
-    cvv: "",
-    cardholderName: "",
   };
 
   const validationSchema = Yup.object({
@@ -87,7 +83,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({ clientSecret }) => {
   );
 
   return (
-    <div className="flex flex-col items-center bg-[#F5F5F5] px-2 px-4 py-4 md:py-10">
+    <div className="flex flex-col items-center bg-[#F5F5F5] px-4 py-4 md:py-10">
       <h1 className="font-inter mb-6 text-3xl font-bold text-black">
         Complete Your Payment
       </h1>
