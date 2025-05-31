@@ -6,8 +6,12 @@ import type { HolisticProductListProps } from "../resources/model";
 const HolisticProductCards: React.FC<HolisticProductListProps> = ({
   holisticProducts,
 }) => {
-   
-   const holisticHerbalImage = getOptimizedImageUrl('static', 'holistic_herbal', 1920, 70);
+  const holisticHerbalImage = getOptimizedImageUrl(
+    "static",
+    "holistic_herbal",
+    1920,
+    70,
+  );
   const holisticCards = holisticProducts.map((product) => (
     <HolisticProductCard
       id={product.id}
@@ -27,7 +31,7 @@ const HolisticProductCards: React.FC<HolisticProductListProps> = ({
         backgroundSize: "cover",
       }}
     >
-      <div className="p-4 grid grid-cols-1 md:grid-cols-3 justify-items-center mx-auto max-w-screen-xl gap-6">
+      <div className="mx-auto grid max-w-screen-xl grid-cols-1 justify-items-center gap-6 p-4 md:grid-cols-3">
         {holisticCards}
       </div>
     </div>

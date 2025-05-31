@@ -17,24 +17,24 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
   };
 
   return (
-    <div className="absolute top-full left-0 mt-2 rounded bg-white border border-slate-500 p-4 shadow-lg z-[100] min-h-[10rem] max-h-[70rem] w-64 flex flex-col">
+    <div className="absolute left-0 top-full z-[100] mt-2 flex max-h-[70rem] min-h-[10rem] w-64 flex-col rounded border border-slate-500 bg-white p-4 shadow-lg">
       {/* Dropdown Content */}
-      <div className="relative">
-        <img
-          src={xIcon}
-          alt="Close cart"
-          className="absolute top-2 right-2 w-4 h-4 cursor-pointer"
-          role="button"
-          tabIndex={0}
-          aria-label="Close cart"
-          onClick={toggleIsCartOpen}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              toggleIsCartOpen();
-            }
-          }}
-        />
-      </div>
+
+      <img
+        src={xIcon}
+        alt="Close cart"
+        className="absolute right-2 top-2 h-4 w-4 cursor-pointer"
+        role="button"
+        tabIndex={0}
+        aria-label="Close cart"
+        onClick={toggleIsCartOpen}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            toggleIsCartOpen();
+          }
+        }}
+      />
+
       <div className="mt-8">
         {cartItems.length > 0 ? (
           <>
@@ -42,30 +42,26 @@ const CartDropdown: React.FC<CartDropdownProps> = ({
               {cartItems.map((item) => (
                 <li
                   key={item.id}
-                  className="flex justify-between items-center mb-2"
+                  className="mb-2 flex items-center justify-between"
                 >
                   <span>
                     {item.quantity} x {item.product_title}
                   </span>
-                  <span className="ml-2 font-semibold">
+                  <span className="font-semibold">
                     ${Number(item.price).toFixed(2)}
                   </span>
                 </li>
               ))}
             </ul>
-            <p className="font-bold mb-4">Total: ${total.toFixed(2)}</p>
-            <div className="flex flex-col justify-center items-center">
-              <Button className="mt-4 md:mt-0" onClick={handleCheckout}>
-                Go to Checkout
-              </Button>
+            <p className="mb-4 font-bold">Total: ${total.toFixed(2)}</p>
+            <div className="flex flex-col items-center justify-center">
+              <Button onClick={handleCheckout}>Go to Checkout</Button>
             </div>
           </>
         ) : (
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col items-center justify-center">
             <p className="mb-4 text-center text-gray-700">Your cart is empty</p>
-            <Button className="mt-4 md:mt-0" onClick={handleCheckout}>
-              Go to Checkout
-            </Button>
+            <Button onClick={handleCheckout}>Go to Checkout</Button>
           </div>
         )}
       </div>

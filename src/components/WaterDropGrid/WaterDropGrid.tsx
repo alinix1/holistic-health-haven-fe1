@@ -63,15 +63,15 @@ const DotGrid = (): JSX.Element => {
 
 const ErrorMessage = (): JSX.Element => {
   return (
-    <div className="flex flex-col items-center text-center space-y-8">
-      <h2 className="text-black text-3xl font-inter font-bold">
+    <div className="flex flex-col items-center space-y-8 text-center">
+      <h2 className="font-inter text-3xl font-bold text-black">
         Sorry, this URL does not exist.
       </h2>
-      <Link to="/" className="bottom-0 left-0">
-        <Button className="mt-4 md:mt-0 lowercase">Home</Button>
+      <Link to="/">
+        <Button className="mt-4 lowercase md:mt-0">Home</Button>
       </Link>
       <div className="pb-4">
-        <p className="text-black text-md font-normal font-inter">
+        <p className="font-inter text-base font-normal text-black">
           In the meantime, click on the animation below.
         </p>
       </div>

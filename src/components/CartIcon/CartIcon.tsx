@@ -7,17 +7,14 @@ const CartIcon: React.FC<CartIconProps> = ({
   cartCount,
   className,
 }) => {
-  const handleClick = (): void => {
-    toggleIsCartOpen();
-  };
   return (
     <button
       type="button"
-      onClick={handleClick}
-      className={`relative flex cursor-pointer items-center justify-center ${className}`}
+      onClick={toggleIsCartOpen}
+      className={`relative flex items-center justify-center ${className}`}
       aria-label="Toggle Cart Dropdown"
     >
-      <img className="w-10 h-10" src={cartIcon} alt="Shopping Cart" />
+      <img className="h-10 w-10" src={cartIcon} alt="Shopping Cart" />
       {cartCount > 0 && <span className="absolute bottom-3">{cartCount}</span>}
     </button>
   );

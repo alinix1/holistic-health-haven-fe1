@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import type { HolisticProduct } from "./resources/model";
 import { useToggle } from "./hooks/useToggle";
@@ -8,13 +8,12 @@ import Dropdown from "./components/Dropdown/Dropdown";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Header from "./components/Header/Header";
 import CarouselSection from "./components/CarouselSection/CarouselSection";
-import Modal from "./components/Modal/Modal";
 import Footer from "./components/Footer/Footer";
 import spinner from "./assets/Yin_and_Yang.gif";
 import { getHolisticProducts } from "./apiCalls";
 import { AppRoutes } from "./routes/AppRoutes";
 
-import "./App.css";
+const Modal = lazy(() => import("./components/Modal/Modal"));
 
 const App: React.FC = () => {
   const [holisticProducts, setHolisticProducts] = useState<HolisticProduct[]>(
@@ -36,11 +35,15 @@ const App: React.FC = () => {
   } = useToggle(false);
 
   useEffect(() => {
-    openModal();
+
     getHolisticProducts()
       .then((data) => {
         setHolisticProducts(data);
         setLoading(false);
+
+        setTimeout(() => {
+          openModal();
+        }, 2000);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -121,7 +124,9 @@ const App: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Modal */}
+      {/* Modal with Suspense */}
+      {isModalOpen && (
+      <Suspense fallback={<div className="hidden"></div>}>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <div className="flex flex-col h-full px-4 py-6">
           {/* Title Section */}
@@ -133,7 +138,7 @@ const App: React.FC = () => {
               15% off your first order
             </h2>
           </div>
-
+          
           {/* Form Container */}
           <div className="flex-grow flex items-center justify-center">
             <div className="w-full max-w-md p-4 border border-gray-200 rounded-lg bg-white shadow mt-40">
@@ -177,6 +182,8 @@ const App: React.FC = () => {
           </p>
         </div>
       </Modal>
+      </Suspense>
+      )}
       <Header>
         <div className="flex flex-col md:flex-row items-center justify-start gap-4">
           <Dropdown

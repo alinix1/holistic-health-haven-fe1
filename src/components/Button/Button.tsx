@@ -12,12 +12,12 @@ const Button: React.FC<ButtonProps> = ({
     bg-[#5A7340] 
     px-8 
     py-2 
-    text-md 
+    text-base 
     font-medium 
     font-quicksand
     leading-normal 
     text-white
-    hover:shadow-4-strong        
+    hover:shadow-4-strong      
     transition 
     duration-150 
     ease-in-out 
@@ -25,8 +25,7 @@ const Button: React.FC<ButtonProps> = ({
     hover:text-black
     focus:bg-[#8BA663]
     focus:outline-none 
-    focus:ring-0 
-    active:bg-[#8BA663]-600 
+    active:bg-[#8BA663] 
     dark:shadow-black/30
   `;
 

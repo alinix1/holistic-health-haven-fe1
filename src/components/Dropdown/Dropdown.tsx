@@ -29,15 +29,12 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <Menu as="div" className="relative z-50 inline-block text-left">
       {/* Dropdown Button */}
-      <MenuButton className="relative inline-flex w-[200px] font-inter justify-center gap-x-1.5 ml-10 rounded bg-white border border-slate-500 px-4 py-2 shadow-lg flex flex-col">
+      <MenuButton className="font-inter relative flex w-[200px] items-center justify-between rounded border border-slate-500 bg-white px-4 py-2 shadow-lg">
         {ailment || "Select Ailment"}
-        <ChevronDownIcon
-          aria-hidden="true"
-          className="absolute top-2 right-2 w-5 h-5 text-gray-500"
-        />
+        <ChevronDownIcon aria-hidden="true" className="h-5 w-5 text-gray-500" />
       </MenuButton>
       {/* Dropdown Items */}
-      <MenuItems className="absolute max-h-80 left-0 z-10 mt-2 w-56 origin-top-left rounded-md font-inter bg-white shadow-lg ring-1 ring-black/5 focus:outline-none overflow-y-auto">
+      <MenuItems className="font-inter absolute left-0 z-10 mt-2 max-h-80 w-56 origin-top-left overflow-y-auto rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
         {ailments.map((ailmentOption) => (
           <MenuItem key={ailmentOption}>
             {({ active }) => (
@@ -49,10 +46,8 @@ const Dropdown: React.FC<DropdownProps> = ({
                   )
                 }
                 className={`${
-                  active
-                    ? "bg-gray-100 font-inter text-gray-900"
-                    : "text-gray-700"
-                } block w-full text-left px-4 py-2 text-sm`}
+                  active ? "bg-gray-100 text-gray-900" : "text-gray-700"
+                } block w-full px-4 py-2 text-left text-sm`}
               >
                 {ailmentOption}
               </button>
@@ -75,7 +70,7 @@ export const MobileNavMenu: React.FC = () => {
   ];
 
   return (
-    <MenuItems className="absolute top-10 left-2 w-40 bg-white shadow-lg rounded ring-1 ring-black/5 focus:outline-none z-[60]">
+    <MenuItems className="absolute left-2 top-10 z-[60] w-40 rounded bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
       <div className="flex flex-col gap-y-2 px-2 py-2">
         {navLinks.map((link) => (
           <MenuItem key={link.name}>

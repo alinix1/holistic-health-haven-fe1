@@ -9,38 +9,32 @@ const SearchBar: React.FC<SearchBarProps> = ({
   hasSearched,
   filteredProducts,
 }) => {
-  const handleInputChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ): void => {
-    const { value } = event.target;
-    handleSearchInput(value);
-  };
   return (
     <section className="w-full min-w-[300px]">
       <div className="relative">
         <input
           aria-label="Search holistic products"
-          className="w-full font-inter bg-transparent placeholder:text-slate-600 text-slate-800 text-sm border border-slate-500 rounded-md pl-3 pr-16 py-2 transition duration-300 ease focus:outline-none focus:border-slate-700 hover:border-slate-500 shadow-sm focus:shadow"
+          className="font-inter ease w-full rounded-md border border-slate-500 bg-transparent py-2 pl-3 pr-16 text-sm text-slate-800 shadow-sm transition duration-300 placeholder:text-slate-600 hover:border-slate-500 focus:border-slate-700 focus:shadow focus:outline-none"
           placeholder="Search holistic products..."
           type="text"
           name="searchValue"
           value={searchValue}
-          onChange={handleInputChange}
+          onChange={(e) => handleSearchInput(e.target.value)}
         />
         <button
           type="button"
-          className="absolute top-1 right-1 flex items-center rounded bg-slate-800 py-1 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          className="absolute right-1 top-1 flex items-center rounded border border-transparent bg-slate-800 px-2.5 py-1 text-center text-sm text-white shadow-sm transition-all hover:bg-slate-700 hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           onClick={handleSearch}
         >
           <img
             src={searchIcon}
             alt="search icon"
-            className="w-4 h-4 filter brightness-0 invert"
+            className="h-4 w-4 brightness-0 invert filter"
           />
-          <span className="ml-2 font-inter">Search</span>
+          <span className="font-inter ml-2">Search</span>
         </button>
         {hasSearched && filteredProducts.length === 0 && (
-          <p className="text-grey-700 font-bold text-center mt-4">
+          <p className="mt-4 text-center font-bold text-gray-700">
             No products match your search! Try searching by a different name.
           </p>
         )}

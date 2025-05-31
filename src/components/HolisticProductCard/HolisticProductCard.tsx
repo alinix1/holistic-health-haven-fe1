@@ -10,20 +10,17 @@ const HolisticProductCard: React.FC<HolisticProductProps> = ({
 }) => {
   return (
     <Link to={`/${id}`}>
-      <div
-        className="product-card box-border flex flex-col items-center sm:items-center gap-7 m-4 p-4 px-8 max-w-sm sm:min-h-[30rem] rounded-lg shadow-2xl bg-white overflow-hidden"
-        key={id}
-      >
-        <h1 className="product-title mt-3 font-inter text-2xl font-bold">
+      <div className="product-card m-4 box-border flex max-w-sm flex-col items-center gap-7 overflow-hidden rounded-lg bg-white p-4 px-8 shadow-2xl sm:min-h-[30rem]">
+        <h1 className="product-title font-inter mt-3 text-2xl font-bold">
           {product_title}
         </h1>
         <img
-          className="product-img w-80 h-48 object-cover rounded-lg shadow-none transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
+          className="product-img h-48 w-80 rounded-lg object-cover shadow-none transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
           src={img}
           alt={product_title}
           loading="lazy"
         />
-        <p className="product-type font-jakarta font-semibold mb-5">
+        <p className="product-type mb-5 font-jakarta font-semibold">
           {product_type.join(", ")}
         </p>
       </div>

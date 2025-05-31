@@ -15,7 +15,6 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-    // "plugin:prettier/recommended",
     "plugin:react-hooks/recommended"
   ],
   "parserOptions": {
@@ -31,15 +30,8 @@
     }
   },
   "env": { "browser": true, "es2021": true, "jest": true },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "import",
-    // "prettier",
-    "react-hooks"
-  ],
+  "plugins": ["react", "@typescript-eslint", "import", "react-hooks"],
   "rules": {
-    // "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off",

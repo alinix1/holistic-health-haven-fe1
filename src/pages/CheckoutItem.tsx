@@ -24,15 +24,15 @@ const CheckoutItem: React.FC = () => {
     dispatch({ type: "DECREASE_QUANTITY", payload: id });
   };
   return (
-    <div className="bg-gray-100 p-4 md:p-8 flex flex-col items-center">
-      <h1 className="text-3xl text-black font-inter font-bold mb-6">
+    <div className="flex flex-col items-center bg-gray-100 p-4 md:p-8">
+      <h1 className="font-inter mb-6 text-3xl font-bold text-black">
         Checkout
       </h1>
-      <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-6">
+      <div className="w-full max-w-3xl rounded-lg bg-white p-6 shadow-md">
         {cartItems.length > 0 ? (
           <>
             {/* List each cart item */}
-            <ul className="space-y-4 font-inter font-bold">
+            <ul className="font-inter space-y-4 font-bold">
               {cartItems.map((item) => (
                 <li
                   key={item.id}
@@ -58,7 +58,7 @@ const CheckoutItem: React.FC = () => {
                         />
                       </svg>
                     </button>
-                    <span className="mr-4 font-inter font-semibold">
+                    <span className="font-inter mr-4 font-semibold">
                       {item.quantity} x
                     </span>
                     <button
@@ -96,7 +96,7 @@ const CheckoutItem: React.FC = () => {
                         viewBox="0 0 24 24"
                         strokeWidth="1.5"
                         stroke="currentColor"
-                        className="w-6 h-6"
+                        className="h-6 w-6"
                       >
                         <path
                           strokeLinecap="round"
@@ -111,24 +111,26 @@ const CheckoutItem: React.FC = () => {
             </ul>
 
             {/* Total */}
-            <div className="flex justify-between items-center mt-6 border-t pt-4">
-              <span className="text-xl font-inter font-bold">Grand Total:</span>
-              <span className="text-xl font-inter font-bold">
+            <div className="mt-6 flex items-center justify-between border-t pt-4">
+              <span className="font-inter text-xl font-bold">Grand Total:</span>
+              <span className="font-inter text-xl font-bold">
                 ${total.toFixed(2)}
               </span>
             </div>
 
             {/* Proceed to Payment Button */}
-            <Button
-              type="submit"
-              className="w-2/3 mt-4"
-              onClick={handleProceedToPayment}
-            >
-              Proceed to Payment
-            </Button>
+            <div className="flex justify-center">
+              <Button
+                type="submit"
+                className="mt-4 w-2/3"
+                onClick={handleProceedToPayment}
+              >
+                Proceed to Payment
+              </Button>
+            </div>
           </>
         ) : (
-          <p className="text-center font-inter text-gray-600">
+          <p className="font-inter text-center text-gray-600">
             Your cart is empty.
           </p>
         )}

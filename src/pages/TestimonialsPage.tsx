@@ -19,18 +19,18 @@ const TestimonialsPage: React.FC = () => {
 
   return (
     <div
-      className="bg-cover bg-center bg-fixed min-h-screen flex flex-col items-center justify-center text-black overflow-y-auto"
+      className="flex min-h-screen flex-col items-center justify-center overflow-y-auto bg-cover bg-fixed bg-center text-black"
       style={{
         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url(${holisticHerbalImage})`,
       }}
     >
-      <h2 className="text-3xl mb-2 font-inter font-extrabold">Testimonials</h2>
+      <h2 className="font-inter mb-2 text-3xl font-extrabold">Testimonials</h2>
       <ul className="text-center">
         {reviews.map((review) => (
           <li key={review.id} className="mb-4 text-left">
-            <p className="font-inter font-bold text-md md:text-xl">
+            <p className="font-inter text-md font-bold md:text-xl">
               <span
-                className="text-gray-400 text-4xl mr-2"
+                className="mr-2 text-4xl text-gray-400"
                 aria-hidden="true"
                 style={{ fontSize: "5em" }}
               >
@@ -38,7 +38,7 @@ const TestimonialsPage: React.FC = () => {
               </span>
               {review.user_name}
             </p>
-            <p className="text-md md:text-xl font-semibold font-jakarta text-gray-700">
+            <p className="text-md font-jakarta font-semibold text-gray-700 md:text-xl">
               {review.user_review}
             </p>
           </li>

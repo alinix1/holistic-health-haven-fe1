@@ -74,15 +74,23 @@ Link to: [Back End](https://github.com/alinix1/holistic-health-haven-BE)
 
 1. <strong>Clone down frontend repository:</strong>
 
-```
-https://github.com/alinix1/holistic-health-haven-fe1.git
-```
+`git clone https://github.com/alinix1/holistic-health-haven-fe1.git`
 
-2. <strong>Install npm packages:</strong>
+2. <strong>Navigate to the project directory:</strong>
+
+`cd holistic-health-haven-fe1`
+
+3. <strong>Install npm packages:</strong>
 
 `yarn install` or `yarn i`
 
-3. <strong>`cd` into directory and run:</strong>
+4. <strong>Set up environment variables:</strong>
+
+Create a `.env` file in the root directory:
+
+`REACT_APP_SERVER_URL=http://localhost:9000/api/v1`
+
+5. <strong>Start the development server:</strong>
 
 `yarn start`
 

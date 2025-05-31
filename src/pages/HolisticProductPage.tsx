@@ -10,13 +10,13 @@ import { useCart } from "../hooks/useCart";
 const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
   holisticProducts,
 }) => {
-  const { id } = useParams()
+  const { id } = useParams();
   const { dispatch } = useCart();
 
   const productId = id ? Number.parseInt(id, 10) : null;
-  const selectedProduct = productId 
-  ? holisticProducts.find((product) => product.id === productId)
-  : null;
+  const selectedProduct = productId
+    ? holisticProducts.find((product) => product.id === productId)
+    : null;
 
   if (!selectedProduct) {
     return (
@@ -31,78 +31,53 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-start bg-[#F5F5F5]">
-      <section className="order-2 md:order-1 product-section flex flex-col items-center">
+    <div className="flex flex-col items-center justify-start bg-[#F5F5F5] md:flex-row">
+      <section className="order-2 flex flex-col items-center md:order-1">
         <img
-          className="product-img w-72 h-72 object-cover md:mr-6 md:ml-10 md:mt-10 rounded shadow-none transition-shadow duration-500 ease-in-out hover:shadow-4-strong"
+          className="h-72 w-72 rounded object-cover shadow-none transition-shadow duration-500 ease-in-out hover:shadow-4-strong md:ml-10 md:mr-6 md:mt-10"
           src={selectedProduct.img}
           alt={selectedProduct.product_title}
         />
-        <article className="flex items-start justify-center mt-5 gap-4">
+        <div className="mt-5 flex items-start justify-center gap-4">
           <button
             type="button"
-            className="inline-block
-             rounded bg-[#5A7340]
-              text-[#fff] 
-              px-5 
-              py-2 
-              text-md 
-              font-medium 
-              leading-normal 
-              shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] 
-              
-              hover:bg-[#8C6645] 
-              hover:px-7 
-              hover:py-3 
-              hover:text-[#ffffff] 
-              hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] 
-              focus:bg-[#402B18] 
-              focus:text-[#ffffff] 
-              focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] 
-              active:bg-[#67733D] active:text-[#BFB2A3] 
-              active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] 
-              transition-all 
-              duration-200 
-              ease-in-out 
-              focus:outline-none 
-              focus:ring-0"
-            style={{ width: "fit-content" }}
+            className="text-md inline-block rounded bg-[#5A7340] px-5 py-2 font-medium leading-normal text-white shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] transition-all duration-200 ease-in-out hover:bg-[#8C6645] hover:px-7 hover:py-3 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-[#402B18] focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:outline-none focus:ring-0 active:bg-[#67733D] active:text-[#BFB2A3] active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)]"
             onClick={handleAddToCart}
           >
             Add to Cart
           </button>
 
-          <Link to="/" className="link">
+          <Link to="/">
             <Button>Back</Button>
           </Link>
-        </article>
+        </div>
       </section>
-      <article className="order-1 md:order-2 flex items-center flex-col ml-4 text-center md:text-left">
-        <h2 className="product-title font-inter text-lg font-bold mb-2">
+      <section className="order-1 ml-4 flex flex-col items-center text-center md:order-2 md:text-left">
+        <h2 className="font-inter mb-2 text-lg font-bold">
           {selectedProduct.product_title}
         </h2>
-        <p className="product-type mb-2 italic font-inter font-semibold">
+        <p className="font-inter mb-2 font-semibold italic">
           {selectedProduct.product_type.join(", ")}
         </p>
-        <p className="product-description mb-4 px-4 max-w-md leading-relaxed font-jakarta tracking-normal md:text-justify">
+        <p className="mb-4 max-w-md px-4 font-jakarta leading-relaxed tracking-normal md:text-justify">
           {selectedProduct.product_description}
         </p>
-        <p className="product-price font-inter text-lg font-bold">
+        <p className="font-inter text-lg font-bold">
           ${Number(selectedProduct.price).toFixed(2)}
         </p>
-      </article>
-      <article className="order-3 flex flex-col items-center md:items-end md:ml-10 mt-10 mb-10 gap-10 animate-[fade-in-up_1s_ease-in-out] md:animate-[fade-in-right_1s_ease-in-out]">
+      </section>
+      <section className="order-3 mb-10 mt-10 flex animate-[fade-in-up_1s_ease-in-out] flex-col items-center gap-10 md:ml-10 md:animate-[fade-in-right_1s_ease-in-out] md:items-end">
         <img
-          className="w-72 h-72 object-cover mt-10 rounded border-4 border-[#402B18]"
+          className="mt-10 h-72 w-72 rounded border-4 border-[#402B18] object-cover"
           src={holisticMushroom}
           alt="Holistic Mushroom"
         />
         <img
-          className="w-72 h-72 object-cover mt-10 rounded border-4 border-[#402B18]"
+          className="mt-10 h-72 w-72 rounded border-4 border-[#402B18] object-cover"
           src={holisticTree}
           alt="Holistic Tree"
         />
-      </article>
+      </section>
     </div>
   );
 };
