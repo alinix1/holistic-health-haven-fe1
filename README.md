@@ -21,7 +21,6 @@
     <li><a href="#usage">Installation</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#roadmap">Acknowledgments</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -186,7 +185,8 @@ Create a `.env` file in the root directory:
 
 - [ ] End-to-end testing using Playwright
 - [ ] Unit and integration testing using React Testing Library
-- [ ] Email subscription, login, and authorization/authentication
+- [ ] User login with email/password and two-factor authentication
+- [ ] Order confirmation email
 
 <!-- CONTACT -->
 
