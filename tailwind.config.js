@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['"Inter"', "Quicksand", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
         quicksand: ["Quicksand", "sans-serif"],
         jakarta: ["Plus Jakarta Sans", "sans-serif"],
       },
