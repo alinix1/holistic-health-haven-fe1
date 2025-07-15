@@ -61,9 +61,13 @@ This full-stack project demonstrates modern web development practices using the 
 
 Link to: [Back End](https://github.com/alinix1/holistic-health-haven-BE)
 
-[View Miro](https://miro.com/app/live-embed/uXjVNE2x8xc=/?moveToViewport=-18777,-3658,22606,10992&embedId=565526013409)
+[View Miro](https://miro.com/app/board/uXjVNE2x8xc=/?moveToViewport=-18777,-3658,22606,10992&embedId=565526013409)
 
-[View Figma](https://embed.figma.com/design/DMkEzup6oRWF9PHeNBfU4Y/Holistic-Health-App?node-id=0-1&embed-host=share)
+[Wireframes](https://www.figma.com/design/CkIDi79gYox7WvqFowN7gg/Holistic-Health-Haven?node-id=0-1&t=dguvDJ6H3FZIUEDP-1)
+
+[Lo-fi prototypes]()
+
+[Hi-fi static mockups](https://embed.figma.com/design/DMkEzup6oRWF9PHeNBfU4Y/Holistic-Health-App?node-id=0-1&embed-host=share)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
