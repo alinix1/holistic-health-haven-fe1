@@ -65,9 +65,11 @@ Link to: [Back End](https://github.com/alinix1/holistic-health-haven-BE)
 
 [Wireframes](https://www.figma.com/design/CkIDi79gYox7WvqFowN7gg/Holistic-Health-Haven?node-id=0-1&t=dguvDJ6H3FZIUEDP-1)
 
-[Lo-fi prototypes]()
+[Low-fidelity prototypes](https://www.figma.com/design/CkIDi79gYox7WvqFowN7gg/Holistic-Health-Haven?node-id=44-52&t=2HclCi5c23AHgCM8-1)
 
-[Hi-fi static mockups](https://embed.figma.com/design/DMkEzup6oRWF9PHeNBfU4Y/Holistic-Health-App?node-id=0-1&embed-host=share)
+[High-fidelity static mockups](https://embed.figma.com/design/DMkEzup6oRWF9PHeNBfU4Y/Holistic-Health-App?node-id=0-1&embed-host=share)
+
+[High-fidelity prototypes]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
