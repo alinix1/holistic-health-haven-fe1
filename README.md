@@ -71,6 +71,8 @@ Link to: [Back End](https://github.com/alinix1/holistic-health-haven-BE)
 
 [High-fidelity prototypes](https://www.figma.com/design/CkIDi79gYox7WvqFowN7gg/Holistic-Health-Haven?node-id=89-2&t=S3ETk28XrPuPULZc-1)
 
+[UX case study](https://docs.google.com/presentation/d/14ClIUr5moaAQVylingeCdfOISpPiT1i098JGzN4riMc/edit?usp=sharing)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- INSTALLATION -->
