@@ -30,11 +30,11 @@
 
 ## About The Project
 
-This is an e-commerce web application built to provide a curated selection of holistic health products for purchase, offering a seamless and user-friendly shopping experience.
+Holistic Health Haven is a full-stack e-commerce web application designed to provide a curated selection of organic remedies, herbal supplements, and mindfulness tools through an optimized, user-centered interface.
 
-Many individuals struggle to find natural and sustainable products that truly support their well-being. <strong>Holistic Health Haven</strong> addresses this need by offering organic remedies, herbal supplements, and mindfulness tools designed to empower users to embrace a balanced, conscious lifestyle.
+Through a comprehensive UX audit and redesign process, this application addresses common e-commerce pain points by applying usability heuristics and information hierarchy principles to improve navigation, product discoverability, and checkout flow.
 
-This full-stack project demonstrates modern web development practices using the <strong>PERN stack (PostgreSQL, Express, React, Node.js)</strong> and <strong>TypeScript</strong>. It serves both as a practical solution for holistic product retail and a learning endeavor to deepen my understanding of full-stack web development.
+Built using the PERN stack (PostgreSQL, Express, React, Node.js) and TypeScript, this project demonstrates the integration of modern web development practices with user experience design principles, resulting in both improved application performance and enhanced user satisfaction.
 
 ### Built With
 
