@@ -20,6 +20,7 @@
     <li><a href="#setup">Setup</a></li>
     <li><a href="#usage">Installation</a></li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#deployment">Deployment</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -186,6 +187,12 @@ Create a `.env` file in the root directory:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ![Lighthouse Eval](https://github.com/user-attachments/assets/95b11f30-b2d6-498c-876c-85ba63773143)
+
+<!-- DEPLOYMENT -->
+
+## Deployment
+
+[https://holistichealthhaven.xyz](https://holistichealthhaven.xyz)
 
 <!-- ROADMAP -->
 
