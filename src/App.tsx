@@ -9,7 +9,6 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import Header from "./components/Header/Header";
 import CarouselSection from "./components/CarouselSection/CarouselSection";
 import Footer from "./components/Footer/Footer";
-import spinner from "./assets/Yin_and_Yang.gif";
 import { getHolisticProducts } from "./apiCalls";
 import { AppRoutes } from "./routes/AppRoutes";
 
@@ -35,7 +34,6 @@ const App: React.FC = () => {
   } = useToggle(false);
 
   useEffect(() => {
-
     getHolisticProducts()
       .then((data) => {
         setHolisticProducts(data);
@@ -108,84 +106,74 @@ const App: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center h-full mt-20">
-        <img
-          src={spinner}
-          alt="loading spinner Yin & Yang"
-          loading="lazy"
-          className="loading-image w-20 h-20"
-        />
-        <h4 className="mt-4">
-          ...Please wait for the page to load fully. Namaste.
-        </h4>
+      <div className="mt-20 flex h-full flex-col items-center justify-center">
+        <div className="spinner"></div>
+        <h4 className="mt-4">...Please wait for the page to load fully.</h4>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       {/* Modal with Suspense */}
       {isModalOpen && (
-      <Suspense fallback={<div className="hidden"></div>}>
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <div className="flex flex-col h-full px-4 py-6">
-          {/* Title Section */}
-          <div className="relative">
-            <h2
-              className="absolute top-6 left-6 text-sm md:text-2xl font-bold text-white bg-black px-2 py-1 rounded-sm 
-    rotate-[-40deg] translate-x-[-40%] translate-y-[-35%] z-50 md:static md:rotate-0 md:translate-x-0 md:translate-y-0 md:bg-transparent md:text-black"
-            >
-              15% off your first order
-            </h2>
-          </div>
-          
-          {/* Form Container */}
-          <div className="flex-grow flex items-center justify-center">
-            <div className="w-full max-w-md p-4 border border-gray-200 rounded-lg bg-white shadow mt-40">
-              <form>
-                <div className="flex flex-col md:flex-col items-center md:flex-row gap-4 w-full">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    Enter your email to subscribe:
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    placeholder="Your email address"
-                    className="w-full md:flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus-ring-blue-500"
-                    required
-                  />
-                  <Button type="submit" className="p-2 ml-2 w-2/3">
-                    Subscribe
-                  </Button>
-                </div>
-              </form>
-            </div>
+        <Suspense fallback={<div className="hidden"></div>}>
+          <Modal isOpen={isModalOpen} onClose={closeModal}>
+            <div className="flex h-full flex-col px-4 py-6">
+              {/* Title Section */}
+              <div className="relative">
+                <h2 className="absolute left-6 top-6 z-50 translate-x-[-40%] translate-y-[-35%] rotate-[-40deg] rounded-sm bg-black px-2 py-1 text-sm font-bold text-white md:static md:translate-x-0 md:translate-y-0 md:rotate-0 md:bg-transparent md:text-2xl md:text-black">
+                  15% off your first order
+                </h2>
+              </div>
 
-            {/* Terms & Conditions */}
-          </div>
-          <p className="absolute bottom-2 left-0 right-0 text-center text-sm font-bold">
-            By subscribing you agree with our{" "}
-            <Link
-              to="/terms-and-conditions"
-              className="text-[#0056b3] underline hover:text-blue-700"
-            >
-              terms & conditions
-            </Link>{" "}
-            and{" "}
-            <Link
-              to="/privacy-policy"
-              className="text-[#0056b3] underline hover:text-blue-700"
-            >
-              privacy policy
-            </Link>
-            .
-          </p>
-        </div>
-      </Modal>
-      </Suspense>
+              {/* Form Container */}
+              <div className="flex flex-grow items-center justify-center">
+                <div className="mt-40 w-full max-w-md rounded-lg border border-gray-200 bg-white p-4 shadow">
+                  <form>
+                    <div className="flex w-full flex-col items-center gap-4 md:flex-row md:flex-col">
+                      <label htmlFor="email" className="text-sm font-medium">
+                        Enter your email to subscribe:
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        placeholder="Your email address"
+                        className="focus-ring-blue-500 w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 md:flex-grow"
+                        required
+                      />
+                      <Button type="submit" className="ml-2 w-2/3 p-2">
+                        Subscribe
+                      </Button>
+                    </div>
+                  </form>
+                </div>
+
+                {/* Terms & Conditions */}
+              </div>
+              <p className="absolute bottom-2 left-0 right-0 text-center text-sm font-bold">
+                By subscribing you agree with our{" "}
+                <Link
+                  to="/terms-and-conditions"
+                  className="text-[#0056b3] underline hover:text-blue-700"
+                >
+                  terms & conditions
+                </Link>{" "}
+                and{" "}
+                <Link
+                  to="/privacy-policy"
+                  className="text-[#0056b3] underline hover:text-blue-700"
+                >
+                  privacy policy
+                </Link>
+                .
+              </p>
+            </div>
+          </Modal>
+        </Suspense>
       )}
       <Header>
-        <div className="flex flex-col md:flex-row items-center justify-start gap-4">
+        <div className="flex flex-col items-center justify-start gap-4 md:flex-row">
           <Dropdown
             handleAilmentSelect={handleAilmentSelect}
             ailment={ailment}
@@ -203,9 +191,9 @@ const App: React.FC = () => {
       <CarouselSection />
       <main className="App flex-grow">
         <AppRoutes
-        holisticProducts={holisticProducts}
-        productList={productList}
-        loading={loading}
+          holisticProducts={holisticProducts}
+          productList={productList}
+          loading={loading}
         />
       </main>
       <Footer />
