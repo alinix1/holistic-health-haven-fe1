@@ -54,3 +54,24 @@ button.h-3.w-3.rounded-full {
   align-items: center;
   justify-content: center;
 }
+
+.spinner {
+  width: 70px !important;
+  height: 70px !important;
+  margin: 3rem auto !important;
+  border: 5px solid #8c6645 !important;
+  border-radius: 50% !important;
+  animation: pulse 1.5s ease-in-out infinite !important;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.5;
+  }
+}
