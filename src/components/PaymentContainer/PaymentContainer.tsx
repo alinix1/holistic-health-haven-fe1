@@ -5,7 +5,6 @@ import { Elements } from "@stripe/react-stripe-js";
 import PaymentPage from "../../pages/PaymentPage";
 import { useCartTotal } from "../../hooks/useCart";
 import { getStripePublishableKey, createPaymentIntent } from "../../apiCalls";
-import spinner from "../../assets/Yin_and_Yang.gif";
 
 const PaymentContainer: React.FC = () => {
   const [stripePromise, setStripePromise] =
@@ -43,14 +42,11 @@ const PaymentContainer: React.FC = () => {
     }
   }, [total, stripePromise]);
 
-  if (loading || !clientSecret || !stripePromise) {
+  if (loading) {
     return (
-      <div className="flex items-center justify-center">
-        <img
-          src={spinner}
-          className="h-20 w-20"
-          alt="loading spinner Yin & Yang"
-        />
+      <div className="mt-20 flex h-full flex-col items-center justify-center">
+        <div className="spinner"></div>
+        <h4 className="mt-4">...Please wait for the page to load fully.</h4>
       </div>
     );
   }
