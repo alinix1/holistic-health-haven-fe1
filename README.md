@@ -108,6 +108,8 @@ Create a `.env` file in the root directory:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<img width="803" height="400" alt="Image" src="https://github.com/user-attachments/assets/34e1d4fa-05c3-4136-a528-2ddcaa342be6" />
+
 <img width="1307" alt="Image" src="https://github.com/user-attachments/assets/229f6f63-77c8-4ec0-9365-5adfe89ce4af" />
 
 <img width="1177" alt="Image" src="https://github.com/user-attachments/assets/b2db4b0d-e298-4d42-9c4f-4ced36273e3e" />
