@@ -7,25 +7,25 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
     return null;
   }
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-[100]">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center">
       {/* Modal Container */}
       <div
         onClick={(event) => event.stopPropagation()}
-        className="bg-white rounded-lg shadow-xl p-6 w-[90%] max-w-lg xs:h-[80%] md:h-[90%] lg:h-[90%] xl:h-[80%] overflow-y-auto overflow-x-hidden relative z-50"
+        className="relative z-50 w-[90%] max-w-lg overflow-y-auto overflow-x-hidden rounded-lg bg-neutral-50 p-6 shadow-2xl xs:h-[80%] md:h-[90%] lg:h-[90%] xl:h-[80%]"
       >
         <img
           src={discount}
           alt="Discount price"
-          className="absolute top-2 right-2 w-[10rem] h-[10rem] z-60"
+          className="z-60 absolute right-2 top-2 h-[10rem] w-[10rem]"
         />
         {/* Close Button */}
         <button
           onClick={onClose}
           type="button"
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-70"
+          className="z-70 absolute right-3 top-3 text-[#B64A50] transition-all hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#B64A50] focus:ring-offset-2"
           aria-label="Close"
         >
-          <span className="[&>svg]:h-6 [&>svg]:w-6">
+          <span className="[&>svg]:h-8 [&>svg]:w-8">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -42,7 +42,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
           </span>
         </button>
         {/* Modal Title */}
-        {title && <h2 className="text-xl font-bold mb-4">{title}</h2>}
+        {title && <h2 className="mb-4 text-xl font-bold">{title}</h2>}
 
         {/* Modal Content */}
         <div>{children}</div>
