@@ -151,11 +151,11 @@ const App: React.FC = () => {
 
                 {/* Terms & Conditions */}
               </div>
-              <p className="absolute bottom-2 left-0 right-0 text-center text-sm font-bold">
+              <p className="absolute bottom-2 left-0 right-0 text-center text-xs font-bold sm:text-sm">
                 By subscribing you agree with our{" "}
                 <Link
                   to="/terms-and-conditions"
-                  className="text-[#0056b3] underline hover:text-blue-700"
+                  className="whitespace-nowrap text-[#0056b3] underline hover:text-blue-700"
                 >
                   terms & conditions
                 </Link>{" "}
