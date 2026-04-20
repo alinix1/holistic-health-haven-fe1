@@ -231,4 +231,4 @@ Ali Nix | [![LinkedIn][linkedin-shield]][linkedin-url1]
 [ESLint-shield]: https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white
 [Vercel-shield]: https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url1]: https://www.linkedin.com/in/ali-nix-38b9b9126/
+[linkedin-url1]: https://www.linkedin.com/in/ali-nix/
