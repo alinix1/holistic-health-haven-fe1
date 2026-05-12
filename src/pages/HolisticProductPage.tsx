@@ -35,7 +35,7 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
       <section className="order-2 flex flex-col items-center md:order-1">
         <img
           className="h-72 w-72 rounded object-cover shadow-none transition-shadow duration-500 ease-in-out hover:shadow-4-strong md:ml-10 md:mr-6 md:mt-10"
-          src={selectedProduct.img}
+          src={`${process.env.REACT_APP_BASE_URL}${selectedProduct.img}`}
           alt={selectedProduct.product_title}
         />
         <div className="mt-5 flex items-start justify-center gap-4">
@@ -53,10 +53,10 @@ const HolisticProductPage: React.FC<HolisticProductPageProps> = ({
         </div>
       </section>
       <section className="order-1 ml-4 flex flex-col items-center text-center md:order-2 md:text-left">
-        <h2 className="font-inter mb-2 text-lg font-bold">
+        <h2 className="mb-2 font-inter text-lg font-bold">
           {selectedProduct.product_title}
         </h2>
-        <p className="font-inter mb-2 font-semibold italic">
+        <p className="mb-2 font-inter font-semibold italic">
           {selectedProduct.product_type.join(", ")}
         </p>
         <p className="mb-4 max-w-md px-4 font-jakarta leading-relaxed tracking-normal md:text-justify">
